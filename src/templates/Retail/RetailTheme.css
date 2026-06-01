@@ -1,0 +1,600 @@
+/* HAVEN Retail Template Design System */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+.vivere-theme {
+  /* Container queries for the simulator */
+  container-type: inline-size;
+  container-name: vivere-app;
+
+  /* Fonts */
+  --vivere-font: 'Montserrat', sans-serif;
+  --vivere-font-size-base: 14px;
+  --vivere-font-weight-base: 400;
+  --vivere-line-height-base: 20px;
+  
+  /* Typography Scale */
+  --vivere-text-xs: 12px;
+  --vivere-text-sm: 13.33px;
+  --vivere-text-md: 14px;
+  --vivere-text-lg: 16px;
+  --vivere-text-xl: 24px;
+
+  /* Color Palette */
+  --vivere-text-primary: #25211e;
+  --vivere-text-secondary: #45413e;
+  --vivere-border-strong: #5a3721;
+  --vivere-surface-raised: #fcfbfa;
+  --vivere-surface-base: #000000;
+  --vivere-surface-muted: #ebebeb;
+  --vivere-surface-strong: #ffffff;
+  
+  /* Spacing Scale */
+  --vivere-space-1: 2px;
+  --vivere-space-2: 5px;
+  --vivere-space-3: 8px;
+  --vivere-space-4: 9px;
+  --vivere-space-5: 10px;
+  --vivere-space-6: 15px;
+  --vivere-space-7: 20px;
+  --vivere-space-8: 30px;
+  --vivere-space-9: 45px;
+  --vivere-space-10: 60px; /* Extended for section padding */
+
+  /* Radius, Shadows, Motion */
+  --vivere-radius-xs: 4px;
+  --vivere-radius-sm: 50px;
+  --vivere-shadow-1: rgba(0, 0, 0, 0.05) 0px 5px 15px 0px;
+  --vivere-motion-instant: 500ms;
+  
+  /* Base applying */
+  font-family: var(--vivere-font);
+  font-size: var(--vivere-font-size-base);
+  font-weight: var(--vivere-font-weight-base);
+  line-height: var(--vivere-line-height-base);
+  color: var(--vivere-text-primary);
+  background-color: var(--vivere-surface-strong); /* Default to strong white */
+  width: 100%;
+  min-height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Reset inside the theme to not inherit global styles unexpectedly */
+.vivere-theme *, .vivere-theme *::before, .vivere-theme *::after {
+  box-sizing: border-box;
+}
+
+.vivere-theme a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Components Base */
+.vivere-btn {
+  font-family: var(--vivere-font);
+  font-size: var(--vivere-text-sm);
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid var(--vivere-border-strong);
+  border-radius: var(--vivere-radius-sm);
+  padding: var(--vivere-space-5) var(--vivere-space-7);
+  transition: all var(--vivere-motion-instant) ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.vivere-btn:focus-visible {
+  outline: 2px solid var(--vivere-border-strong);
+  outline-offset: 2px;
+}
+
+.vivere-btn-primary {
+  background-color: var(--vivere-text-primary);
+  color: var(--vivere-surface-strong);
+  border-color: var(--vivere-text-primary);
+}
+
+.vivere-btn-primary:hover, .vivere-btn-primary:active {
+  background-color: var(--vivere-border-strong);
+  border-color: var(--vivere-border-strong);
+}
+
+.vivere-btn-secondary {
+  background-color: transparent;
+  color: var(--vivere-text-primary);
+}
+
+.vivere-btn-secondary:hover, .vivere-btn-secondary:active {
+  background-color: var(--vivere-surface-muted);
+}
+
+/* Typography Classes */
+.vivere-heading {
+  font-size: var(--vivere-text-xl);
+  font-weight: 800;
+  margin-bottom: var(--vivere-space-6);
+  color: var(--vivere-text-primary);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.vivere-subtext {
+  font-size: var(--vivere-text-md);
+  color: var(--vivere-text-secondary);
+}
+
+.vivere-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--vivere-space-7);
+}
+
+/* Horizontal Scroll Utilities */
+.vivere-horizontal-scroll {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  gap: var(--vivere-space-7);
+  padding-bottom: var(--vivere-space-6); /* Space for scrollbar or shadow */
+  /* Hide scrollbar for a cleaner look */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.vivere-horizontal-scroll::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+.vivere-snap-child {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  width: 280px; /* Fixed width for horizontal scrolling items */
+}
+
+/* Responsive Utilities */
+.vivere-nav-links {
+  display: flex;
+  gap: var(--vivere-space-7);
+}
+
+.vivere-mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dynamic Hover & Animation Utilities */
+.vivere-nav-link-item {
+  position: relative;
+  font-size: var(--vivere-text-sm);
+  font-weight: 500;
+  transition: color var(--vivere-motion-instant) ease;
+}
+
+.vivere-nav-link-item::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--vivere-border-strong);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.vivere-nav-link-item:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.product-card-image-wrap {
+  overflow: hidden;
+}
+
+.product-card-image-wrap img {
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.product-card:hover .product-card-image-wrap img {
+  transform: scale(1.05);
+}
+
+.product-card-overlay {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.product-card:hover .product-card-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.vivere-icon-wrap svg {
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.vivere-category-card:hover .vivere-icon-wrap svg {
+  transform: scale(1.15) translateY(-2px);
+}
+
+/* Dropdown Menu Utilities */
+.vivere-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.vivere-dropdown-content {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--vivere-surface-strong);
+  min-width: 220px;
+  box-shadow: var(--vivere-shadow-1);
+  z-index: 100;
+  border-radius: var(--vivere-radius-xs);
+  padding: var(--vivere-space-3) 0;
+  transform: translateY(10px);
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  border: 1px solid var(--vivere-surface-muted);
+}
+
+.vivere-dropdown:hover .vivere-dropdown-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.vivere-dropdown-item {
+  color: var(--vivere-text-primary);
+  padding: var(--vivere-space-3) var(--vivere-space-5);
+  text-decoration: none;
+  display: block;
+  font-size: var(--vivere-text-sm);
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.vivere-dropdown-item:hover {
+  background-color: var(--vivere-surface-muted);
+}
+
+/* Action Icon Utilities */
+.vivere-action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--vivere-text-primary);
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vivere-action-btn svg {
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.vivere-action-btn:hover {
+  color: var(--vivere-border-strong);
+}
+
+/* Specific icon hover effects */
+.vivere-action-btn.icon-search:hover svg {
+  transform: scale(1.15) rotate(5deg);
+}
+
+.vivere-action-btn.icon-user:hover svg {
+  transform: scale(1.15) translateY(-2px);
+}
+
+.vivere-action-btn.icon-cart:hover svg {
+  transform: scale(1.1) rotate(-8deg);
+}
+
+.vivere-action-btn.icon-cart:hover span {
+  transform: scale(1.2);
+  background-color: var(--vivere-border-strong);
+}
+
+.vivere-action-btn span {
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.vivere-hero-buttons {
+  display: flex;
+  gap: var(--vivere-space-5);
+  justify-content: center;
+}
+
+.vivere-hero-heading {
+  font-size: 42px;
+  font-weight: 600;
+  color: var(--vivere-text-primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+@container (max-width: 768px) {
+  .vivere-nav-links {
+    display: none; /* Hide desktop links on mobile */
+  }
+  
+  .vivere-mobile-menu-btn {
+    display: block; /* Show hamburger on mobile */
+  }
+
+  .vivere-hero-buttons {
+    flex-direction: column;
+    padding: 0 var(--vivere-space-7);
+  }
+
+  .vivere-hero-buttons .vivere-btn {
+    width: 100%;
+  }
+
+  .vivere-hero-heading {
+    font-size: 28px;
+    margin-top: var(--vivere-space-6);
+  }
+
+  .vivere-heading {
+    font-size: var(--vivere-text-lg);
+  }
+  
+  /* Prevent 'berdempetan' by increasing section padding on mobile */
+  section {
+    padding-top: var(--vivere-space-10) !important;
+    padding-bottom: var(--vivere-space-10) !important;
+  }
+}
+
+/* ==========================================================================
+   Premium Collection Slider & Responsiveness Classes
+   ========================================================================== */
+
+.vivere-slider-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--vivere-space-8);
+  align-items: stretch;
+  width: 100%;
+}
+
+.vivere-slider-spotlight-wrap {
+  display: flex;
+  flex-direction: column;
+  order: 1; /* Always spotlight on top for mobile/tablet vertical stacking */
+  width: 100%;
+}
+
+.vivere-spotlight-tagline {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--vivere-text-secondary);
+  margin-bottom: var(--vivere-space-3);
+  opacity: 0.8;
+  border-left: 2px solid var(--vivere-border-strong);
+  padding-left: var(--vivere-space-3);
+}
+
+.vivere-slider-spotlight {
+  position: relative;
+  border-radius: var(--vivere-radius-xs);
+  overflow: hidden;
+  height: 320px; /* Mobile / default height */
+  cursor: pointer;
+  box-shadow: var(--vivere-shadow-1);
+  width: 100%;
+}
+
+.vivere-slider-spotlight img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.vivere-slider-spotlight:hover img {
+  transform: scale(1.05);
+}
+
+.vivere-slider-carousel-wrap {
+  position: relative;
+  order: 2; /* Always products below spotlight for mobile/tablet vertical stacking */
+  min-width: 0; /* CRITICAL: prevents horizontal scroll from expanding grid columns */
+  width: 100%;
+}
+
+/* 
+   Desktop layout container queries for the simulator.
+   Using 900px as the breakpoint ensures that tablets in portrait mode 
+   or narrow sizes display the beautiful stacked layout without squeezing 
+   the spotlight and carousel, preventing clipping!
+*/
+@container (min-width: 900px) {
+  .vivere-slider-grid.layout-left {
+    grid-template-columns: 1fr 2.5fr;
+  }
+  
+  .vivere-slider-grid.layout-right {
+    grid-template-columns: 2.5fr 1fr;
+  }
+
+  .vivere-slider-grid.layout-left .vivere-slider-spotlight-wrap {
+    order: 1;
+  }
+
+  .vivere-slider-grid.layout-left .vivere-slider-carousel-wrap {
+    order: 2;
+  }
+
+  .vivere-slider-grid.layout-right .vivere-slider-spotlight-wrap {
+    order: 2;
+  }
+
+  .vivere-slider-grid.layout-right .vivere-slider-carousel-wrap {
+    order: 1;
+  }
+
+  .vivere-slider-spotlight {
+    height: 480px; /* Perfect desktop height matching product card height */
+  }
+
+  /* Exactly 3 cards fit the carousel perfectly on desktop */
+  .vivere-slider-carousel-wrap .vivere-product-card-premium {
+    width: calc((100% - var(--vivere-space-7) * 2) / 3) !important;
+  }
+}
+
+/* 
+   Tablet responsive query:
+   Display EXACTLY 2 cards side-by-side with 1 gap in between on tablet screens.
+*/
+@container (min-width: 600px) and (max-width: 899.98px) {
+  .vivere-slider-carousel-wrap .vivere-product-card-premium {
+    width: calc((100% - var(--vivere-space-7)) / 2) !important;
+  }
+}
+
+/* Premium Product Cards inside Slider (Default is Mobile / < 600px) */
+.vivere-product-card-premium {
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  width: 100% !important; /* Exactly 1 card takes up full width on mobile for absolute cleanliness */
+  flex-shrink: 0;
+}
+
+.vivere-product-card-premium:hover {
+  transform: translateY(-5px);
+}
+
+.vivere-product-image-box {
+  background-color: var(--vivere-surface-muted) !important; /* Elegant gray box for contrast! */
+  height: 300px; /* Adjusted height for perfect proportion with 240px width */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--vivere-space-6);
+  position: relative;
+  border-radius: var(--vivere-radius-xs);
+  overflow: hidden;
+  transition: box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+
+.vivere-product-card-premium:hover .vivere-product-image-box {
+  box-shadow: var(--vivere-shadow-1);
+}
+
+.vivere-product-image-box img {
+  max-width: 75%;
+  max-height: 75%;
+  object-fit: contain;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.vivere-product-card-premium:hover .vivere-product-image-box img {
+  transform: scale(1.06);
+}
+
+.vivere-product-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: var(--vivere-text-primary);
+  color: var(--vivere-surface-strong);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 5px 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 2px;
+  z-index: 5;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  transition: background-color 0.3s ease;
+}
+
+.vivere-product-card-premium:hover .vivere-product-badge {
+  background-color: var(--vivere-border-strong);
+}
+
+/* ==========================================================================
+   Hero Billboard Hover Effects
+   ========================================================================== */
+
+.vivere-hero-billboard-container {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  overflow: hidden;
+  border: 1px solid var(--vivere-border-strong);
+  box-shadow: var(--vivere-shadow-1);
+  border-radius: var(--vivere-radius-xs);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+  width: 100%;
+}
+
+.vivere-hero-billboard-container:hover {
+  border-color: var(--vivere-text-primary);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
+}
+
+.vivere-hero-billboard-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  zIndex: 1;
+  transition: transform 2.2s cubic-bezier(0.25, 1, 0.3, 1);
+}
+
+.vivere-hero-billboard-container:hover .vivere-hero-billboard-img {
+  transform: scale(1.045);
+}
+
+.vivere-hero-billboard-btn {
+  background-color: white !important;
+  color: var(--vivere-text-primary) !important;
+  border: 1px solid white !important;
+  padding: 10px 26px !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.5px !important;
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.3, 1) !important;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+.vivere-hero-billboard-btn:hover {
+  background-color: transparent !important;
+  color: white !important;
+  border-color: white !important;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 15px rgba(255, 255, 255, 0.25);
+  letter-spacing: 1.5px !important;
+}
+
+
