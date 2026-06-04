@@ -804,6 +804,83 @@ input:focus, textarea:focus {
   box-shadow: var(--vivere-shadow-1);
 }
 
+/* ==========================================================================
+   Footer Interactive Links & Modals Styling
+   ========================================================================== */
+.vivere-footer-link {
+  color: #a3a3a3 !important;
+  font-size: var(--vivere-text-sm);
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  display: inline-block;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+  text-decoration: none;
+}
+
+.vivere-footer-link:hover {
+  color: #d9ab7e !important;
+  transform: translateX(4px);
+}
+
+.vivere-footer-link:focus-visible {
+  outline: 2px solid #d9ab7e;
+  outline-offset: 2px;
+}
+
+.vivere-footer-input {
+  padding: var(--vivere-space-3) var(--vivere-space-4);
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: var(--vivere-radius-xs);
+  width: 100%;
+  color: #ffffff !important;
+  transition: all 0.3s ease;
+}
+
+.vivere-footer-input::placeholder {
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.vivere-footer-input:focus {
+  border-color: #d9ab7e !important;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 0 0 2px rgba(217, 171, 126, 0.2);
+}
+
+.vivere-footer-btn-join {
+  background-color: #d9ab7e !important;
+  color: #1a1a1a !important;
+  border: none !important;
+  border-radius: var(--vivere-radius-xs);
+  padding: var(--vivere-space-3) var(--vivere-space-5);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+.vivere-footer-btn-join:hover {
+  background-color: #e5c19d !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(217, 171, 126, 0.3);
+}
+
+.vivere-footer-btn-join:active {
+  transform: translateY(0);
+}
+
+.vivere-footer-btn-join:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+
 
 
 

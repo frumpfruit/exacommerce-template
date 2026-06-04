@@ -250,7 +250,7 @@ export default function RetailStore() {
       </main>
 
       {/* Footer Component */}
-      <Footer />
+      <Footer onNavigate={setActivePage} />
 
       {/* Cart Drawer Component */}
       {cartOpen && (
