@@ -52,7 +52,7 @@ const TEMPLATES = [
 ];
 
 export default function App() {
-  const [activePreview, setActivePreview] = useState(null);
+  const [activePreview, setActivePreview] = useState(TEMPLATES[0]);
   const [simulatorDevice, setSimulatorDevice] = useState('desktop');
 
   return (
@@ -160,7 +160,12 @@ export default function App() {
 
           <div className="simulator-canvas">
             <div className="device-frame" style={{ width: simulatorDevice === 'desktop' ? '100%' : simulatorDevice === 'tablet' ? '768px' : '375px' }}>
-              <div className="device-body" style={{ padding: activePreview.id === 'retail' ? 0 : 'var(--spacing-xl)' }}>
+              <div 
+                className="device-body" 
+                style={{ 
+                  padding: activePreview.id === 'retail' ? 0 : 'var(--spacing-xl)'
+                }}
+              >
                 {activePreview.id === 'retail' ? (
                   <RetailStore />
                 ) : (

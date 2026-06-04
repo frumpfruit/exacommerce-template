@@ -55,8 +55,6 @@
   background-color: var(--vivere-surface-strong); /* Default to strong white */
   width: 100%;
   min-height: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
 }
 
 /* Reset inside the theme to not inherit global styles unexpectedly */
@@ -596,5 +594,216 @@
   box-shadow: 0 6px 15px rgba(255, 255, 255, 0.25);
   letter-spacing: 1.5px !important;
 }
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+/* Custom transitions and styling for mobile dropdown navigation */
+.vivere-mobile-nav button {
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.vivere-mobile-nav button:hover {
+  background-color: var(--vivere-surface-muted);
+}
+
+/* Inquiry form input focus states */
+input:focus, textarea:focus {
+  border-color: var(--vivere-border-strong) !important;
+  box-shadow: 0 0 0 2px rgba(90, 55, 33, 0.15);
+}
+
+.vivere-btn-back:hover {
+  background-color: var(--vivere-surface-muted) !important;
+  border-color: var(--vivere-text-secondary) !important;
+}
+
+.vivere-btn-submit-inquiry:hover {
+  background-color: #5c6ac4 !important; /* Darker indigo blue on hover */
+  transform: translateY(-1px);
+  box-shadow: var(--vivere-shadow-1);
+}
+
+/* Mobile responsive styles for B2B Chat WhatsApp button */
+@container (max-width: 500px) {
+  .vivere-whatsapp-badge {
+    display: none !important;
+  }
+}
+
+/* Mobile responsive styles for testimonial items (border adjustments) */
+@container (max-width: 768px) {
+  .vivere-testimonial-item {
+    border-right: none !important;
+    border-bottom: 1px solid var(--vivere-surface-muted) !important;
+    padding-bottom: var(--vivere-space-6) !important;
+    padding-right: 0 !important;
+    margin-bottom: var(--vivere-space-6);
+  }
+  .vivere-testimonial-item:last-child {
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0;
+  }
+}
+
+/* Category Grid Hover & Animation Classes */
+.vivere-category-card {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: var(--vivere-radius-xs);
+  height: 380px;
+  border: 1px solid var(--vivere-surface-muted);
+}
+
+.vivere-category-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.vivere-category-card:hover img {
+  transform: scale(1.05);
+}
+
+.vivere-category-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to top, rgba(37,33,30,0.85) 0%, rgba(37,33,30,0.3) 50%, rgba(37,33,30,0.1) 100%);
+  opacity: 0.8;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+
+.vivere-category-card:hover .vivere-category-overlay {
+  opacity: 0.95;
+}
+
+.vivere-category-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--vivere-space-6);
+  z-index: 2;
+  color: #ffffff;
+  text-align: left;
+  transform: translateY(8px);
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.vivere-category-card:hover .vivere-category-content {
+  transform: translateY(0);
+}
+
+.vivere-category-arrow {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  display: inline-block;
+  margin-left: 8px;
+}
+
+.vivere-category-card:hover .vivere-category-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ==========================================================================
+   Premium Hover & Micro-Interaction Enhancements
+   ========================================================================== */
+
+/* Logo Letter-Spacing Transition */
+.vivere-logo {
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+
+.vivere-logo:hover {
+  color: var(--vivere-border-strong) !important;
+  letter-spacing: 3.5px !important;
+  transform: scale(1.02);
+}
+
+/* WhatsApp Badge Background Fill */
+.vivere-whatsapp-badge {
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+
+.vivere-whatsapp-badge:hover {
+  background-color: var(--vivere-border-strong) !important;
+  color: var(--vivere-surface-strong) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(90, 55, 33, 0.2);
+}
+
+/* About Philosophy Grid Editorial Padding Indentation */
+.philosophy-grid-cell {
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+
+.philosophy-grid-cell:hover {
+  background-color: var(--vivere-surface-raised) !important;
+  padding-left: calc(var(--vivere-space-7) + 12px) !important;
+  padding-right: calc(var(--vivere-space-7) - 12px) !important;
+}
+
+.philosophy-grid-cell .cell-index {
+  transition: all 0.4s ease !important;
+  display: inline-block;
+}
+
+.philosophy-grid-cell:hover .cell-index {
+  color: var(--vivere-text-primary) !important;
+  transform: translateX(4px);
+}
+
+/* Insights Expert Recommendation Quote Lifting */
+.expert-tip-card {
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+
+.expert-tip-card:hover {
+  background-color: var(--vivere-surface-strong) !important;
+  transform: translateX(6px);
+  box-shadow: -4px 0 0 0 var(--vivere-border-strong), var(--vivere-shadow-1);
+}
+
+/* Process Timeline Stepper Pulse Indicator */
+.process-step-row {
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+
+.process-step-row .process-dot {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+
+.process-step-row:hover .process-dot {
+  transform: scale(1.35);
+  background-color: var(--vivere-border-strong) !important;
+  box-shadow: 0 0 0 5px rgba(90, 55, 33, 0.18);
+}
+
+.process-step-row .process-output-badge {
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+
+.process-step-row:hover .process-output-badge {
+  background-color: var(--vivere-surface-strong) !important;
+  border-left-width: 4px !important;
+  transform: translateX(3px);
+  box-shadow: var(--vivere-shadow-1);
+}
+
+
 
 

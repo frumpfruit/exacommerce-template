@@ -7,7 +7,9 @@ export default function CollectionSlider({
   spotlightImage, 
   spotlightText, 
   spotlightDesc,
-  products 
+  products,
+  onAddToCart,
+  onViewDetail
 }) {
   const isLeft = spotlightPosition === 'left';
   const scrollRef = useRef(null);
@@ -125,7 +127,11 @@ export default function CollectionSlider({
           >
             <div className="vivere-horizontal-scroll" ref={scrollRef}>
               {products.map((item, index) => (
-                <div key={item.id || index} className="vivere-snap-child vivere-product-card-premium">
+                <div 
+                  key={item.id || index} 
+                  className="vivere-snap-child vivere-product-card-premium"
+                  onClick={() => onViewDetail && onViewDetail(item)}
+                >
                   <div className="vivere-product-image-box">
                     <img src={item.img} alt={item.name} />
                     
@@ -146,8 +152,15 @@ export default function CollectionSlider({
                       justifyContent: 'center',
                       zIndex: 3
                     }}>
-                      <button className="vivere-btn vivere-btn-primary" style={{ width: '100%', fontSize: '12px', padding: 'var(--vivere-space-3)' }}>
-                        Add to Cart
+                      <button 
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          onAddToCart && onAddToCart(item);
+                        }}
+                        className="vivere-btn vivere-btn-primary" 
+                        style={{ width: '100%', fontSize: '12px', padding: 'var(--vivere-space-3)' }}
+                      >
+                        Masukkan Keranjang
                       </button>
                     </div>
                   </div>
