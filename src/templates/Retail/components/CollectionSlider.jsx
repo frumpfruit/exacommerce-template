@@ -187,7 +187,7 @@ export default function CollectionSlider({
                     </p>
                   )}
                   <p style={{ fontSize: 'var(--vivere-text-sm)', color: 'var(--vivere-text-secondary)', fontWeight: 600 }}>
-                    {item.price}
+                    {item.priceFormatted ?? item.price}
                   </p>
                 </div>
               ))}
