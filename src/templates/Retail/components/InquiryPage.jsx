@@ -3,12 +3,12 @@ import React, { useState } from 'react';
 export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }) {
   // If we came with no items, show empty state or fallback to default Bora Chair
   const defaultProduct = {
-    id: 1, 
-    name: 'BORA Stacking Armless Chair', 
+    id: 1,
+    name: 'BORA Stacking Armless Chair',
     price: 300,
-    priceFormatted: 'Rp 300', 
-    img: '/images/retail/bora_chair.png', 
-    tag: 'Chair', 
+    priceFormatted: 'Rp 300',
+    img: '/images/retail/bora_chair.png',
+    tag: 'Chair',
     stock: 100,
     desc: 'Indonesian teak outdoor armless chair, stackable, precision mortise and tenon jointing.'
   };
@@ -84,7 +84,7 @@ export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }
                 <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
               </svg>
             </div>
-            
+
             <h1 style={{
               fontSize: '22px',
               fontWeight: 700,
@@ -95,7 +95,7 @@ export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }
             }}>
               Inquiry Terkirim!
             </h1>
-            
+
             <p style={{
               fontSize: '14px',
               color: 'var(--vivere-text-secondary)',
@@ -105,9 +105,9 @@ export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }
               Terima kasih, <strong>{namaLengkap}</strong>. Permintaan inquiry Anda telah berhasil dikirim ke sales desk HAVEN. Salinan inquiry telah dikirimkan ke <strong>{email}</strong>. Tim kami akan segera menghubungi Anda.
             </p>
 
-            <button 
-              onClick={onGoBack} 
-              className="vivere-btn vivere-btn-primary" 
+            <button
+              onClick={onGoBack}
+              className="vivere-btn vivere-btn-primary"
               style={{ width: '100%', padding: 'var(--vivere-space-4)' }}
             >
               Kembali ke Toko
@@ -121,7 +121,7 @@ export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }
   return (
     <div style={{ backgroundColor: 'var(--vivere-surface-raised)', padding: 'var(--vivere-space-8) 0' }}>
       <div className="vivere-container" style={{ maxWidth: '1000px' }}>
-        
+
         {/* Main Header */}
         <div style={{ marginBottom: 'var(--vivere-space-7)' }}>
           <h1 style={{ fontSize: '24px', fontWeight: 700, color: 'var(--vivere-text-primary)', margin: '0 0 var(--vivere-space-1) 0' }}>
@@ -139,7 +139,7 @@ export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }
           gap: 'var(--vivere-space-7)',
           alignItems: 'start'
         }}>
-          
+
           {/* LEFT PANEL: Ringkasan Produk */}
           <div style={{
             backgroundColor: 'var(--vivere-surface-strong)',
@@ -185,10 +185,10 @@ export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }
                       marginBottom: 'var(--vivere-space-4)',
                       border: '1px solid var(--vivere-surface-muted)'
                     }}>
-                      <img 
-                        src={prod.img} 
-                        alt={prod.name} 
-                        style={{ maxWidth: '90%', maxHeight: '90%', objectFit: 'contain' }} 
+                      <img
+                        src={prod.img}
+                        alt={prod.name}
+                        style={{ maxWidth: '90%', maxHeight: '90%', objectFit: 'contain' }}
                       />
                     </div>
 
@@ -227,7 +227,7 @@ export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }
                           {prod.priceFormatted || `Rp ${prod.price}`}
                         </span>
                       </div>
-                      
+
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <span style={{ fontSize: '13px', color: 'var(--vivere-text-secondary)' }}>Stok Tersedia</span>
                         <span style={{
@@ -312,7 +312,7 @@ export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }
             </div>
 
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 'var(--vivere-space-6)' }}>
-              
+
               {/* SECTION: Informasi Pribadi */}
               <div>
                 <h3 style={{
@@ -353,8 +353,8 @@ export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }
                           <circle cx="12" cy="7" r="4"></circle>
                         </svg>
                       </span>
-                      <input 
-                        type="text" 
+                      <input
+                        type="text"
                         required
                         placeholder="Masukkan nama lengkap Anda"
                         value={namaLengkap}
@@ -384,8 +384,8 @@ export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }
                           <polyline points="22,6 12,13 2,6"></polyline>
                         </svg>
                       </span>
-                      <input 
-                        type="email" 
+                      <input
+                        type="email"
                         required
                         placeholder="email@contoh.com"
                         value={email}
@@ -415,8 +415,8 @@ export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }
                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                       </svg>
                     </span>
-                    <input 
-                      type="text" 
+                    <input
+                      type="text"
                       required
                       placeholder="+62 8xxxxxxxxxx atau 08xxxxxxxxxx"
                       value={telepon}
@@ -463,9 +463,10 @@ export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }
                 {/* Quantity & Expected Price Row */}
                 <div style={{
                   display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+                  gridTemplateColumns: '1fr 1fr',
                   gap: 'var(--vivere-space-4)',
-                  marginBottom: 'var(--vivere-space-4)'
+                  marginBottom: 'var(--vivere-space-4)',
+                  alignItems: 'end'
                 }}>
                   {/* Quantity */}
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--vivere-space-1)' }}>
@@ -479,8 +480,8 @@ export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }
                           <line x1="9" y1="3" x2="9" y2="21"></line>
                         </svg>
                       </span>
-                      <input 
-                        type="number" 
+                      <input
+                        type="number"
                         required
                         min="1"
                         placeholder="Jumlah yang dibutuhkan"
@@ -502,7 +503,7 @@ export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }
                   {/* Expected Price */}
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--vivere-space-1)' }}>
                     <label style={{ fontSize: '12px', fontWeight: 600, color: 'var(--vivere-text-secondary)' }}>
-                      Harga yang Diharapkan/Unit <span style={{ fontSize: '10px', color: '#9ca3af' }}>(opsional)</span>
+                      Harga/Unit <span style={{ fontSize: '10px', color: '#9ca3af' }}>(opsional)</span>
                     </label>
                     <div style={{ position: 'relative' }}>
                       <span style={{
@@ -517,8 +518,8 @@ export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }
                       }}>
                         Rp
                       </span>
-                      <input 
-                        type="text" 
+                      <input
+                        type="text"
                         placeholder="Harga yang diharapkan"
                         value={expectedPrice}
                         onChange={e => setExpectedPrice(e.target.value)}
@@ -547,7 +548,7 @@ export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }
                         <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
                       </svg>
                     </span>
-                    <textarea 
+                    <textarea
                       required
                       rows={5}
                       placeholder="Tuliskan kebutuhan spesifik, pertanyaan, atau permintaan khusus Anda..."
@@ -633,7 +634,7 @@ export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }
               </div>
             </form>
           </div>
-          
+
         </div>
       </div>
     </div>

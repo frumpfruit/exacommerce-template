@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import RetailStore from './templates/Retail/RetailStore';
+import DistributionStore from './templates/Distribution/DistributionStore';
 
 // Pure, minimal geometric mockups (No emojis, no AI-slop)
 const MockupA = () => (
@@ -44,6 +45,7 @@ const MockupD = () => (
 
 const TEMPLATES = [
   { id: 'retail', title: 'Retail & Online Store (HAVEN)', category: 'E-commerce', svg: <MockupC /> },
+  { id: 'distribution', title: 'Distribution & Wholesale (NEXUS)', category: 'E-commerce', svg: <MockupB /> },
   { id: 'marketing', title: 'Marketing Site', category: 'Landing Page', svg: <MockupA /> },
   { id: 'dashboard', title: 'Web App Interface', category: 'Dashboard', svg: <MockupB /> },
   { id: 'profile', title: 'Creator Profile', category: 'Portfolio', svg: <MockupC /> },
@@ -52,12 +54,42 @@ const TEMPLATES = [
 ];
 
 export default function App() {
-  const [activePreview, setActivePreview] = useState(TEMPLATES[0]);
-  const [simulatorDevice, setSimulatorDevice] = useState('desktop');
+  const [currentRoute, setCurrentRoute] = React.useState(() => {
+    const hash = window.location.hash;
+    if (hash === '#/retail') return 'retail';
+    if (hash === '#/distribution') return 'distribution';
+    const found = TEMPLATES.find(t => hash === `#/${t.id}`);
+    return found ? found.id : 'catalog';
+  });
+
+  React.useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+      if (hash === '#/retail') {
+        setCurrentRoute('retail');
+      } else if (hash === '#/distribution') {
+        setCurrentRoute('distribution');
+      } else {
+        const found = TEMPLATES.find(t => hash === `#/${t.id}`);
+        setCurrentRoute(found ? found.id : 'catalog');
+      }
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
+  const navigateTo = (routeId) => {
+    if (routeId === 'catalog') {
+      window.location.hash = '';
+    } else {
+      window.location.hash = `#/${routeId}`;
+    }
+  };
 
   return (
     <div className="app-wrapper">
-      {!activePreview ? (
+      {currentRoute === 'catalog' ? (
         <>
           {/* Top Navigation */}
           <header className="top-nav">
@@ -107,7 +139,7 @@ export default function App() {
             </div>
 
             {TEMPLATES.map((tpl) => (
-              <div key={tpl.id} className="template-card" onClick={() => setActivePreview(tpl)}>
+              <div key={tpl.id} className="template-card" onClick={() => navigateTo(tpl.id)}>
                 <div className="card-visual">
                   {tpl.svg}
                 </div>
@@ -125,85 +157,86 @@ export default function App() {
           </footer>
         </>
       ) : (
-        /* Minimal Simulator Layout */
-        <div className="simulator-layout">
-          <div className="simulator-topbar">
-            <button className="button-secondary" onClick={() => setActivePreview(null)}>
-              Back to Catalog
-            </button>
-            <div className="simulator-title">{activePreview.title}</div>
-            
-            {/* Minimal Device Switcher */}
-            <div style={{ display: 'flex', gap: '4px', backgroundColor: '#090909', padding: '4px', borderRadius: '100px', border: '1px solid #262626' }}>
-              {['desktop', 'tablet', 'mobile'].map((dev) => (
-                <button 
-                  key={dev} 
-                  onClick={() => setSimulatorDevice(dev)}
-                  style={{ 
-                    background: simulatorDevice === dev ? '#262626' : 'transparent',
-                    color: simulatorDevice === dev ? '#ffffff' : '#999999',
-                    border: 'none',
-                    padding: '4px 12px',
-                    borderRadius: '100px',
-                    fontSize: '12px',
-                    fontWeight: '500',
-                    cursor: 'pointer'
-                  }}
-                >
-                  {dev.charAt(0).toUpperCase() + dev.slice(1)}
-                </button>
-              ))}
-            </div>
-
-            <button className="button-primary">Get Template</button>
-          </div>
-
-          <div className="simulator-canvas">
-            <div className="device-frame" style={{ width: simulatorDevice === 'desktop' ? '100%' : simulatorDevice === 'tablet' ? '768px' : '375px' }}>
-              <div 
-                className="device-body" 
-                style={{ 
-                  padding: activePreview.id === 'retail' ? 0 : 'var(--spacing-xl)'
-                }}
-              >
-                {activePreview.id === 'retail' ? (
-                  <RetailStore />
-                ) : (
-                  <div style={{ maxWidth: '800px', margin: '40px auto', textAlign: 'center' }}>
-                  <h1 className="display-md" style={{ marginBottom: '15px' }}>{activePreview.title}</h1>
-                  <p className="subhead" style={{ marginBottom: '60px' }}>
-                    Previewing the <span style={{ color: '#ffffff' }}>{activePreview.category}</span> structural layout.
-                  </p>
-                  
-                  {/* Clean Visual Placeholder for the actual template */}
-                  <div style={{
-                    width: '100%',
-                    height: '400px',
-                    backgroundColor: '#141414',
-                    border: '1px dashed #262626',
-                    borderRadius: '20px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    flexDirection: 'column',
-                    gap: '15px'
-                  }}>
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#999999" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                      <line x1="3" y1="9" x2="21" y2="9"></line>
-                      <line x1="9" y1="21" x2="9" y2="9"></line>
-                    </svg>
-                    <div style={{ color: '#999999', fontSize: '15px', letterSpacing: '-0.15px' }}>
-                      Template rendering engine ready.
-                    </div>
-                  </div>
-                  </div>
-                )}
+        /* Full Screen Template Render (Maximizes View & Fixes Sticky Layouts) */
+        <div className="fullscreen-preview-wrapper" style={{ width: '100%', minHeight: '100vh' }}>
+          {currentRoute === 'retail' ? (
+            <RetailStore />
+          ) : currentRoute === 'distribution' ? (
+            <DistributionStore />
+          ) : (
+            <div style={{ maxWidth: '800px', margin: '80px auto', textAlign: 'center', padding: '0 20px' }}>
+              <h1 className="display-md" style={{ marginBottom: '15px' }}>
+                {TEMPLATES.find(t => t.id === currentRoute)?.title || 'Template Preview'}
+              </h1>
+              <p className="subhead" style={{ marginBottom: '60px' }}>
+                Previewing structural layout.
+              </p>
+              
+              <div style={{
+                width: '100%',
+                height: '400px',
+                backgroundColor: '#141414',
+                border: '1px dashed #262626',
+                borderRadius: '20px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexDirection: 'column',
+                gap: '15px'
+              }}>
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#999999" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="3" y1="9" x2="21" y2="9"></line>
+                  <line x1="9" y1="21" x2="9" y2="9"></line>
+                </svg>
+                <div style={{ color: '#999999', fontSize: '15px', letterSpacing: '-0.15px' }}>
+                  Template rendering engine ready.
+                </div>
               </div>
-
             </div>
-          </div>
+          )}
         </div>
+      )}
+
+      {/* Floating Glassmorphic Back to Catalog Button */}
+      {currentRoute !== 'catalog' && (
+        <button 
+          onClick={() => navigateTo('catalog')}
+          style={{
+            position: 'fixed',
+            bottom: '24px',
+            left: '24px',
+            zIndex: 99999,
+            backgroundColor: 'rgba(15, 23, 42, 0.85)',
+            backdropFilter: 'blur(12px)',
+            color: 'white',
+            border: '1px solid rgba(255, 255, 255, 0.15)',
+            padding: '12px 20px',
+            borderRadius: '100px',
+            fontSize: '13px',
+            fontWeight: 700,
+            cursor: 'pointer',
+            boxShadow: '0 10px 40px rgba(0, 0, 0, 0.4)',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+            transition: 'transform 0.2s ease, background-color 0.2s ease'
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = 'translateY(-2px)';
+            e.currentTarget.style.backgroundColor = 'rgba(15, 23, 42, 0.95)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = 'translateY(0)';
+            e.currentTarget.style.backgroundColor = 'rgba(15, 23, 42, 0.85)';
+          }}
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          Back to Catalog
+        </button>
       )}
     </div>
   );
