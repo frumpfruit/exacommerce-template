@@ -378,10 +378,11 @@
 
 @container nexus-app (max-width: 768px) {
   .nexus-theme {
-    --nexus-space-10: 64px;
-    --nexus-space-8: 48px;
-    --nexus-space-7: 36px;
-    --nexus-space-6: 28px;
+    --nexus-space-10: 48px;
+    --nexus-space-8: 32px;
+    --nexus-space-7: 24px;
+    --nexus-space-6: 20px;
+    --nexus-space-5: 16px;
   }
   .nexus-container {
     padding: 0 var(--nexus-space-5);
@@ -396,16 +397,19 @@
   .nexus-sticky-right {
     gap: var(--nexus-space-6);
   }
-  h1, h2, h3 {
+  h1, h2, h3, .nexus-heading {
     line-height: 1.25 !important;
+    margin-top: 8px !important;
+    margin-bottom: 12px !important;
   }
 }
 
 @container nexus-app (max-width: 480px) {
   .nexus-theme {
-    --nexus-space-10: 48px;
-    --nexus-space-8: 36px;
-    --nexus-space-7: 28px;
-    --nexus-space-6: 24px;
+    --nexus-space-10: 32px;
+    --nexus-space-8: 24px;
+    --nexus-space-7: 20px;
+    --nexus-space-6: 16px;
+    --nexus-space-5: 12px;
   }
 }
