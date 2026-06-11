@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ScrollReveal from './ScrollReveal';
+/* eslint-disable react/prop-types */
 import { FinancialHero } from '@/components/hero-section';
 
 const BEST_SELLERS = [
@@ -62,6 +63,10 @@ const FEATURE_CARDS = [
 function NexusCardStack() {
   const [hovered, setHovered] = useState(false);
   const [activeCard, setActiveCard] = useState(null);
+  // Touch-friendly: tap to toggle fan-out on mobile
+  const [tapped, setTapped] = useState(false);
+
+  const isFanOut = hovered || tapped;
 
   // Stacked state offsets (cards peeking behind top card)
   const stackOffsets = [
@@ -86,25 +91,26 @@ function NexusCardStack() {
       style={{ position: 'relative', height: '420px', display: 'flex', alignItems: 'center', justifyContent: 'center', perspective: '1200px' }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => { setHovered(false); setActiveCard(null); }}
+      onClick={() => setTapped(t => !t)}
     >
       {/* Hint label */}
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: hovered ? 0 : 1 }}
+        animate={{ opacity: isFanOut ? 0 : 1 }}
         transition={{ duration: 0.3 }}
         style={{
           position: 'absolute', bottom: '20px', left: '50%', transform: 'translateX(-50%)',
           fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1.5px',
           color: 'var(--nexus-text-secondary)', display: 'flex', alignItems: 'center', gap: '6px',
-          pointerEvents: 'none', zIndex: 10
+          pointerEvents: 'none', zIndex: 10, whiteSpace: 'nowrap'
         }}
       >
         <motion.span animate={{ x: [0, 5, 0] }} transition={{ repeat: Infinity, duration: 1.5 }}>→</motion.span>
-        Hover to explore
+        Tap / Hover to explore
       </motion.div>
 
       {FEATURE_CARDS.map((card, i) => {
-        const pos = hovered ? fanOffsets[i] : stackOffsets[i];
+        const pos = isFanOut ? fanOffsets[i] : stackOffsets[i];
         const isActive = activeCard === i;
 
         return (
@@ -118,11 +124,11 @@ function NexusCardStack() {
               zIndex: isActive ? 20 : pos.zIndex,
             }}
             transition={{ type: 'spring', stiffness: 280, damping: 26, mass: 0.8 }}
-            onHoverStart={() => hovered && setActiveCard(i)}
+            onHoverStart={() => isFanOut && setActiveCard(i)}
             onHoverEnd={() => setActiveCard(null)}
             style={{
               position: 'absolute',
-              width: '260px',
+              width: '240px',
               minHeight: '180px',
               backgroundColor: card.bg,
               borderRadius: '12px',
@@ -130,7 +136,7 @@ function NexusCardStack() {
               boxShadow: isActive
                 ? `0 20px 48px rgba(0,0,0,0.2), 0 0 0 1px ${card.accent}20`
                 : '0 8px 24px rgba(0,0,0,0.12)',
-              cursor: hovered ? 'pointer' : 'default',
+              cursor: isFanOut ? 'pointer' : 'default',
               overflow: 'hidden',
               transformStyle: 'preserve-3d',
               willChange: 'transform',
@@ -179,16 +185,33 @@ function NexusCardStack() {
 }
 
 export default function HomePage({ products = [], onNavigate, onAddToCart }) {
-  const [scrollY, setScrollY] = useState(0);
-
   useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    // no-op for scroll tracking moved to parent if needed
   }, []);
 
   return (
     <div>
+      {/* Responsive CSS via container queries */}
+      <style>{`
+        .nexus-value-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: var(--nexus-space-8);
+          align-items: center;
+        }
+        .nexus-table-header-row { display: flex; }
+        @container nexus-app (max-width: 768px) {
+          .nexus-value-grid {
+            grid-template-columns: 1fr;
+            gap: var(--nexus-space-6);
+          }
+          .nexus-table-header-row { display: none; }
+        }
+        @container nexus-app (max-width: 600px) {
+          .nexus-mosaic-first { grid-column: span 1 !important; }
+        }
+      `}</style>
+
       {/* 1. Hero Section - Animated FinancialHero */}
       <FinancialHero 
         title={
@@ -205,10 +228,10 @@ export default function HomePage({ products = [], onNavigate, onAddToCart }) {
         className="border-b border-muted"
       />
 
-      {/* 2. Value Props - Stacked Card Deck (hover to fan out) */}
+      {/* 2. Value Props - Stacked Card Deck (hover/tap to fan out) */}
       <section style={{ backgroundColor: 'var(--nexus-surface-raised)', padding: 'var(--nexus-space-10) 0', borderBottom: '1px solid var(--nexus-surface-muted)' }}>
         <div className="nexus-container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--nexus-space-8)', alignItems: 'center' }}>
+          <div className="nexus-value-grid">
 
             {/* Left: Headline */}
             <ScrollReveal direction="left" easing="elastic">
@@ -242,11 +265,12 @@ export default function HomePage({ products = [], onNavigate, onAddToCart }) {
         </div>
       </section>
 
+
       {/* 3. B2B Data Table (Replaces Best Sellers Slider) */}
       <ScrollReveal direction="up" easing="smooth">
         <section style={{ padding: 'var(--nexus-space-8) 0', borderBottom: '1px solid var(--nexus-surface-muted)' }}>
           <div className="nexus-container">
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 'var(--nexus-space-5)' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 'var(--nexus-space-5)', flexWrap: 'wrap', gap: '12px' }}>
               <div>
                 <h2 style={{ fontSize: '24px', fontWeight: 800, color: 'var(--nexus-text-primary)', margin: '0 0 4px 0' }}>High-Volume Movers</h2>
                 <p style={{ fontSize: '14px', color: 'var(--nexus-text-secondary)', margin: 0 }}>Our most frequently reordered industrial supplies.</p>
@@ -255,7 +279,7 @@ export default function HomePage({ products = [], onNavigate, onAddToCart }) {
             </div>
             
             <div style={{ overflowX: 'auto', backgroundColor: 'var(--nexus-surface-strong)', border: '1px solid var(--nexus-surface-muted)' }}>
-              <table className="nexus-data-table">
+              <table className="nexus-data-table" style={{ minWidth: '640px' }}>
                 <thead>
                   <tr>
                     <th>SKU</th>
@@ -269,22 +293,22 @@ export default function HomePage({ products = [], onNavigate, onAddToCart }) {
                 <tbody>
                   {BEST_SELLERS.map(item => (
                     <tr key={item.id}>
-                      <td style={{ fontFamily: 'monospace', fontWeight: 600, color: 'var(--nexus-brand-primary)' }}>{item.sku}</td>
+                      <td style={{ fontFamily: 'monospace', fontWeight: 600, color: 'var(--nexus-brand-primary)', whiteSpace: 'nowrap' }}>{item.sku}</td>
                       <td>
                         <div style={{ fontWeight: 700, color: 'var(--nexus-text-primary)', marginBottom: '4px' }}>{item.name}</div>
-                        <div style={{ fontSize: '12px', color: 'var(--nexus-text-secondary)', maxWidth: '300px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{item.desc}</div>
+                        <div style={{ fontSize: '12px', color: 'var(--nexus-text-secondary)', maxWidth: '260px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{item.desc}</div>
                       </td>
-                      <td>{item.moq}</td>
+                      <td style={{ whiteSpace: 'nowrap' }}>{item.moq}</td>
                       <td>
-                        <span className="nexus-badge nexus-badge-success" style={{ backgroundColor: 'rgba(22,163,74,0.1)', color: 'var(--nexus-status-success)' }}>
+                        <span className="nexus-badge nexus-badge-success" style={{ backgroundColor: 'rgba(22,163,74,0.1)', color: 'var(--nexus-status-success)', whiteSpace: 'nowrap' }}>
                           {item.stock.toLocaleString()} In Stock
                         </span>
                       </td>
-                      <td style={{ fontWeight: 700 }}>{item.priceFormatted} <span style={{ fontSize: '11px', color: 'var(--nexus-text-secondary)', fontWeight: 400 }}>{item.unit}</span></td>
+                      <td style={{ fontWeight: 700, whiteSpace: 'nowrap' }}>{item.priceFormatted} <span style={{ fontSize: '11px', color: 'var(--nexus-text-secondary)', fontWeight: 400 }}>{item.unit}</span></td>
                       <td style={{ textAlign: 'right' }}>
                         <button 
                           onClick={() => onAddToCart(item)}
-                          style={{ background: 'var(--nexus-brand-primary)', border: 'none', color: 'white', padding: '6px 12px', fontSize: '11px', fontWeight: 700, cursor: 'pointer', borderRadius: '2px' }}
+                          style={{ background: 'var(--nexus-brand-primary)', border: 'none', color: 'white', padding: '6px 12px', fontSize: '11px', fontWeight: 700, cursor: 'pointer', borderRadius: '2px', whiteSpace: 'nowrap' }}
                         >
                           Add to RFQ
                         </button>
@@ -308,7 +332,7 @@ export default function HomePage({ products = [], onNavigate, onAddToCart }) {
             
             <div className="nexus-mosaic-grid">
               {NEW_ARRIVALS.map((item, idx) => (
-                <div key={item.id} className="nexus-mosaic-item" style={{ gridColumn: idx === 0 ? 'span 2' : 'span 1' }}>
+                <div key={item.id} className={`nexus-mosaic-item${idx === 0 ? ' nexus-mosaic-first' : ''}`} style={{ gridColumn: idx === 0 ? 'span 2' : 'span 1' }}>
                   {/* 📷 IMAGE NEEDED */}
                   <img src={item.img} alt={item.name} onError={(e) => { e.target.style.display = 'none'; }} />
                   <div className="nexus-mosaic-content">

@@ -1,65 +1,97 @@
-import React from 'react';
+import React, { useState } from 'react';
+
+const NAV_LINKS = [
+  { id: 'home', label: 'HOME' },
+  { id: 'about', label: 'ABOUT' },
+  { id: 'process', label: 'PROCESS' },
+  { id: 'insights', label: 'INSIGHTS' },
+  { id: 'contact', label: 'CONTACT' },
+  { id: 'store', label: 'STORE' }
+];
 
 export default function Navbar({ activePage, onNavigate, cartCount, onOpenCart }) {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  const handleNav = (id) => {
+    onNavigate(id);
+    setMobileOpen(false);
+  };
+
   return (
-    <nav style={{ 
-      position: 'sticky', top: 0, zIndex: 100,
-      backgroundColor: 'var(--nexus-surface-strong)',
-      borderBottom: '1px solid var(--nexus-surface-muted)',
-      boxShadow: 'var(--nexus-shadow-sm)'
-    }}>
-      {/* Top Utility Bar (SaaS/Enterprise style) */}
-      <div style={{ backgroundColor: 'var(--nexus-surface-base)', color: 'white', padding: 'var(--nexus-space-1) 0' }}>
-        <div className="nexus-container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '11px', fontWeight: 600, letterSpacing: '0.5px' }}>
-          <div style={{ display: 'flex', gap: '16px', opacity: 0.8 }}>
-            <span>B2B Portal</span>
-            <span>Support: +62 31 8888 7777</span>
-          </div>
-          <div style={{ display: 'flex', gap: '16px' }}>
-            <button style={{ background: 'none', border: 'none', color: 'white', fontSize: '11px', cursor: 'pointer' }}>Corporate Login</button>
-            <button style={{ background: 'none', border: 'none', color: 'var(--nexus-brand-accent)', fontSize: '11px', cursor: 'pointer', fontWeight: 700 }}>Track Freight</button>
-          </div>
-        </div>
-      </div>
+    <>
+      <style>{`
+        .nexus-topbar { display: flex; }
+        .nexus-nav-links { display: flex; }
+        .nexus-hamburger { display: none; }
+        @container nexus-app (max-width: 768px) {
+          .nexus-topbar { display: none !important; }
+          .nexus-nav-links { display: none !important; }
+          .nexus-hamburger { display: flex !important; }
+          .nexus-rfq-btn-label { display: none; }
+        }
+      `}</style>
 
-      {/* Main Navigation Bar */}
-      <div className="nexus-container" style={{ 
-        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-        padding: 'var(--nexus-space-3) var(--nexus-space-5)'
-      }}>
-        {/* Logo */}
-        <div 
-          onClick={() => onNavigate('home')} 
-          style={{ 
-            fontSize: '24px', fontWeight: 800, letterSpacing: '-0.5px',
-            color: 'var(--nexus-brand-primary)', cursor: 'pointer',
-            display: 'flex', alignItems: 'center', gap: '8px'
+      {/* Mobile Drawer Overlay */}
+      {mobileOpen && (
+        <div
+          onClick={() => setMobileOpen(false)}
+          style={{
+            position: 'fixed', inset: 0, zIndex: 200,
+            backgroundColor: 'rgba(15,23,42,0.6)', backdropFilter: 'blur(4px)'
           }}
-        >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-          </svg>
-          NEXUS.
+        />
+      )}
+
+      {/* Mobile Slide Drawer */}
+      <div style={{
+        position: 'fixed', top: 0, left: 0, bottom: 0, zIndex: 201,
+        width: '280px',
+        backgroundColor: 'var(--nexus-surface-strong)',
+        boxShadow: '4px 0 32px rgba(0,0,0,0.2)',
+        transform: mobileOpen ? 'translateX(0)' : 'translateX(-100%)',
+        transition: 'transform 0.3s cubic-bezier(0.25,1,0.5,1)',
+        display: 'flex', flexDirection: 'column',
+        overflowY: 'auto'
+      }}>
+        {/* Drawer Header */}
+        <div style={{
+          display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+          padding: '20px 24px',
+          borderBottom: '1px solid var(--nexus-surface-muted)',
+          backgroundColor: 'var(--nexus-surface-base)'
+        }}>
+          <div style={{ fontSize: '20px', fontWeight: 800, color: 'var(--nexus-brand-primary)', display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+            </svg>
+            NEXUS.
+          </div>
+          <button
+            onClick={() => setMobileOpen(false)}
+            style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'rgba(255,255,255,0.6)', padding: '4px' }}
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
         </div>
 
-        {/* Main Links */}
-        <div className="nexus-nav-links" style={{ display: 'flex', gap: 'var(--nexus-space-5)', alignItems: 'center' }}>
-          {[
-            { id: 'home', label: 'HOME' },
-            { id: 'about', label: 'ABOUT' },
-            { id: 'process', label: 'PROCESS' },
-            { id: 'insights', label: 'INSIGHTS' },
-            { id: 'contact', label: 'CONTACT' },
-            { id: 'store', label: 'STORE' }
-          ].map(link => (
+        {/* Drawer Nav Links */}
+        <div style={{ padding: '16px 0', flex: 1 }}>
+          {NAV_LINKS.map(link => (
             <button
               key={link.id}
-              onClick={() => onNavigate(link.id)}
+              onClick={() => handleNav(link.id)}
               style={{
-                background: 'none', border: 'none', cursor: 'pointer',
-                fontSize: '13px', fontWeight: activePage === link.id ? 700 : 500,
+                display: 'block', width: '100%', textAlign: 'left',
+                background: activePage === link.id ? 'rgba(29,78,216,0.08)' : 'none',
+                border: 'none', borderLeft: activePage === link.id ? '3px solid var(--nexus-brand-primary)' : '3px solid transparent',
+                padding: '14px 24px',
+                fontSize: '14px', fontWeight: activePage === link.id ? 700 : 500,
                 color: activePage === link.id ? 'var(--nexus-brand-primary)' : 'var(--nexus-text-primary)',
-                textTransform: 'uppercase', letterSpacing: '0.5px'
+                textTransform: 'uppercase', letterSpacing: '0.5px',
+                cursor: 'pointer', transition: 'all 0.15s'
               }}
             >
               {link.label}
@@ -67,41 +99,134 @@ export default function Navbar({ activePage, onNavigate, cartCount, onOpenCart }
           ))}
         </div>
 
-        {/* Actions */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--nexus-space-4)' }}>
-          {/* Quick SKU Search */}
-          <div style={{ position: 'relative', display: 'none' }} className="nexus-desktop-search">
-             <input type="text" placeholder="Search SKU..." style={{
-               padding: '8px 12px 8px 32px', border: '1px solid var(--nexus-surface-muted)',
-               borderRadius: '2px', fontSize: '12px', width: '200px', backgroundColor: 'var(--nexus-surface-raised)'
-             }}/>
-             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--nexus-text-secondary)" strokeWidth="2" style={{ position: 'absolute', left: '10px', top: '9px' }}>
-               <circle cx="11" cy="11" r="8"></circle>
-               <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-             </svg>
-          </div>
-
-          <button 
-            onClick={onOpenCart}
-            style={{
-              background: 'none', border: '1px solid var(--nexus-surface-muted)', 
-              borderRadius: '2px', padding: '8px 16px', cursor: 'pointer',
-              display: 'flex', alignItems: 'center', gap: '8px',
-              fontSize: '12px', fontWeight: 700, color: 'var(--nexus-text-primary)'
-            }}
+        {/* Drawer RFQ Button */}
+        <div style={{ padding: '16px 24px', borderTop: '1px solid var(--nexus-surface-muted)' }}>
+          <button
+            onClick={() => { setMobileOpen(false); onOpenCart(); }}
+            className="nexus-btn nexus-btn-primary"
+            style={{ width: '100%', padding: '12px', fontSize: '14px', justifyContent: 'center', gap: '8px' }}
           >
-            RFQ Cart
-            {cartCount > 0 && (
-              <span style={{ 
-                backgroundColor: 'var(--nexus-brand-primary)', color: 'white', 
-                padding: '2px 6px', borderRadius: '2px', fontSize: '10px'
-              }}>
-                {cartCount}
-              </span>
-            )}
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+            </svg>
+            RFQ Cart {cartCount > 0 && `(${cartCount})`}
           </button>
         </div>
       </div>
-    </nav>
+
+      <nav style={{ 
+        position: 'sticky', top: 0, zIndex: 100,
+        backgroundColor: 'var(--nexus-surface-strong)',
+        borderBottom: '1px solid var(--nexus-surface-muted)',
+        boxShadow: 'var(--nexus-shadow-sm)'
+      }}>
+        {/* Top Utility Bar */}
+        <div className="nexus-topbar" style={{ backgroundColor: 'var(--nexus-surface-base)', color: 'white', padding: 'var(--nexus-space-1) 0' }}>
+          <div className="nexus-container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '11px', fontWeight: 600, letterSpacing: '0.5px', width: '100%' }}>
+            <div style={{ display: 'flex', gap: '16px', opacity: 0.8 }}>
+              <span>B2B Portal</span>
+              <span>Support: +62 31 8888 7777</span>
+            </div>
+            <div style={{ display: 'flex', gap: '16px' }}>
+              <button style={{ background: 'none', border: 'none', color: 'white', fontSize: '11px', cursor: 'pointer' }}>Corporate Login</button>
+              <button style={{ background: 'none', border: 'none', color: 'var(--nexus-brand-accent)', fontSize: '11px', cursor: 'pointer', fontWeight: 700 }}>Track Freight</button>
+            </div>
+          </div>
+        </div>
+
+        {/* Main Bar */}
+        <div className="nexus-container" style={{ 
+          display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+          padding: 'var(--nexus-space-3) var(--nexus-space-5)'
+        }}>
+          {/* Logo */}
+          <div 
+            onClick={() => onNavigate('home')} 
+            style={{ 
+              fontSize: '22px', fontWeight: 800, letterSpacing: '-0.5px',
+              color: 'var(--nexus-brand-primary)', cursor: 'pointer',
+              display: 'flex', alignItems: 'center', gap: '8px'
+            }}
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+            </svg>
+            NEXUS.
+          </div>
+
+          {/* Desktop Nav Links */}
+          <div className="nexus-nav-links" style={{ gap: 'var(--nexus-space-5)', alignItems: 'center' }}>
+            {NAV_LINKS.map(link => (
+              <button
+                key={link.id}
+                onClick={() => onNavigate(link.id)}
+                style={{
+                  background: 'none', border: 'none', cursor: 'pointer',
+                  fontSize: '13px', fontWeight: activePage === link.id ? 700 : 500,
+                  color: activePage === link.id ? 'var(--nexus-brand-primary)' : 'var(--nexus-text-primary)',
+                  textTransform: 'uppercase', letterSpacing: '0.5px'
+                }}
+              >
+                {link.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Right Actions */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--nexus-space-3)' }}>
+            {/* Desktop: RFQ Cart button */}
+            <button 
+              onClick={onOpenCart}
+              style={{
+                background: 'none', border: '1px solid var(--nexus-surface-muted)', 
+                borderRadius: '2px', padding: '8px 16px', cursor: 'pointer',
+                display: 'flex', alignItems: 'center', gap: '8px',
+                fontSize: '12px', fontWeight: 700, color: 'var(--nexus-text-primary)'
+              }}
+            >
+              <span className="nexus-rfq-btn-label">RFQ Cart</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              {cartCount > 0 && (
+                <span style={{ 
+                  backgroundColor: 'var(--nexus-brand-primary)', color: 'white', 
+                  padding: '2px 6px', borderRadius: '2px', fontSize: '10px'
+                }}>
+                  {cartCount}
+                </span>
+              )}
+            </button>
+
+            {/* Mobile Hamburger */}
+            <button
+              className="nexus-hamburger"
+              onClick={() => setMobileOpen(true)}
+              style={{
+                background: 'none', border: '1px solid var(--nexus-surface-muted)',
+                borderRadius: '4px', padding: '8px', cursor: 'pointer',
+                display: 'none', alignItems: 'center', justifyContent: 'center',
+                color: 'var(--nexus-text-primary)', position: 'relative'
+              }}
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+              </svg>
+              {cartCount > 0 && (
+                <span style={{
+                  position: 'absolute', top: '2px', right: '2px',
+                  width: '8px', height: '8px', borderRadius: '50%',
+                  backgroundColor: 'var(--nexus-brand-primary)'
+                }} />
+              )}
+            </button>
+          </div>
+        </div>
+      </nav>
+    </>
   );
 }
