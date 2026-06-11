@@ -81,7 +81,7 @@ export default function InsightsPage() {
           }
         }
       `}</style>
-      
+
       {/* 1. Header & Global Supply Chain Map */}
       <section style={{ backgroundColor: 'var(--nexus-surface-base)', color: 'white', paddingTop: 'var(--nexus-space-7)', paddingBottom: 'var(--nexus-space-8)' }}>
         <div className="nexus-container">
@@ -108,20 +108,20 @@ export default function InsightsPage() {
               flexDirection: 'column',
               justifyContent: 'center'
             }}>
-              
+
               {/* Background Map Placeholder Pattern */}
               <div style={{
                 position: 'absolute', top: 0, left: 0, right: 0, bottom: 0,
                 backgroundImage: 'radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px)',
                 backgroundSize: '24px 24px', opacity: 0.5, zIndex: 0
               }}></div>
-              
+
               <div style={{ position: 'relative', zIndex: 1, display: 'flex', flexWrap: 'wrap', gap: 'var(--nexus-space-6)' }}>
                 {/* Text Block */}
                 <div style={{ flex: '1 1 300px' }}>
                   <span className="nexus-badge nexus-badge-accent" style={{ marginBottom: 'var(--nexus-space-3)' }}>Network Capability</span>
                   <h2 style={{ fontSize: '32px', fontWeight: 800, margin: '0 0 var(--nexus-space-3) 0', letterSpacing: '-0.5px', lineHeight: 1.2 }}>
-                    Unmatched <br/> Distribution Node.
+                    Unmatched <br /> Distribution Node.
                   </h2>
                   <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.7)', lineHeight: 1.6, marginBottom: 'var(--nexus-space-4)', maxWidth: '400px' }}>
                     Access our proprietary network map detailing our major warehouses, partner transit hubs, and average lead times across key industrial zones in Indonesia and SE Asia.
@@ -176,7 +176,7 @@ export default function InsightsPage() {
                   <div className="nexus-insights-img-wrapper">
                     <img src={article.img} alt={article.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} onError={(e) => { e.target.style.display = 'none'; }} />
                   </div>
-                  
+
                   {/* Article Details */}
                   <div style={{ flex: 1 }}>
                     <div style={{ display: 'flex', gap: '12px', alignItems: 'center', marginBottom: '8px' }}>
@@ -193,7 +193,7 @@ export default function InsightsPage() {
                 </div>
               ))}
             </div>
-            
+
             <div style={{ textAlign: 'center', marginTop: 'var(--nexus-space-6)' }}>
               <button className="nexus-btn nexus-btn-secondary">
                 Access Archive
