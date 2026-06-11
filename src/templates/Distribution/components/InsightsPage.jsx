@@ -39,12 +39,54 @@ const ARTICLES = [
 export default function InsightsPage() {
   return (
     <div style={{ backgroundColor: 'var(--nexus-surface-raised)', minHeight: '100vh' }}>
+      <style>{`
+        .nexus-insights-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+          margin-bottom: var(--nexus-space-6);
+          border-bottom: 1px solid rgba(255,255,255,0.1);
+          padding-bottom: var(--nexus-space-4);
+        }
+        .nexus-insights-row {
+          display: flex;
+          gap: var(--nexus-space-5);
+          border-bottom: 1px solid var(--nexus-surface-muted);
+          padding-bottom: var(--nexus-space-6);
+          align-items: center;
+          cursor: pointer;
+        }
+        .nexus-insights-img-wrapper {
+          width: 200px;
+          height: 140px;
+          flex-shrink: 0;
+          background-color: var(--nexus-surface-muted);
+          border-radius: 2px;
+          overflow: hidden;
+        }
+        @container nexus-app (max-width: 768px) {
+          .nexus-insights-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 12px;
+          }
+          .nexus-insights-row {
+            flex-direction: column;
+            align-items: stretch;
+            gap: var(--nexus-space-4);
+          }
+          .nexus-insights-img-wrapper {
+            width: 100%;
+            height: 200px;
+          }
+        }
+      `}</style>
       
       {/* 1. Header & Global Supply Chain Map */}
       <section style={{ backgroundColor: 'var(--nexus-surface-base)', color: 'white', paddingTop: 'var(--nexus-space-7)', paddingBottom: 'var(--nexus-space-8)' }}>
         <div className="nexus-container">
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 'var(--nexus-space-6)', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: 'var(--nexus-space-4)' }}>
-            <h1 style={{ fontSize: '48px', fontWeight: 800, margin: 0, letterSpacing: '-1.5px' }}>
+          <div className="nexus-insights-header">
+            <h1 style={{ fontSize: 'clamp(28px, 5vw, 48px)', fontWeight: 800, margin: 0, letterSpacing: '-1.5px' }}>
               Intelligence <span style={{ color: 'var(--nexus-brand-primary)' }}>& Reach.</span>
             </h1>
             <div style={{ fontSize: '13px', textTransform: 'uppercase', letterSpacing: '1px', color: 'rgba(255,255,255,0.5)', fontWeight: 600 }}>
@@ -129,16 +171,9 @@ export default function InsightsPage() {
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--nexus-space-6)' }}>
               {ARTICLES.map((article, idx) => (
-                <div key={idx} style={{ 
-                  display: 'flex', gap: 'var(--nexus-space-5)', 
-                  borderBottom: '1px solid var(--nexus-surface-muted)', 
-                  paddingBottom: 'var(--nexus-space-6)', alignItems: 'center', cursor: 'pointer'
-                }}>
+                <div key={idx} className="nexus-insights-row">
                   {/* Article Image */}
-                  <div style={{ 
-                    width: '200px', height: '140px', flexShrink: 0,
-                    backgroundColor: 'var(--nexus-surface-muted)', borderRadius: '2px', overflow: 'hidden'
-                  }}>
+                  <div className="nexus-insights-img-wrapper">
                     <img src={article.img} alt={article.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} onError={(e) => { e.target.style.display = 'none'; }} />
                   </div>
                   

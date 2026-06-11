@@ -376,7 +376,15 @@
   padding-top: 0;
 }
 
-@container (max-width: 768px) {
+@container nexus-app (max-width: 768px) {
+  .nexus-theme {
+    --nexus-space-10: var(--nexus-space-6);
+    --nexus-space-8: var(--nexus-space-5);
+    --nexus-space-7: var(--nexus-space-4);
+  }
+  .nexus-container {
+    padding: 0 var(--nexus-space-4);
+  }
   .nexus-sticky-container {
     grid-template-columns: 1fr;
     gap: var(--nexus-space-6);
@@ -386,5 +394,13 @@
   }
   .nexus-sticky-right {
     gap: var(--nexus-space-6);
+  }
+}
+
+@container nexus-app (max-width: 480px) {
+  .nexus-theme {
+    --nexus-space-10: var(--nexus-space-5);
+    --nexus-space-8: var(--nexus-space-4);
+    --nexus-space-6: var(--nexus-space-3);
   }
 }

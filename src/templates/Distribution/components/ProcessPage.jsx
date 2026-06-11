@@ -28,7 +28,7 @@ export default function ProcessPage({ onNavigate }) {
               }}>
                 System Architecture
               </span>
-              <h1 style={{ fontSize: '48px', fontWeight: 800, letterSpacing: '-1.5px', lineHeight: 1.1, margin: '0 0 var(--nexus-space-4) 0' }}>
+              <h1 style={{ fontSize: 'clamp(28px, 4vw, 48px)', fontWeight: 800, letterSpacing: '-1.5px', lineHeight: 1.1, margin: '0 0 var(--nexus-space-4) 0' }}>
                 The Procurement <span style={{ color: 'var(--nexus-brand-primary)' }}>Pipeline.</span>
               </h1>
               <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.7)', lineHeight: 1.6, margin: 0, fontWeight: 400 }}>

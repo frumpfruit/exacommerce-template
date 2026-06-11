@@ -66,7 +66,18 @@ export default function Footer({ onNavigate }) {
             <p style={{ fontSize: '13px', marginBottom: 'var(--nexus-space-3)' }}>
               Subscribe to receive quarterly B2B procurement intelligence and commodity price indexes.
             </p>
-            <div style={{ display: 'flex' }}>
+            <style>{`
+              .nexus-footer-subscribe {
+                display: flex;
+              }
+              @container nexus-app (max-width: 480px) {
+                .nexus-footer-subscribe {
+                  flex-direction: column;
+                  gap: 8px;
+                }
+              }
+            `}</style>
+            <div className="nexus-footer-subscribe">
               <input type="email" placeholder="Corporate Email" style={{ 
                 padding: '10px 12px', border: '1px solid rgba(255,255,255,0.2)', 
                 backgroundColor: 'rgba(0,0,0,0.2)', color: 'white', fontSize: '12px',
@@ -74,8 +85,8 @@ export default function Footer({ onNavigate }) {
               }} />
               <button style={{ 
                 backgroundColor: 'var(--nexus-brand-primary)', border: 'none', 
-                color: 'white', padding: '0 16px', fontSize: '12px', fontWeight: 700,
-                cursor: 'pointer'
+                color: 'white', padding: '10px 16px', fontSize: '12px', fontWeight: 700,
+                cursor: 'pointer', whiteSpace: 'nowrap'
               }}>
                 SUBSCRIBE
               </button>

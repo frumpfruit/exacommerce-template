@@ -206,8 +206,20 @@ export default function InquiryPage({ inquiryItems = [], onRemoveItem, onNavigat
                 <h2 style={{ fontSize: '16px', fontWeight: 700, marginBottom: 'var(--nexus-space-4)', borderBottom: '1px solid var(--nexus-surface-muted)', paddingBottom: 'var(--nexus-space-3)' }}>
                   Company Information
                 </h2>
-
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--nexus-space-4)', marginBottom: 'var(--nexus-space-4)' }}>
+                <style>{`
+                  .nexus-inquiry-grid {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: var(--nexus-space-4);
+                    margin-bottom: var(--nexus-space-4);
+                  }
+                  @container nexus-app (max-width: 768px) {
+                    .nexus-inquiry-grid {
+                      grid-template-columns: 1fr;
+                    }
+                  }
+                `}</style>
+                <div className="nexus-inquiry-grid">
                   <div style={{ gridColumn: '1 / -1' }}>
                     <label style={{ fontSize: '12px', fontWeight: 600, color: 'var(--nexus-text-primary)', display: 'block', marginBottom: '4px' }}>
                       Company Name <span style={{ color: '#ef4444' }}>*</span>

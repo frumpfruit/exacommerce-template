@@ -130,17 +130,36 @@ export default function AboutPage() {
 
       {/* 4. Split-Pane Typography Core Principles (No cards, no emojis) */}
       <section style={{ padding: 'var(--nexus-space-10) 0', backgroundColor: 'var(--nexus-surface-strong)' }}>
+        <style>{`
+          .nexus-principles-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--nexus-space-8);
+          }
+          .nexus-principles-left {
+            position: sticky;
+            top: 120px;
+            align-self: start;
+          }
+          @container nexus-app (max-width: 768px) {
+            .nexus-principles-grid {
+              grid-template-columns: 1fr;
+              gap: var(--nexus-space-6);
+            }
+            .nexus-principles-left {
+              position: static;
+            }
+          }
+        `}</style>
         <div className="nexus-container">
-          <div style={{
-            display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--nexus-space-8)'
-          }}>
+          <div className="nexus-principles-grid">
             {/* Left Column: Sticky Title */}
-            <div style={{ position: 'sticky', top: '120px', alignSelf: 'start' }}>
+            <div className="nexus-principles-left">
               <ScrollReveal direction="left" easing="smooth">
                 <span style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--nexus-brand-primary)' }}>
                   Operating Principles
                 </span>
-                <h2 style={{ fontSize: '48px', fontWeight: 800, letterSpacing: '-1.5px', margin: 'var(--nexus-space-3) 0 var(--nexus-space-4) 0', lineHeight: 1.1 }}>
+                <h2 style={{ fontSize: 'clamp(28px, 4vw, 48px)', fontWeight: 800, letterSpacing: '-1.5px', margin: 'var(--nexus-space-3) 0 var(--nexus-space-4) 0', lineHeight: 1.1 }}>
                   Built on Data.<br/>Driven by Efficiency.
                 </h2>
                 <p style={{ fontSize: '16px', color: 'var(--nexus-text-secondary)', lineHeight: 1.7, maxWidth: '400px' }}>

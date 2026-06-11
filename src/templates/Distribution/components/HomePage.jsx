@@ -200,12 +200,27 @@ export default function HomePage({ products = [], onNavigate, onAddToCart }) {
           align-items: center;
         }
         .nexus-table-header-row { display: flex; }
+        .nexus-card-mobile-scroll { display: none; }
+        .nexus-card-stack-canvas { display: block; }
         @container nexus-app (max-width: 768px) {
           .nexus-value-grid {
             grid-template-columns: 1fr;
             gap: var(--nexus-space-6);
           }
           .nexus-table-header-row { display: none; }
+          .nexus-card-stack-canvas { display: none !important; }
+          .nexus-card-mobile-scroll {
+            display: flex !important;
+            overflow-x: auto;
+            gap: 16px;
+            padding: 16px var(--nexus-space-5);
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+            margin: 0 calc(-1 * var(--nexus-space-5));
+          }
+          .nexus-card-mobile-scroll::-webkit-scrollbar {
+            display: none;
+          }
         }
         @container nexus-app (max-width: 600px) {
           .nexus-mosaic-first { grid-column: span 1 !important; }
@@ -258,8 +273,53 @@ export default function HomePage({ products = [], onNavigate, onAddToCart }) {
               </div>
             </ScrollReveal>
 
-            {/* Right: Stacked Card Deck */}
-            <NexusCardStack />
+            {/* Right: Stacked Card Deck or Mobile Scroll */}
+            <div className="nexus-card-stack-canvas" style={{ width: '100%' }}>
+              <NexusCardStack />
+            </div>
+            
+            <div className="nexus-card-mobile-scroll">
+              {FEATURE_CARDS.map((card) => (
+                <div
+                  key={card.id}
+                  style={{
+                    flex: '0 0 280px',
+                    minHeight: '200px',
+                    backgroundColor: card.bg,
+                    borderRadius: '12px',
+                    border: '1px solid #E5E7EB',
+                    boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+                    overflow: 'hidden',
+                    scrollSnapAlign: 'start',
+                    display: 'flex',
+                    flexDirection: 'column'
+                  }}
+                >
+                  <div style={{ height: '4px', backgroundColor: card.accent, width: '100%' }} />
+                  <div style={{ padding: '20px 22px 22px', display: 'flex', flexDirection: 'column', flex: 1 }}>
+                    <div style={{
+                      fontSize: '11px', fontWeight: 800, fontFamily: 'monospace',
+                      color: card.accent, marginBottom: '10px', letterSpacing: '1px'
+                    }}>
+                      {card.id}
+                    </div>
+                    <h3 style={{
+                      fontSize: '17px', fontWeight: 800,
+                      color: card.textColor, margin: '0 0 8px 0', lineHeight: 1.25,
+                      letterSpacing: '-0.3px'
+                    }}>
+                      {card.title}
+                    </h3>
+                    <p style={{
+                      fontSize: '13px', color: card.textColor === '#fff' ? 'rgba(255,255,255,0.7)' : '#6B7280',
+                      lineHeight: 1.6, margin: 0
+                    }}>
+                      {card.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
 
           </div>
         </div>

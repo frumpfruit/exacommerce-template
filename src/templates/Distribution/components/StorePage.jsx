@@ -54,7 +54,13 @@ export default function StorePage({ products = [], onAddToCart, onViewDetail }) 
       <div className="nexus-container" style={{ padding: 'var(--nexus-space-6) var(--nexus-space-5)' }}>
         <ScrollReveal>
           {/* Table Header (Visual only for list view) */}
-          <div style={{ 
+          <style>{`
+            .nexus-store-th { display: flex; }
+            @container nexus-app (max-width: 768px) {
+              .nexus-store-th { display: none !important; }
+            }
+          `}</style>
+          <div className="nexus-store-th" style={{ 
             display: 'flex', 
             padding: '0 var(--nexus-space-4) var(--nexus-space-3) var(--nexus-space-4)', 
             borderBottom: '2px solid var(--nexus-surface-muted)',
