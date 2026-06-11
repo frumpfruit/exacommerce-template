@@ -45,13 +45,13 @@ export default function Navbar({ activePage, onNavigate, cartCount, onOpenCart }
       {/* Mobile Slide Drawer */}
       <div style={{
         position: 'fixed', top: 0, left: 0, bottom: 0, zIndex: 201,
-        width: '280px',
+        width: '280px', height: '100vh',
         backgroundColor: 'var(--nexus-surface-strong)',
         boxShadow: '4px 0 32px rgba(0,0,0,0.2)',
         transform: mobileOpen ? 'translateX(0)' : 'translateX(-100%)',
         transition: 'transform 0.3s cubic-bezier(0.25,1,0.5,1)',
         display: 'flex', flexDirection: 'column',
-        overflowY: 'auto'
+        overflow: 'hidden'
       }}>
         {/* Drawer Header */}
         <div style={{
@@ -78,7 +78,7 @@ export default function Navbar({ activePage, onNavigate, cartCount, onOpenCart }
         </div>
 
         {/* Drawer Nav Links */}
-        <div style={{ padding: '16px 0', flex: 1 }}>
+        <div style={{ padding: '16px 0', flex: 1, overflowY: 'auto' }}>
           {NAV_LINKS.map(link => (
             <button
               key={link.id}
