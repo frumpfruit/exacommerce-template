@@ -229,6 +229,10 @@
     flex-direction: column;
     align-items: stretch;
   }
+  .nexus-list-img {
+    width: 100%;
+    height: 200px;
+  }
   .nexus-list-meta {
     width: 100%;
     text-align: left;
