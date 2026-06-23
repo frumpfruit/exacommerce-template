@@ -38,14 +38,7 @@ export default function ProductDetailPage({ product, onAddToCart, onInquireNow, 
             boxShadow: 'var(--nexus-shadow-md)'
           }}>
             {/* Image */}
-            <div style={{
-              height: '400px',
-              backgroundColor: 'var(--nexus-surface-raised)',
-              borderRadius: 'var(--nexus-radius-sm)',
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-              border: '1px solid var(--nexus-surface-muted)',
-              position: 'relative', overflow: 'hidden'
-            }}>
+            <div className="nexus-detail-img-container">
               {/* 📷 IMAGE NEEDED: product image */}
               <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" strokeWidth="1" style={{ position: 'absolute', zIndex: 0 }}>
                 <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
