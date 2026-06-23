@@ -23,7 +23,7 @@ export default function Navbar({ activePage, onNavigate, cartCount, onOpenCart }
         .nexus-topbar { display: flex; }
         .nexus-nav-links { display: flex; }
         .nexus-hamburger { display: none; }
-        @container nexus-app (max-width: 768px) {
+        @media (max-width: 768px) {
           .nexus-topbar { display: none !important; }
           .nexus-nav-links { display: none !important; }
           .nexus-hamburger { display: flex !important; }

@@ -70,7 +70,7 @@ export default function Footer({ onNavigate }) {
               .nexus-footer-subscribe {
                 display: flex;
               }
-              @container nexus-app (max-width: 480px) {
+              @media (max-width: 480px) {
                 .nexus-footer-subscribe {
                   flex-direction: column;
                   gap: 8px;

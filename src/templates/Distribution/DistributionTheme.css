@@ -171,12 +171,12 @@
   z-index: 10;
   pointer-events: none;
 }
-@container (max-width: 900px) {
+@media (max-width: 900px) {
   .nexus-mosaic-grid {
     grid-template-columns: 1fr 1fr;
   }
 }
-@container (max-width: 600px) {
+@media (max-width: 600px) {
   .nexus-mosaic-grid {
     grid-template-columns: 1fr;
   }
@@ -224,7 +224,7 @@
   gap: var(--nexus-space-2);
 }
 
-@container (max-width: 768px) {
+@media (max-width: 768px) {
   .nexus-list-row {
     flex-direction: column;
     align-items: stretch;
@@ -232,6 +232,19 @@
   .nexus-list-meta {
     width: 100%;
     text-align: left;
+    align-items: flex-start;
+  }
+}
+
+.nexus-list-meta-row {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--nexus-space-2);
+}
+@media (max-width: 768px) {
+  .nexus-list-meta-row {
+    justify-content: flex-start;
   }
 }
 
@@ -241,12 +254,12 @@
   grid-template-columns: 2fr 1fr 1fr 1.5fr;
   gap: var(--nexus-space-8);
 }
-@container (max-width: 900px) {
+@media (max-width: 900px) {
   .nexus-footer-grid {
     grid-template-columns: 1fr 1fr;
   }
 }
-@container (max-width: 600px) {
+@media (max-width: 600px) {
   .nexus-footer-grid {
     grid-template-columns: 1fr;
   }
@@ -379,7 +392,7 @@
 /* ============================================
    RESPONSIVE: TABLET (≤ 768px)
    ============================================ */
-@container nexus-app (max-width: 768px) {
+@media (max-width: 768px) {
   .nexus-container {
     padding: 0 20px;
   }
@@ -408,7 +421,7 @@
 /* ============================================
    RESPONSIVE: MOBILE (≤ 480px)
    ============================================ */
-@container nexus-app (max-width: 480px) {
+@media (max-width: 480px) {
   .nexus-container {
     padding: 0 16px;
   }

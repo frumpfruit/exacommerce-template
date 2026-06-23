@@ -213,7 +213,7 @@ export default function InquiryPage({ inquiryItems = [], onRemoveItem, onNavigat
                     gap: var(--nexus-space-4);
                     margin-bottom: var(--nexus-space-4);
                   }
-                  @container nexus-app (max-width: 768px) {
+                  @media (max-width: 768px) {
                     .nexus-inquiry-grid {
                       grid-template-columns: 1fr;
                     }

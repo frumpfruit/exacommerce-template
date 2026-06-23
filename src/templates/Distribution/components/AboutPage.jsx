@@ -141,7 +141,7 @@ export default function AboutPage() {
             top: 120px;
             align-self: start;
           }
-          @container nexus-app (max-width: 768px) {
+          @media (max-width: 768px) {
             .nexus-principles-grid {
               grid-template-columns: 1fr;
               gap: var(--nexus-space-6);

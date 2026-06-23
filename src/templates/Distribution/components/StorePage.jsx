@@ -56,7 +56,7 @@ export default function StorePage({ products = [], onAddToCart, onViewDetail }) 
           {/* Table Header (Visual only for list view) */}
           <style>{`
             .nexus-store-th { display: flex; }
-            @container nexus-app (max-width: 768px) {
+            @media (max-width: 768px) {
               .nexus-store-th { display: none !important; }
             }
           `}</style>
@@ -106,19 +106,19 @@ export default function StorePage({ products = [], onAddToCart, onViewDetail }) 
 
                 {/* Meta & Actions */}
                 <div className="nexus-list-meta">
-                  <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', gap: '8px' }}>
+                  <div className="nexus-list-meta-row">
                     <span style={{ fontSize: '12px', color: 'var(--nexus-text-secondary)' }}>Unit Price</span>
                     <span style={{ fontSize: '18px', fontWeight: 800, color: 'var(--nexus-text-primary)' }}>
                       {product.priceFormatted}
                     </span>
                   </div>
                   
-                  <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', gap: '16px', fontSize: '12px' }}>
+                  <div className="nexus-list-meta-row" style={{ fontSize: '12px', gap: '16px' }}>
                     <div><span style={{ color: 'var(--nexus-text-secondary)' }}>MOQ:</span> <strong>{product.moq}</strong></div>
                     <div><span style={{ color: 'var(--nexus-status-success)', fontWeight: 600 }}>● {product.stock > 0 ? 'In Stock' : 'Out'}</span></div>
                   </div>
 
-                  <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'flex-end' }}>
+                  <div className="nexus-list-meta-row" style={{ marginTop: 'auto' }}>
                     <button
                       onClick={(e) => {
                         e.stopPropagation();

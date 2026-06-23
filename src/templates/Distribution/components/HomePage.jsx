@@ -191,7 +191,6 @@ export default function HomePage({ products = [], onNavigate, onAddToCart }) {
 
   return (
     <div>
-      {/* Responsive CSS via container queries */}
       <style>{`
         .nexus-value-grid {
           display: grid;
@@ -202,7 +201,7 @@ export default function HomePage({ products = [], onNavigate, onAddToCart }) {
         .nexus-table-header-row { display: flex; }
         .nexus-card-mobile-scroll { display: none; }
         .nexus-card-stack-canvas { display: block; }
-        @container nexus-app (max-width: 768px) {
+        @media (max-width: 768px) {
           .nexus-value-grid {
             grid-template-columns: 1fr;
             gap: var(--nexus-space-6);
@@ -222,7 +221,7 @@ export default function HomePage({ products = [], onNavigate, onAddToCart }) {
             display: none;
           }
         }
-        @container nexus-app (max-width: 600px) {
+        @media (max-width: 600px) {
           .nexus-mosaic-first { grid-column: span 1 !important; }
         }
       `}</style>

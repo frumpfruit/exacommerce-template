@@ -64,7 +64,7 @@ export default function InsightsPage() {
           border-radius: 2px;
           overflow: hidden;
         }
-        @container nexus-app (max-width: 768px) {
+        @media (max-width: 768px) {
           .nexus-insights-header {
             flex-direction: column;
             align-items: flex-start;
