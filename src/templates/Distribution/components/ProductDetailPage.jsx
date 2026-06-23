@@ -46,10 +46,6 @@ export default function ProductDetailPage({ product, onAddToCart, onInquireNow, 
                 <line x1="12" y1="22.08" x2="12" y2="12"></line>
               </svg>
               <img src={product.img} alt={product.name} style={{ maxWidth: '80%', maxHeight: '80%', objectFit: 'contain', position: 'relative', zIndex: 1 }} onError={(e) => { e.target.style.display = 'none'; }} />
-
-              {product.tag && (
-                <span className="nexus-product-badge">{product.tag}</span>
-              )}
             </div>
 
             {/* Details */}
