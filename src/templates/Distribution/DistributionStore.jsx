@@ -138,8 +138,7 @@ export default function DistributionStore() {
           display: 'flex', justifyContent: 'flex-end',
           animation: 'fadeIn 0.3s ease-out'
         }} onClick={() => setIsCartOpen(false)}>
-          <div style={{
-            width: '100%', maxWidth: '400px',
+          <div className="nexus-rfq-drawer" style={{
             backgroundColor: 'var(--nexus-surface-strong)',
             height: '100%',
             display: 'flex', flexDirection: 'column',

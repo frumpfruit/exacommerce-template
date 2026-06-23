@@ -433,5 +433,14 @@
     padding-bottom: 40px !important;
   }
   p { line-height: 1.7 !important; font-size: 14px !important; }
+  .nexus-rfq-drawer {
+    max-width: 100% !important;
+  }
 }
+
+.nexus-rfq-drawer {
+  width: 100%;
+  max-width: 400px;
+}
+
 
