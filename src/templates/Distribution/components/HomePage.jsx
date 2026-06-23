@@ -212,10 +212,10 @@ export default function HomePage({ products = [], onNavigate, onAddToCart }) {
             display: flex !important;
             overflow-x: auto;
             gap: 16px;
-            padding: 16px var(--nexus-space-5);
+            padding: 16px 20px;
             scroll-snap-type: x mandatory;
             scrollbar-width: none;
-            margin: 0 calc(-1 * var(--nexus-space-5));
+            margin: 0 -20px;
           }
           .nexus-card-mobile-scroll::-webkit-scrollbar {
             display: none;
@@ -223,6 +223,12 @@ export default function HomePage({ products = [], onNavigate, onAddToCart }) {
         }
         @media (max-width: 600px) {
           .nexus-mosaic-first { grid-column: span 1 !important; }
+        }
+        @media (max-width: 480px) {
+          .nexus-card-mobile-scroll {
+            margin: 0 -16px;
+            padding: 16px 16px;
+          }
         }
       `}</style>
 
