@@ -3,6 +3,7 @@ import './App.css';
 import RetailStore from './templates/Retail/RetailStore';
 import DistributionStore from './templates/Distribution/DistributionStore';
 import SupplementStore from './templates/Supplement/SupplementStore';
+import CoffeeStore from './templates/Coffee/CoffeeStore';
 
 // Pure, minimal geometric mockups (No emojis, no AI-slop)
 const MockupA = () => (
@@ -48,7 +49,7 @@ const TEMPLATES = [
   { id: 'retail', title: 'Retail & Online Store (HAVEN)', category: 'E-commerce', svg: <MockupC /> },
   { id: 'distribution', title: 'Distribution & Wholesale (NEXUS)', category: 'E-commerce', svg: <MockupB /> },
   { id: 'marketing', title: 'Supplement & Health Compro (NUTRIPRIDE)', category: 'Landing Page', svg: <MockupA /> },
-  { id: 'dashboard', title: 'Web App Interface', category: 'Dashboard', svg: <MockupB /> },
+  { id: 'coffee', title: 'Premium Coffee Producer (KOPITERA)', category: 'Landing Page', svg: <MockupD /> },
   { id: 'profile', title: 'Creator Profile', category: 'Portfolio', svg: <MockupC /> },
   { id: 'analytics', title: 'Data Analytics', category: 'SaaS', svg: <MockupD /> },
   { id: 'docs', title: 'Documentation', category: 'Content', svg: <MockupA /> }
@@ -166,6 +167,8 @@ export default function App() {
             <DistributionStore />
           ) : currentRoute === 'marketing' ? (
             <SupplementStore />
+          ) : currentRoute === 'coffee' ? (
+            <CoffeeStore />
           ) : (
             <div style={{ maxWidth: '800px', margin: '80px auto', textAlign: 'center', padding: '0 20px' }}>
               <h1 className="display-md" style={{ marginBottom: '15px' }}>
