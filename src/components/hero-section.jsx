@@ -54,13 +54,13 @@ export const FinancialHero = ({
       />
  
       <div
-        className="relative container mx-auto flex min-h-[70vh] items-center justify-between px-6 py-16 lg:flex-row flex-col gap-12"
-        style={{ position: 'relative', zIndex: 3, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '48px' }}
+        className="relative container mx-auto flex min-h-[70vh] items-center justify-between px-6 py-16 flex-col lg:flex-row gap-12"
+        style={{ position: 'relative', zIndex: 3 }}
       >
         {/* Left: Text Content */}
         <div
-          className="flex flex-col items-center text-center lg:items-start lg:text-left lg:w-1/2"
-          style={{ display: 'flex', flexDirection: 'column', flex: 1, zIndex: 10 }}
+          className="flex flex-col items-center text-center lg:items-start lg:text-left w-full lg:w-1/2"
+          style={{ zIndex: 10 }}
         >
           <h1
             className="text-4xl font-extrabold tracking-tight md:text-5xl lg:text-6xl"

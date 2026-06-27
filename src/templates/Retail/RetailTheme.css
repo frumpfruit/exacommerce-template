@@ -327,7 +327,7 @@
   line-height: 1.2;
 }
 
-@container (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .retail-nav-links {
     display: none; /* Hide desktop links on mobile */
   }
@@ -427,7 +427,7 @@
    or narrow sizes display the beautiful stacked layout without squeezing 
    the spotlight and carousel, preventing clipping!
 */
-@container (min-width: 900px) {
+@media screen and (min-width: 900px) {
   .retail-slider-grid.layout-left {
     grid-template-columns: 1fr 2.5fr;
   }
@@ -466,7 +466,7 @@
    Tablet responsive query:
    Display EXACTLY 2 cards side-by-side with 1 gap in between on tablet screens.
 */
-@container (min-width: 600px) and (max-width: 899.98px) {
+@media screen and (min-width: 600px) and (max-width: 899.98px) {
   .retail-slider-carousel-wrap .retail-product-card-premium {
     width: calc((100% - var(--retail-space-7)) / 2) !important;
   }
@@ -636,14 +636,14 @@ input:focus, textarea:focus {
 }
 
 /* Mobile responsive styles for B2B Chat WhatsApp button */
-@container (max-width: 500px) {
+@media screen and (max-width: 500px) {
   .retail-whatsapp-badge {
     display: none !important;
   }
 }
 
 /* Mobile responsive styles for testimonial items (border adjustments) */
-@container (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .retail-testimonial-item {
     border-right: none !important;
     border-bottom: 1px solid var(--retail-surface-muted) !important;

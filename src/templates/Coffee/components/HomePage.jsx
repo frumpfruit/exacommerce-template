@@ -79,10 +79,10 @@ function ParallaxSection({ imageUrl, height = 480, children, overlay = 'rgba(28,
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] });
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '25%']);
   return (
-    <div ref={ref} style={{ position: 'relative', height, overflow: 'hidden' }}>
+    <div ref={ref} style={{ position: 'relative', minHeight: height, display: 'flex', overflow: 'hidden' }}>
       <motion.div style={{ y, position: 'absolute', inset: 0, backgroundImage: `url('${imageUrl}')`, backgroundSize: 'cover', backgroundPosition: 'center', height: '140%', top: '-20%', willChange: 'transform' }} />
       <div style={{ position: 'absolute', inset: 0, background: overlay }} />
-      <div style={{ position: 'relative', zIndex: 2, height: '100%' }}>{children}</div>
+      <div style={{ position: 'relative', zIndex: 2, width: '100%' }}>{children}</div>
     </div>
   );
 }
@@ -136,23 +136,23 @@ export default function HomePage({ onNavigate, onToggleCartItem, cart }) {
     <div style={{ backgroundColor: 'var(--coffee-bg-dark)', color: 'var(--coffee-text-light)' }}>
 
       {/* ─── 1. HERO ──────────────────────────────────────────────────────── */}
-      <section ref={heroRef} style={{ position: 'relative', minHeight: '100vh', display: 'flex', overflow: 'hidden' }}>
-        <motion.div style={{ y: heroImgY, scale: heroScale, position: 'absolute', inset: 0, backgroundImage: "url('/images/coffee/gregory-hayes-MjvOQ__XFgI-unsplash.jpg')", backgroundSize: 'cover', backgroundPosition: 'center', willChange: 'transform' }} />
+      <section ref={heroRef} className="w-full flex flex-col" style={{ position: 'relative', minHeight: '100vh', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
+        <motion.div style={{ y: heroImgY, scale: heroScale, position: 'absolute', top: '-15%', height: '130%', left: 0, right: 0, backgroundImage: "url('/images/coffee/gregory-hayes-MjvOQ__XFgI-unsplash.jpg')", backgroundSize: 'cover', backgroundPosition: 'center', willChange: 'transform' }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(120deg, rgba(28,15,10,0.88) 0%, rgba(28,15,10,0.4) 60%, rgba(28,15,10,0.15) 100%)' }} />
         <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '220px', background: 'linear-gradient(to top, var(--coffee-bg-dark) 0%, transparent 100%)' }} />
 
         {/* Floating EST badge */}
         <motion.div
-          style={{ position: 'absolute', top: 40, right: 60, display: 'flex' }}
-          animate={{ y: [0, -8, 0] }}
-          transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+          style={{ position: 'absolute', top: 40, right: 'clamp(20px, 5vw, 60px)', display: 'flex' }}
+          animate={{ rotate: 360 }}
+          transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
         >
-          <div style={{ width: 80, height: 80, borderRadius: '50%', border: '1px solid var(--coffee-gold)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', backgroundColor: 'var(--coffee-surface)' }}>
-            <span style={{ fontSize: '9px', fontWeight: 800, textTransform: 'uppercase', color: '#C5A880', letterSpacing: '1.5px', textAlign: 'center', lineHeight: 1.6 }}>EST{'\n'}2015</span>
+          <div style={{ width: 80, height: 80, borderRadius: '50%', border: '1px solid rgba(250, 247, 242, 0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FAF7F2', fontSize: '10px', letterSpacing: '2px' }}>
+            EST 2015
           </div>
         </motion.div>
 
-        <motion.div style={{ opacity: heroOpacity, position: 'relative', zIndex: 2, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: 'clamp(80px, 10vw, 120px) clamp(24px, 6vw, 80px)' }}>
+        <motion.div style={{ flex: 1, opacity: heroOpacity, position: 'relative', zIndex: 2, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: 'clamp(80px, 10vw, 120px) clamp(24px, 6vw, 80px)' }}>
           <motion.span
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}

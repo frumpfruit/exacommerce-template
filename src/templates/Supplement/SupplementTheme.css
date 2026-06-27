@@ -208,6 +208,8 @@
   width: 100%;
   margin: 0 auto;
   padding: 0 var(--supp-space-layout-sm);
+  container-type: inline-size;
+  container-name: supp-app;
 }
 
 .supp-section {
@@ -1091,7 +1093,7 @@
    We also fall back or duplicate with media queries for full robustness.
 */
 
-@container supp-app (max-width: 992px) {
+@media screen and (max-width: 992px) {
   .supp-hero {
     grid-template-columns: 1fr;
     text-align: center;
@@ -1129,7 +1131,7 @@
   }
 }
 
-@container supp-app (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .supp-nav-links {
     display: none;
   }
@@ -1269,7 +1271,7 @@
   border-right: none !important;
 }
 
-@container supp-app (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .supp-stat-item-clean {
     border-right: none !important;
     border-bottom: 1px solid rgba(22, 42, 30, 0.4) !important;
