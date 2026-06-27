@@ -16,17 +16,33 @@ export function useIntersection(threshold = 0.1, rootMargin = '0px') {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+
+    // Safety fallback: auto-reveal after 300ms if observer doesn't fire
+    const fallbackTimeout = setTimeout(() => {
+      setIsVisible(true);
+    }, 300);
+
+    if (!window.IntersectionObserver) {
+      setIsVisible(true);
+      clearTimeout(fallbackTimeout);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
+          clearTimeout(fallbackTimeout);
           observer.unobserve(el);
         }
       },
       { threshold, rootMargin }
     );
     observer.observe(el);
-    return () => observer.disconnect();
+    return () => {
+      clearTimeout(fallbackTimeout);
+      observer.disconnect();
+    };
   }, [threshold, rootMargin]);
 
   return [ref, isVisible];
@@ -113,25 +129,45 @@ export function useStaggerVisible(count, staggerMs = 80, threshold = 0.05) {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+
+    const triggerReveal = () => {
+      for (let i = 0; i < count; i++) {
+        setTimeout(() => {
+          setVisibles(prev => {
+            const next = [...prev];
+            next[i] = true;
+            return next;
+          });
+        }, i * staggerMs);
+      }
+    };
+
+    // Safety fallback: auto-reveal after 300ms if observer doesn't fire
+    const fallbackTimeout = setTimeout(() => {
+      triggerReveal();
+    }, 300);
+
+    if (!window.IntersectionObserver) {
+      triggerReveal();
+      clearTimeout(fallbackTimeout);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          for (let i = 0; i < count; i++) {
-            setTimeout(() => {
-              setVisibles(prev => {
-                const next = [...prev];
-                next[i] = true;
-                return next;
-              });
-            }, i * staggerMs);
-          }
+          triggerReveal();
+          clearTimeout(fallbackTimeout);
           observer.unobserve(el);
         }
       },
       { threshold }
     );
     observer.observe(el);
-    return () => observer.disconnect();
+    return () => {
+      clearTimeout(fallbackTimeout);
+      observer.disconnect();
+    };
   }, [count, staggerMs, threshold]);
 
   return [ref, visibles];

@@ -1,7 +1,7 @@
-import * as React from "react"
-import { motion } from "motion/react";
+import * as React from "react";
+import { motion } from "framer-motion";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
 const ContainerScroll = React.forwardRef(({ children, className, ...props }, ref) => {
   return (
@@ -37,12 +37,13 @@ const CardSticky = React.forwardRef((
       ref={ref}
       layout="position"
       style={{
+        position: 'sticky',
         top: `${y}px`,
         z,
         backfaceVisibility: "hidden",
         ...style,
       }}
-      className={cn("sticky", className)}
+      className={className}
       {...props}>
       {children}
     </motion.div>

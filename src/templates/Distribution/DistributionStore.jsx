@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import './DistributionTheme.css';
 
 import Navbar from './components/Navbar';
@@ -75,55 +76,65 @@ export default function DistributionStore() {
       />
 
       <main style={{ minHeight: '80vh' }}>
-        {activePage === 'home' && (
-          <HomePage 
-            products={DISTRIBUTION_PRODUCTS} 
-            onNavigate={handleNavigate} 
-            onAddToCart={handleAddToCart} 
-          />
-        )}
-        
-        {activePage === 'about' && (
-          <AboutPage />
-        )}
-        
-        {activePage === 'process' && (
-          <ProcessPage onNavigate={handleNavigate} />
-        )}
-        
-        {activePage === 'insights' && (
-          <InsightsPage />
-        )}
-        
-        {activePage === 'contact' && (
-          <ContactPage />
-        )}
-        
-        {activePage === 'store' && (
-          <StorePage 
-            products={DISTRIBUTION_PRODUCTS} 
-            onAddToCart={handleAddToCart}
-            onViewDetail={(p) => handleNavigate('product-detail', p)}
-          />
-        )}
-        
-        {activePage === 'product-detail' && (
-          <ProductDetailPage 
-            product={selectedProduct}
-            allProducts={DISTRIBUTION_PRODUCTS}
-            onAddToCart={handleAddToCart}
-            onInquireNow={handleInquireNow}
-            onSelectProduct={(p) => handleNavigate(p ? 'product-detail' : 'store', p)}
-          />
-        )}
-        
-        {activePage === 'inquiry' && (
-          <InquiryPage 
-            inquiryItems={inquiryItems}
-            onRemoveItem={handleRemoveFromCart}
-            onNavigate={handleNavigate}
-          />
-        )}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activePage + (selectedProduct ? `-${selectedProduct.id}` : '')}
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -15 }}
+            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+          >
+            {activePage === 'home' && (
+              <HomePage 
+                products={DISTRIBUTION_PRODUCTS} 
+                onNavigate={handleNavigate} 
+                onAddToCart={handleAddToCart} 
+              />
+            )}
+            
+            {activePage === 'about' && (
+              <AboutPage />
+            )}
+            
+            {activePage === 'process' && (
+              <ProcessPage onNavigate={handleNavigate} />
+            )}
+            
+            {activePage === 'insights' && (
+              <InsightsPage />
+            )}
+            
+            {activePage === 'contact' && (
+              <ContactPage />
+            )}
+            
+            {activePage === 'store' && (
+              <StorePage 
+                products={DISTRIBUTION_PRODUCTS} 
+                onAddToCart={handleAddToCart}
+                onViewDetail={(p) => handleNavigate('product-detail', p)}
+              />
+            )}
+            
+            {activePage === 'product-detail' && (
+              <ProductDetailPage 
+                product={selectedProduct}
+                allProducts={DISTRIBUTION_PRODUCTS}
+                onAddToCart={handleAddToCart}
+                onInquireNow={handleInquireNow}
+                onSelectProduct={(p) => handleNavigate(p ? 'product-detail' : 'store', p)}
+              />
+            )}
+            
+            {activePage === 'inquiry' && (
+              <InquiryPage 
+                inquiryItems={inquiryItems}
+                onRemoveItem={handleRemoveFromCart}
+                onNavigate={handleNavigate}
+              />
+            )}
+          </motion.div>
+        </AnimatePresence>
       </main>
 
       <Footer onNavigate={handleNavigate} />
