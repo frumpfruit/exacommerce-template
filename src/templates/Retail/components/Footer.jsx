@@ -36,60 +36,60 @@ export default function Footer({ onNavigate }) {
 
   return (
     <footer style={{
-      backgroundColor: 'var(--vivere-surface-base)',
-      color: 'var(--vivere-surface-strong)',
-      padding: 'var(--vivere-space-10) 0 var(--vivere-space-6) 0',
+      backgroundColor: 'var(--retail-surface-base)',
+      color: 'var(--retail-surface-strong)',
+      padding: 'var(--retail-space-10) 0 var(--retail-space-6) 0',
       position: 'relative'
     }}>
-      <div className="vivere-container">
+      <div className="retail-container">
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-          gap: 'var(--vivere-space-8)',
-          marginBottom: 'var(--vivere-space-10)'
+          gap: 'var(--retail-space-8)',
+          marginBottom: 'var(--retail-space-10)'
         }}>
 
           <div>
             <h3 
               onClick={(e) => handleNav(e, 'home')}
               style={{ 
-                fontSize: 'var(--vivere-text-lg)', 
+                fontSize: 'var(--retail-text-lg)', 
                 fontWeight: 700, 
                 letterSpacing: '2px', 
-                marginBottom: 'var(--vivere-space-6)',
+                marginBottom: 'var(--retail-space-6)',
                 cursor: 'pointer',
                 transition: 'color 0.3s ease'
               }}
               onMouseEnter={(e) => e.currentTarget.style.color = '#d9ab7e'}
-              onMouseLeave={(e) => e.currentTarget.style.color = 'var(--vivere-surface-strong)'}
+              onMouseLeave={(e) => e.currentTarget.style.color = 'var(--retail-surface-strong)'}
             >
               HAVEN
             </h3>
-            <p style={{ fontSize: 'var(--vivere-text-sm)', color: '#999', lineHeight: 1.6 }}>
+            <p style={{ fontSize: 'var(--retail-text-sm)', color: '#999', lineHeight: 1.6 }}>
               Crafting timeless pieces for modern homes. Sustainable, elegant, and functional.
             </p>
           </div>
 
           <div>
-            <h4 style={{ fontSize: 'var(--vivere-text-sm)', fontWeight: 600, marginBottom: 'var(--vivere-space-5)', textTransform: 'uppercase', color: '#ffffff' }}>Shop</h4>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 'var(--vivere-space-3)' }}>
+            <h4 style={{ fontSize: 'var(--retail-text-sm)', fontWeight: 600, marginBottom: 'var(--retail-space-5)', textTransform: 'uppercase', color: '#ffffff' }}>Shop</h4>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 'var(--retail-space-3)' }}>
               <li>
-                <button onClick={(e) => handleNav(e, 'store')} className="vivere-footer-link">
+                <button onClick={(e) => handleNav(e, 'store')} className="retail-footer-link">
                   Furniture
                 </button>
               </li>
               <li>
-                <button onClick={(e) => handleNav(e, 'store')} className="vivere-footer-link">
+                <button onClick={(e) => handleNav(e, 'store')} className="retail-footer-link">
                   Lighting
                 </button>
               </li>
               <li>
-                <button onClick={(e) => handleNav(e, 'store')} className="vivere-footer-link">
+                <button onClick={(e) => handleNav(e, 'store')} className="retail-footer-link">
                   Decor
                 </button>
               </li>
               <li>
-                <button onClick={(e) => handleNav(e, 'store')} className="vivere-footer-link">
+                <button onClick={(e) => handleNav(e, 'store')} className="retail-footer-link">
                   Sale
                 </button>
               </li>
@@ -97,20 +97,20 @@ export default function Footer({ onNavigate }) {
           </div>
 
           <div>
-            <h4 style={{ fontSize: 'var(--vivere-text-sm)', fontWeight: 600, marginBottom: 'var(--vivere-space-5)', textTransform: 'uppercase', color: '#ffffff' }}>Support</h4>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 'var(--vivere-space-3)' }}>
+            <h4 style={{ fontSize: 'var(--retail-text-sm)', fontWeight: 600, marginBottom: 'var(--retail-space-5)', textTransform: 'uppercase', color: '#ffffff' }}>Support</h4>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 'var(--retail-space-3)' }}>
               <li>
-                <button onClick={(e) => handleModalOpen(e, 'faq')} className="vivere-footer-link">
+                <button onClick={(e) => handleModalOpen(e, 'faq')} className="retail-footer-link">
                   FAQ
                 </button>
               </li>
               <li>
-                <button onClick={(e) => handleModalOpen(e, 'shipping')} className="vivere-footer-link">
+                <button onClick={(e) => handleModalOpen(e, 'shipping')} className="retail-footer-link">
                   Shipping & Returns
                 </button>
               </li>
               <li>
-                <button onClick={(e) => handleNav(e, 'contact')} className="vivere-footer-link">
+                <button onClick={(e) => handleNav(e, 'contact')} className="retail-footer-link">
                   Contact Us
                 </button>
               </li>
@@ -118,31 +118,31 @@ export default function Footer({ onNavigate }) {
           </div>
 
           <div>
-            <h4 style={{ fontSize: 'var(--vivere-text-sm)', fontWeight: 600, marginBottom: 'var(--vivere-space-5)', textTransform: 'uppercase', color: '#ffffff' }}>Newsletter</h4>
-            <p style={{ fontSize: 'var(--vivere-text-sm)', color: '#999', marginBottom: 'var(--vivere-space-4)' }}>Subscribe to receive updates, access to exclusive deals, and more.</p>
+            <h4 style={{ fontSize: 'var(--retail-text-sm)', fontWeight: 600, marginBottom: 'var(--retail-space-5)', textTransform: 'uppercase', color: '#ffffff' }}>Newsletter</h4>
+            <p style={{ fontSize: 'var(--retail-text-sm)', color: '#999', marginBottom: 'var(--retail-space-4)' }}>Subscribe to receive updates, access to exclusive deals, and more.</p>
             
-            <form onSubmit={handleSubscribe} style={{ display: 'flex', gap: 'var(--vivere-space-2)', flexWrap: 'wrap', flexDirection: 'column', width: '100%' }}>
-              <div style={{ display: 'flex', gap: 'var(--vivere-space-2)', width: '100%' }}>
+            <form onSubmit={handleSubscribe} style={{ display: 'flex', gap: 'var(--retail-space-2)', flexWrap: 'wrap', flexDirection: 'column', width: '100%' }}>
+              <div style={{ display: 'flex', gap: 'var(--retail-space-2)', width: '100%' }}>
                 <input 
                   type="email" 
                   placeholder="Enter your email" 
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="vivere-footer-input"
+                  className="retail-footer-input"
                 />
-                <button type="submit" className="vivere-footer-btn-join">
+                <button type="submit" className="retail-footer-btn-join">
                   Join
                 </button>
               </div>
               
               {error && (
-                <span style={{ fontSize: 'var(--vivere-text-xs)', color: '#ff6b6b', marginTop: 'var(--vivere-space-1)' }}>
+                <span style={{ fontSize: 'var(--retail-text-xs)', color: '#ff6b6b', marginTop: 'var(--retail-space-1)' }}>
                   {error}
                 </span>
               )}
               
               {subscribed && (
-                <span style={{ fontSize: 'var(--vivere-text-sm)', color: '#d9ab7e', marginTop: 'var(--vivere-space-1)', fontWeight: 500 }}>
+                <span style={{ fontSize: 'var(--retail-text-sm)', color: '#d9ab7e', marginTop: 'var(--retail-space-1)', fontWeight: 500 }}>
                   ✓ Subscribed successfully!
                 </span>
               )}
@@ -153,19 +153,19 @@ export default function Footer({ onNavigate }) {
 
         <div style={{
           borderTop: '1px solid #333',
-          paddingTop: 'var(--vivere-space-6)',
+          paddingTop: 'var(--retail-space-6)',
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
-          fontSize: 'var(--vivere-text-xs)',
+          fontSize: 'var(--retail-text-xs)',
           color: '#666'
         }}>
           <div>© 2026 Haven Collection. All rights reserved.</div>
-          <div style={{ display: 'flex', gap: 'var(--vivere-space-5)' }}>
-            <button onClick={(e) => handleModalOpen(e, 'privacy')} className="vivere-footer-link" style={{ fontSize: 'var(--vivere-text-xs)', color: '#666' }}>
+          <div style={{ display: 'flex', gap: 'var(--retail-space-5)' }}>
+            <button onClick={(e) => handleModalOpen(e, 'privacy')} className="retail-footer-link" style={{ fontSize: 'var(--retail-text-xs)', color: '#666' }}>
               Privacy Policy
             </button>
-            <button onClick={(e) => handleModalOpen(e, 'terms')} className="vivere-footer-link" style={{ fontSize: 'var(--vivere-text-xs)', color: '#666' }}>
+            <button onClick={(e) => handleModalOpen(e, 'terms')} className="retail-footer-link" style={{ fontSize: 'var(--retail-text-xs)', color: '#666' }}>
               Terms of Service
             </button>
           </div>
@@ -194,12 +194,12 @@ export default function Footer({ onNavigate }) {
             style={{
               backgroundColor: '#161616',
               border: '1px solid #333',
-              borderRadius: 'var(--vivere-radius-xs)',
+              borderRadius: 'var(--retail-radius-xs)',
               width: '100%',
               maxWidth: '600px',
               maxHeight: '85vh',
               overflowY: 'auto',
-              padding: 'var(--vivere-space-8)',
+              padding: 'var(--retail-space-8)',
               position: 'relative',
               boxShadow: '0 20px 40px rgba(0,0,0,0.5)',
               color: '#ffffff'
@@ -236,8 +236,8 @@ export default function Footer({ onNavigate }) {
               textTransform: 'uppercase',
               color: '#d9ab7e',
               borderBottom: '1px solid #333',
-              paddingBottom: 'var(--vivere-space-4)',
-              marginBottom: 'var(--vivere-space-6)'
+              paddingBottom: 'var(--retail-space-4)',
+              marginBottom: 'var(--retail-space-6)'
             }}>
               {activeModal === 'faq' && 'Frequently Asked Questions'}
               {activeModal === 'shipping' && 'Shipping & Returns'}
@@ -302,14 +302,14 @@ export default function Footer({ onNavigate }) {
 
             {/* Modal Footer */}
             <div style={{
-              marginTop: 'var(--vivere-space-8)',
-              paddingTop: 'var(--vivere-space-4)',
+              marginTop: 'var(--retail-space-8)',
+              paddingTop: 'var(--retail-space-4)',
               borderTop: '1px solid #333',
               textAlign: 'right'
             }}>
               <button 
                 onClick={() => setActiveModal(null)}
-                className="vivere-btn"
+                className="retail-btn"
                 style={{
                   backgroundColor: '#d9ab7e',
                   color: '#1a1a1a',

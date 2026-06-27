@@ -66,7 +66,7 @@ export default function DistributionStore() {
   };
 
   return (
-    <div className="nexus-theme">
+    <div className="dist-theme">
       <Navbar 
         activePage={activePage} 
         onNavigate={handleNavigate} 
@@ -138,16 +138,16 @@ export default function DistributionStore() {
           display: 'flex', justifyContent: 'flex-end',
           animation: 'fadeIn 0.3s ease-out'
         }} onClick={() => setIsCartOpen(false)}>
-          <div className="nexus-rfq-drawer" style={{
-            backgroundColor: 'var(--nexus-surface-strong)',
+          <div className="dist-rfq-drawer" style={{
+            backgroundColor: 'var(--dist-surface-strong)',
             height: '100%',
             display: 'flex', flexDirection: 'column',
             boxShadow: '-4px 0 24px rgba(0,0,0,0.1)',
             animation: 'slideInRight 0.3s cubic-bezier(0.25, 1, 0.5, 1)'
           }} onClick={e => e.stopPropagation()}>
             <div style={{
-              padding: 'var(--nexus-space-5)',
-              borderBottom: '1px solid var(--nexus-surface-muted)',
+              padding: 'var(--dist-space-5)',
+              borderBottom: '1px solid var(--dist-surface-muted)',
               display: 'flex', justifyContent: 'space-between', alignItems: 'center'
             }}>
               <h3 style={{ fontSize: '18px', fontWeight: 700, margin: 0, display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -162,7 +162,7 @@ export default function DistributionStore() {
               </h3>
               <button 
                 onClick={() => setIsCartOpen(false)}
-                style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--nexus-text-secondary)' }}
+                style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--dist-text-secondary)' }}
               >
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -171,9 +171,9 @@ export default function DistributionStore() {
               </button>
             </div>
 
-            <div style={{ flex: 1, overflowY: 'auto', padding: 'var(--nexus-space-5)' }}>
+            <div style={{ flex: 1, overflowY: 'auto', padding: 'var(--dist-space-5)' }}>
               {inquiryItems.length === 0 ? (
-                <div style={{ textAlign: 'center', color: 'var(--nexus-text-secondary)', marginTop: '40px' }}>
+                <div style={{ textAlign: 'center', color: 'var(--dist-text-secondary)', marginTop: '40px' }}>
                   <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" style={{ margin: '0 auto 16px', opacity: 0.5 }}>
                     <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
                     <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -181,7 +181,7 @@ export default function DistributionStore() {
                   </svg>
                   <p style={{ fontSize: '14px' }}>Your RFQ list is empty.</p>
                   <button 
-                    className="nexus-btn nexus-btn-primary" 
+                    className="dist-btn dist-btn-primary" 
                     style={{ marginTop: '16px' }}
                     onClick={() => {
                       setIsCartOpen(false);
@@ -192,17 +192,17 @@ export default function DistributionStore() {
                   </button>
                 </div>
               ) : (
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--nexus-space-4)' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--dist-space-4)' }}>
                   {inquiryItems.map(item => (
-                    <div key={item.id} style={{ display: 'flex', gap: '12px', borderBottom: '1px solid var(--nexus-surface-muted)', paddingBottom: '12px' }}>
-                      <div style={{ width: '60px', height: '60px', backgroundColor: 'var(--nexus-surface-raised)', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <div key={item.id} style={{ display: 'flex', gap: '12px', borderBottom: '1px solid var(--dist-surface-muted)', paddingBottom: '12px' }}>
+                      <div style={{ width: '60px', height: '60px', backgroundColor: 'var(--dist-surface-raised)', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                         <img src={item.img} alt={item.name} style={{ maxWidth: '80%', maxHeight: '80%', objectFit: 'contain' }} onError={(e) => { e.target.style.display = 'none'; }} />
                       </div>
                       <div style={{ flex: 1 }}>
                         <h4 style={{ fontSize: '13px', fontWeight: 700, margin: '0 0 4px 0' }}>{item.name}</h4>
-                        <div style={{ fontSize: '12px', color: 'var(--nexus-brand-primary)', fontWeight: 600, marginBottom: '4px' }}>{item.priceFormatted}</div>
+                        <div style={{ fontSize: '12px', color: 'var(--dist-brand-primary)', fontWeight: 600, marginBottom: '4px' }}>{item.priceFormatted}</div>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                          <span style={{ fontSize: '11px', color: 'var(--nexus-text-secondary)' }}>MOQ: {item.moq}</span>
+                          <span style={{ fontSize: '11px', color: 'var(--dist-text-secondary)' }}>MOQ: {item.moq}</span>
                           <button 
                             onClick={() => handleRemoveFromCart(item.id)}
                             style={{ background: 'none', border: 'none', color: '#ef4444', fontSize: '11px', cursor: 'pointer', padding: 0 }}
@@ -218,9 +218,9 @@ export default function DistributionStore() {
             </div>
 
             {inquiryItems.length > 0 && (
-              <div style={{ padding: 'var(--nexus-space-5)', borderTop: '1px solid var(--nexus-surface-muted)', backgroundColor: 'var(--nexus-surface-raised)' }}>
+              <div style={{ padding: 'var(--dist-space-5)', borderTop: '1px solid var(--dist-surface-muted)', backgroundColor: 'var(--dist-surface-raised)' }}>
                 <button 
-                  className="nexus-btn nexus-btn-primary"
+                  className="dist-btn dist-btn-primary"
                   style={{ width: '100%', padding: '14px', fontSize: '14px' }}
                   onClick={() => {
                     setIsCartOpen(false);
@@ -230,7 +230,7 @@ export default function DistributionStore() {
                   Proceed to Request Quote
                 </button>
                 <button 
-                  className="nexus-btn"
+                  className="dist-btn"
                   style={{ width: '100%', padding: '10px', fontSize: '13px', marginTop: '8px', backgroundColor: 'transparent', borderColor: 'transparent' }}
                   onClick={() => {
                     setIsCartOpen(false);

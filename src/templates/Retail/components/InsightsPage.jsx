@@ -90,12 +90,12 @@ export default function InsightsPage() {
   };
 
   return (
-    <div style={{ backgroundColor: 'var(--vivere-surface-strong)', color: 'var(--vivere-text-primary)' }}>
+    <div style={{ backgroundColor: 'var(--retail-surface-strong)', color: 'var(--retail-text-primary)' }}>
       
       {/* 1. Hero Section */}
       <section style={{ 
-        padding: 'var(--vivere-space-10) 0 var(--vivere-space-8) 0', 
-        borderBottom: '1px solid var(--vivere-surface-muted)',
+        padding: 'var(--retail-space-10) 0 var(--retail-space-8) 0', 
+        borderBottom: '1px solid var(--retail-surface-muted)',
         backgroundColor: '#1a1a1a',
         color: '#fcfbfa',
         position: 'relative',
@@ -110,7 +110,7 @@ export default function InsightsPage() {
         }} />
 
         <ScrollReveal>
-          <div className="vivere-container" style={{ textAlign: 'center', maxWidth: '800px', position: 'relative', zIndex: 2 }}>
+          <div className="retail-container" style={{ textAlign: 'center', maxWidth: '800px', position: 'relative', zIndex: 2 }}>
             <span style={{
               display: 'block',
               fontSize: '11px',
@@ -118,21 +118,21 @@ export default function InsightsPage() {
               textTransform: 'uppercase',
               letterSpacing: '3px',
               color: '#d9ab7e', // High-contrast gold accent for dark backgrounds
-              marginBottom: 'var(--vivere-space-3)'
+              marginBottom: 'var(--retail-space-3)'
             }}>
               Creative Journal
             </span>
-            <h1 className="vivere-heading" style={{ 
+            <h1 className="retail-heading" style={{ 
               fontSize: '36px', 
               lineHeight: 1.15, 
-              marginBottom: 'var(--vivere-space-4)',
+              marginBottom: 'var(--retail-space-4)',
               textTransform: 'uppercase',
               letterSpacing: '1px',
               color: '#ffffff'
             }}>
               Design Inspiration & <span style={{ color: '#d9ab7e' }}>Living Insights</span>
             </h1>
-            <p className="vivere-subtext" style={{ 
+            <p className="retail-subtext" style={{ 
               fontSize: '15px', 
               lineHeight: 1.6, 
               color: '#cccccc',
@@ -146,16 +146,16 @@ export default function InsightsPage() {
       </section>
 
       {/* 2. Featured Article */}
-      <section style={{ padding: 'var(--vivere-space-10) 0', borderBottom: '1px solid var(--vivere-surface-muted)', overflow: 'hidden' }}>
-        <div className="vivere-container">
+      <section style={{ padding: 'var(--retail-space-10) 0', borderBottom: '1px solid var(--retail-surface-muted)', overflow: 'hidden' }}>
+        <div className="retail-container">
           <ScrollReveal>
             <div style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: 'var(--vivere-space-9)',
+              gap: 'var(--retail-space-9)',
               alignItems: 'center'
             }}>
-              <div style={{ overflow: 'hidden', height: '420px', borderRadius: 'var(--vivere-radius-xs)', position: 'relative' }}>
+              <div style={{ overflow: 'hidden', height: '420px', borderRadius: 'var(--retail-radius-xs)', position: 'relative' }}>
                 <img 
                   src={FEATURED_ARTICLE.image} 
                   alt={FEATURED_ARTICLE.title} 
@@ -169,8 +169,8 @@ export default function InsightsPage() {
                 />
               </div>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--vivere-space-4)' }}>
-                <div style={{ display: 'flex', gap: '10px', fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--vivere-border-strong)' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--retail-space-4)' }}>
+                <div style={{ display: 'flex', gap: '10px', fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--retail-border-strong)' }}>
                   <span>{FEATURED_ARTICLE.category}</span>
                   <span>•</span>
                   <span>{FEATURED_ARTICLE.readTime}</span>
@@ -181,20 +181,20 @@ export default function InsightsPage() {
                   textTransform: 'uppercase',
                   letterSpacing: '0.5px',
                   lineHeight: 1.2,
-                  color: 'var(--vivere-text-primary)',
+                  color: 'var(--retail-text-primary)',
                   margin: 0
                 }}>
-                  The Art of Creating a <span style={{ color: 'var(--vivere-border-strong)' }}>Luxurious Living Room</span>
+                  The Art of Creating a <span style={{ color: 'var(--retail-border-strong)' }}>Luxurious Living Room</span>
                 </h2>
-                <span style={{ fontSize: '12px', color: 'var(--vivere-text-secondary)' }}>
+                <span style={{ fontSize: '12px', color: 'var(--retail-text-secondary)' }}>
                   Dipublikasikan pada {FEATURED_ARTICLE.date} oleh {FEATURED_ARTICLE.author}
                 </span>
-                <p style={{ fontSize: '14px', lineHeight: 1.7, color: 'var(--vivere-text-secondary)', margin: 0 }}>
+                <p style={{ fontSize: '14px', lineHeight: 1.7, color: 'var(--retail-text-secondary)', margin: 0 }}>
                   {FEATURED_ARTICLE.desc}
                 </p>
                 <button 
                   onClick={() => alert(`Membaca artikel: ${FEATURED_ARTICLE.title}`)}
-                  className="vivere-btn vivere-btn-primary" 
+                  className="retail-btn retail-btn-primary" 
                   style={{ alignSelf: 'flex-start', fontSize: '11px', padding: '10px 20px', borderRadius: '4px' }}
                 >
                   Read Article
@@ -207,11 +207,11 @@ export default function InsightsPage() {
 
       {/* 3. Categories Navigation */}
       <section style={{ 
-        padding: 'var(--vivere-space-6) 0', 
-        borderBottom: '1px solid var(--vivere-surface-muted)',
-        backgroundColor: 'var(--vivere-surface-raised)'
+        padding: 'var(--retail-space-6) 0', 
+        borderBottom: '1px solid var(--retail-surface-muted)',
+        backgroundColor: 'var(--retail-surface-raised)'
       }}>
-        <div className="vivere-container">
+        <div className="retail-container">
           <ScrollReveal>
             <div style={{ display: 'flex', overflowX: 'auto', gap: '10px', scrollbarWidth: 'none' }}>
               {CATEGORIES.map((cat, i) => {
@@ -231,8 +231,8 @@ export default function InsightsPage() {
                       whiteSpace: 'nowrap',
                       textTransform: 'uppercase',
                       letterSpacing: '0.5px',
-                      color: isActive ? 'var(--vivere-border-strong)' : 'var(--vivere-text-secondary)',
-                      borderBottom: isActive ? '2px solid var(--vivere-border-strong)' : '2px solid transparent',
+                      color: isActive ? 'var(--retail-border-strong)' : 'var(--retail-text-secondary)',
+                      borderBottom: isActive ? '2px solid var(--retail-border-strong)' : '2px solid transparent',
                       transition: 'all 0.2s'
                     }}
                   >
@@ -246,41 +246,41 @@ export default function InsightsPage() {
       </section>
 
       {/* 4. Latest Insights Grid */}
-      <section style={{ padding: 'var(--vivere-space-10) 0', borderBottom: '1px solid var(--vivere-surface-muted)' }}>
-        <div className="vivere-container">
+      <section style={{ padding: 'var(--retail-space-10) 0', borderBottom: '1px solid var(--retail-surface-muted)' }}>
+        <div className="retail-container">
           <ScrollReveal>
             <h3 style={{
               fontSize: '11px',
               fontWeight: 700,
               textTransform: 'uppercase',
               letterSpacing: '2px',
-              color: 'var(--vivere-text-secondary)',
-              marginBottom: 'var(--vivere-space-7)',
-              borderLeft: '2px solid var(--vivere-border-strong)',
-              paddingLeft: 'var(--vivere-space-3)'
+              color: 'var(--retail-text-secondary)',
+              marginBottom: 'var(--retail-space-7)',
+              borderLeft: '2px solid var(--retail-border-strong)',
+              paddingLeft: 'var(--retail-space-3)'
             }}>
-              Latest <span style={{ color: 'var(--vivere-border-strong)' }}>Insights</span>
+              Latest <span style={{ color: 'var(--retail-border-strong)' }}>Insights</span>
             </h3>
           </ScrollReveal>
 
           {filteredArticles.length === 0 ? (
-            <p style={{ fontSize: '14px', color: 'var(--vivere-text-secondary)' }}>Belum ada artikel dalam kategori ini.</p>
+            <p style={{ fontSize: '14px', color: 'var(--retail-text-secondary)' }}>Belum ada artikel dalam kategori ini.</p>
           ) : (
             /* 3-Column Clean Border Grid (No shadow cards, no white boxes) */
             <div style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-              gap: 'var(--vivere-space-8)'
+              gap: 'var(--retail-space-8)'
             }}>
               {filteredArticles.map((art, idx) => (
                 <div key={idx} style={{ 
                   display: 'flex', 
                   flexDirection: 'column', 
-                  gap: 'var(--vivere-space-4)',
-                  paddingBottom: 'var(--vivere-space-4)',
-                  borderBottom: '1px solid var(--vivere-surface-muted)'
+                  gap: 'var(--retail-space-4)',
+                  paddingBottom: 'var(--retail-space-4)',
+                  borderBottom: '1px solid var(--retail-surface-muted)'
                 }}>
-                  <div style={{ height: '220px', borderRadius: '2px', overflow: 'hidden', backgroundColor: 'var(--vivere-surface-muted)' }}>
+                  <div style={{ height: '220px', borderRadius: '2px', overflow: 'hidden', backgroundColor: 'var(--retail-surface-muted)' }}>
                     <img 
                       src={art.image} 
                       alt={art.title} 
@@ -289,7 +289,7 @@ export default function InsightsPage() {
                       onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1.0)'}
                     />
                   </div>
-                  <div style={{ display: 'flex', justifyBetween: 'space-between', fontSize: '11px', color: 'var(--vivere-text-secondary)', gap: '10px' }}>
+                  <div style={{ display: 'flex', justifyBetween: 'space-between', fontSize: '11px', color: 'var(--retail-text-secondary)', gap: '10px' }}>
                     <span>{art.date}</span>
                     <span>•</span>
                     <span>{art.readTime}</span>
@@ -300,12 +300,12 @@ export default function InsightsPage() {
                     textTransform: 'uppercase',
                     letterSpacing: '0.5px',
                     margin: 0,
-                    color: 'var(--vivere-text-primary)',
+                    color: 'var(--retail-text-primary)',
                     lineHeight: 1.3
                   }}>
                     {art.title}
                   </h4>
-                  <p style={{ fontSize: '13px', lineHeight: 1.6, color: 'var(--vivere-text-secondary)', margin: 0 }}>
+                  <p style={{ fontSize: '13px', lineHeight: 1.6, color: 'var(--retail-text-secondary)', margin: 0 }}>
                     {art.desc}
                   </p>
                   <button 
@@ -314,14 +314,14 @@ export default function InsightsPage() {
                       background: 'none',
                       border: 'none',
                       padding: 0,
-                      color: 'var(--vivere-border-strong)',
+                      color: 'var(--retail-border-strong)',
                       fontSize: '12px',
                       fontWeight: 700,
                       textTransform: 'uppercase',
                       letterSpacing: '0.5px',
                       cursor: 'pointer',
                       alignSelf: 'flex-start',
-                      borderBottom: '1px solid var(--vivere-border-strong)'
+                      borderBottom: '1px solid var(--retail-border-strong)'
                     }}
                   >
                     Read Story
@@ -335,20 +335,20 @@ export default function InsightsPage() {
 
       {/* 5. Expert Recommendations */}
       <section style={{ 
-        padding: 'var(--vivere-space-10) 0', 
-        borderBottom: '1px solid var(--vivere-surface-muted)',
-        backgroundColor: 'var(--vivere-surface-raised)'
+        padding: 'var(--retail-space-10) 0', 
+        borderBottom: '1px solid var(--retail-surface-muted)',
+        backgroundColor: 'var(--retail-surface-raised)'
       }}>
-        <div className="vivere-container">
+        <div className="retail-container">
           <ScrollReveal>
-            <div style={{ textAlign: 'center', marginBottom: 'var(--vivere-space-8)' }}>
+            <div style={{ textAlign: 'center', marginBottom: 'var(--retail-space-8)' }}>
               <span style={{
                 display: 'block',
                 fontSize: '11px',
                 fontWeight: 700,
                 textTransform: 'uppercase',
                 letterSpacing: '2px',
-                color: 'var(--vivere-text-secondary)'
+                color: 'var(--retail-text-secondary)'
               }}>
                 Curator Advisory
               </span>
@@ -357,9 +357,9 @@ export default function InsightsPage() {
                 fontWeight: 700,
                 textTransform: 'uppercase',
                 letterSpacing: '1px',
-                marginTop: 'var(--vivere-space-2)'
+                marginTop: 'var(--retail-space-2)'
               }}>
-                Expert <span style={{ color: 'var(--vivere-border-strong)' }}>Recommendations</span>
+                Expert <span style={{ color: 'var(--retail-border-strong)' }}>Recommendations</span>
               </h3>
             </div>
           </ScrollReveal>
@@ -368,26 +368,26 @@ export default function InsightsPage() {
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: 'var(--vivere-space-8)'
+            gap: 'var(--retail-space-8)'
           }}>
             {EXPERT_TIPS.map((tip, idx) => (
               <ScrollReveal key={idx} delay={idx * 150} style={{ display: 'flex', flexDirection: 'column' }}>
                 <div 
                   className="expert-tip-card"
                   style={{
-                    padding: 'var(--vivere-space-6) var(--vivere-space-8)',
-                    borderLeft: '2px solid var(--vivere-border-strong)',
-                    backgroundColor: 'var(--vivere-surface-strong)',
+                    padding: 'var(--retail-space-6) var(--retail-space-8)',
+                    borderLeft: '2px solid var(--retail-border-strong)',
+                    backgroundColor: 'var(--retail-surface-strong)',
                     height: '100%'
                   }}
                 >
-                  <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', color: 'var(--vivere-text-secondary)', display: 'block', marginBottom: 'var(--vivere-space-2)' }}>
+                  <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', color: 'var(--retail-text-secondary)', display: 'block', marginBottom: 'var(--retail-space-2)' }}>
                     Tip Dari: {tip.author}
                   </span>
-                  <h4 style={{ fontSize: '16px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 'var(--vivere-space-3)', color: 'var(--vivere-text-primary)' }}>
+                  <h4 style={{ fontSize: '16px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 'var(--retail-space-3)', color: 'var(--retail-text-primary)' }}>
                     {tip.title}
                   </h4>
-                  <p style={{ fontSize: '13px', color: 'var(--vivere-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                  <p style={{ fontSize: '13px', color: 'var(--retail-text-secondary)', lineHeight: 1.6, margin: 0 }}>
                     "{tip.tip}"
                   </p>
                 </div>
@@ -399,7 +399,7 @@ export default function InsightsPage() {
 
       {/* 6. Newsletter Section */}
       <section style={{ 
-        padding: 'var(--vivere-space-10) 0', 
+        padding: 'var(--retail-space-10) 0', 
         backgroundColor: '#1a1a1a', 
         color: '#ffffff',
         textAlign: 'center',
@@ -414,7 +414,7 @@ export default function InsightsPage() {
           transform: `translateY(${(scrollY - 1500) * 0.1}px)`
         }} />
 
-        <div className="vivere-container" style={{ maxWidth: '600px', margin: '0 auto', position: 'relative', zIndex: 2 }}>
+        <div className="retail-container" style={{ maxWidth: '600px', margin: '0 auto', position: 'relative', zIndex: 2 }}>
           <ScrollReveal>
             <span style={{
               display: 'block',
@@ -423,7 +423,7 @@ export default function InsightsPage() {
               textTransform: 'uppercase',
               letterSpacing: '2px',
               color: '#d9ab7e', // high contrast gold on dark
-              marginBottom: 'var(--vivere-space-3)'
+              marginBottom: 'var(--retail-space-3)'
             }}>
               Subscribe to HAVEN Archives
             </span>
@@ -432,11 +432,11 @@ export default function InsightsPage() {
               fontWeight: 600,
               textTransform: 'uppercase',
               letterSpacing: '1px',
-              marginBottom: 'var(--vivere-space-4)'
+              marginBottom: 'var(--retail-space-4)'
             }}>
               Dapatkan Inspirasi & <span style={{ color: '#d9ab7e' }}>Update Desain</span> Terbaru
             </h3>
-            <p style={{ fontSize: '13px', color: '#cccccc', lineHeight: 1.6, marginBottom: 'var(--vivere-space-6)' }}>
+            <p style={{ fontSize: '13px', color: '#cccccc', lineHeight: 1.6, marginBottom: 'var(--retail-space-6)' }}>
               Bergabunglah dengan buletin bulanan kami untuk menerima tips dekorasi interior eksklusif, wawasan material, dan penawaran koleksi terbaru langsung di email Anda.
             </p>
 
@@ -465,7 +465,7 @@ export default function InsightsPage() {
                 />
                 <button
                   type="submit"
-                  className="vivere-btn vivere-btn-primary"
+                  className="retail-btn retail-btn-primary"
                   style={{ fontSize: '12px', padding: '10px 20px', borderRadius: '4px', border: 'none', backgroundColor: '#d9ab7e', color: '#1a1a1a' }}
                   onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#c89a6d'; }}
                   onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#d9ab7e'; }}

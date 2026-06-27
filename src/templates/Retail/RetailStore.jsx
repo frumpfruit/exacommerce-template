@@ -104,7 +104,7 @@ export default function RetailStore() {
 
   // Scroll to top on page change
   useEffect(() => {
-    const themeWrapper = document.querySelector('.vivere-theme');
+    const themeWrapper = document.querySelector('.retail-theme');
     if (themeWrapper) {
       themeWrapper.scrollTop = 0;
       const parent = themeWrapper.parentElement;
@@ -174,83 +174,85 @@ export default function RetailStore() {
   const cartCount = cart.reduce((acc, curr) => acc + curr.quantity, 0);
 
   return (
-    <div className="vivere-theme">
-      {/* Navbar Component */}
-      <Navbar 
-        activePage={activePage} 
-        onNavigate={(page) => {
-          setSelectedProduct(null);
-          setActivePage(page);
-        }} 
-        cartCount={cartCount} 
-        onOpenCart={() => setCartOpen(true)} 
-      />
-
-      {/* Pages Switcher */}
-      <main>
-        {activePage === 'home' && (
-          <HomePage 
-            products={PRODUCTS}
-            onNavigate={(page, prod) => {
-              if (page === 'product-detail') {
-                setSelectedProduct(prod);
-                setActivePage('product-detail');
-              } else {
-                setSelectedProduct(null);
-                setActivePage(page);
-              }
-            }} 
-            onAddToCart={handleAddToCart} 
-          />
-        )}
-        {activePage === 'about' && (
-          <AboutPage />
-        )}
-        {activePage === 'process' && (
-          <ProcessPage onNavigate={(page) => {
+    <div className="retail-theme">
+      <div className="retail-app-container">
+        {/* Navbar Component */}
+        <Navbar 
+          activePage={activePage} 
+          onNavigate={(page) => {
             setSelectedProduct(null);
             setActivePage(page);
-          }} />
-        )}
-        {activePage === 'insights' && (
-          <InsightsPage />
-        )}
-        {activePage === 'contact' && (
-          <ContactPage />
-        )}
-        {activePage === 'store' && (
-          <StorePage 
-            products={PRODUCTS}
-            onAddToCart={handleAddToCart} 
-            onViewDetail={handleViewDetail} 
-          />
-        )}
-        {activePage === 'product-detail' && (
-          <ProductDetailPage 
-            product={selectedProduct}
-            onAddToCart={handleAddToCart}
-            onInquireNow={handleInquireNow}
-            onSelectProduct={handleViewDetail}
-            allProducts={PRODUCTS}
-          />
-        )}
-        {activePage === 'inquiry' && (
-          <InquiryPage 
-            inquiryItems={inquiryItems} 
-            onGoBack={() => {
-              if (selectedProduct) {
-                setActivePage('product-detail');
-              } else {
-                setActivePage('store');
-              }
-            }} 
-            onClearCart={handleClearCart} 
-          />
-        )}
-      </main>
+          }} 
+          cartCount={cartCount} 
+          onOpenCart={() => setCartOpen(true)} 
+        />
 
-      {/* Footer Component */}
-      <Footer onNavigate={setActivePage} />
+        {/* Pages Switcher */}
+        <main>
+          {activePage === 'home' && (
+            <HomePage 
+              products={PRODUCTS}
+              onNavigate={(page, prod) => {
+                if (page === 'product-detail') {
+                  setSelectedProduct(prod);
+                  setActivePage('product-detail');
+                } else {
+                  setSelectedProduct(null);
+                  setActivePage(page);
+                }
+              }} 
+              onAddToCart={handleAddToCart} 
+            />
+          )}
+          {activePage === 'about' && (
+            <AboutPage />
+          )}
+          {activePage === 'process' && (
+            <ProcessPage onNavigate={(page) => {
+              setSelectedProduct(null);
+              setActivePage(page);
+            }} />
+          )}
+          {activePage === 'insights' && (
+            <InsightsPage />
+          )}
+          {activePage === 'contact' && (
+            <ContactPage />
+          )}
+          {activePage === 'store' && (
+            <StorePage 
+              products={PRODUCTS}
+              onAddToCart={handleAddToCart} 
+              onViewDetail={handleViewDetail} 
+            />
+          )}
+          {activePage === 'product-detail' && (
+            <ProductDetailPage 
+              product={selectedProduct}
+              onAddToCart={handleAddToCart}
+              onInquireNow={handleInquireNow}
+              onSelectProduct={handleViewDetail}
+              allProducts={PRODUCTS}
+            />
+          )}
+          {activePage === 'inquiry' && (
+            <InquiryPage 
+              inquiryItems={inquiryItems} 
+              onGoBack={() => {
+                if (selectedProduct) {
+                  setActivePage('product-detail');
+                } else {
+                  setActivePage('store');
+                }
+              }} 
+              onClearCart={handleClearCart} 
+            />
+          )}
+        </main>
+
+        {/* Footer Component */}
+        <Footer onNavigate={setActivePage} />
+      </div>
 
       {/* Cart Drawer Component */}
       {cartOpen && (
@@ -269,9 +271,9 @@ export default function RetailStore() {
             width: '100%',
             maxWidth: '420px',
             height: '100%',
-            backgroundColor: 'var(--vivere-surface-strong)',
-            boxShadow: 'var(--vivere-shadow-1)',
-            padding: 'var(--vivere-space-6) var(--vivere-space-6) var(--vivere-space-8) var(--vivere-space-6)',
+            backgroundColor: 'var(--retail-surface-strong)',
+            boxShadow: 'var(--retail-shadow-1)',
+            padding: 'var(--retail-space-6) var(--retail-space-6) var(--retail-space-8) var(--retail-space-6)',
             display: 'flex',
             flexDirection: 'column',
             animation: 'slideInRight 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
@@ -283,14 +285,14 @@ export default function RetailStore() {
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center',
-              borderBottom: '1px solid var(--vivere-surface-muted)',
-              paddingBottom: 'var(--vivere-space-4)',
-              marginBottom: 'var(--vivere-space-6)'
+              borderBottom: '1px solid var(--retail-surface-muted)',
+              paddingBottom: 'var(--retail-space-4)',
+              marginBottom: 'var(--retail-space-6)'
             }}>
               <h2 style={{
                 fontSize: '18px',
                 fontWeight: 700,
-                color: 'var(--vivere-text-primary)',
+                color: 'var(--retail-text-primary)',
                 margin: 0
               }}>
                 Keranjang Belanja ({cartCount})
@@ -301,9 +303,9 @@ export default function RetailStore() {
                   background: 'none',
                   border: 'none',
                   cursor: 'pointer',
-                  padding: 'var(--vivere-space-2)',
+                  padding: 'var(--retail-space-2)',
                   display: 'flex',
-                  color: 'var(--vivere-text-secondary)',
+                  color: 'var(--retail-text-secondary)',
                   transition: 'color 0.2s'
                 }}
               >
@@ -325,18 +327,18 @@ export default function RetailStore() {
                   justifyContent: 'center',
                   height: '100%',
                   textAlign: 'center',
-                  padding: '0 var(--vivere-space-6)'
+                  padding: '0 var(--retail-space-6)'
                 }}>
                   {/* Shopping Bag Icon */}
                   <div style={{
                     width: '64px',
                     height: '64px',
                     borderRadius: '50%',
-                    backgroundColor: 'var(--vivere-surface-raised)',
+                    backgroundColor: 'var(--retail-surface-raised)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    marginBottom: 'var(--vivere-space-5)',
+                    marginBottom: 'var(--retail-space-5)',
                     color: '#9ca3af'
                   }}>
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
@@ -346,11 +348,11 @@ export default function RetailStore() {
                     </svg>
                   </div>
                   
-                  <h3 style={{ fontSize: '15px', fontWeight: 600, color: 'var(--vivere-text-primary)', marginBottom: 'var(--vivere-space-2)' }}>
+                  <h3 style={{ fontSize: '15px', fontWeight: 600, color: 'var(--retail-text-primary)', marginBottom: 'var(--retail-space-2)' }}>
                     Keranjang Anda kosong
                   </h3>
                   
-                  <p style={{ fontSize: '12px', color: 'var(--vivere-text-secondary)', lineHeight: 1.5, marginBottom: 'var(--vivere-space-6)' }}>
+                  <p style={{ fontSize: '12px', color: 'var(--retail-text-secondary)', lineHeight: 1.5, marginBottom: 'var(--retail-space-6)' }}>
                     Tambahkan produk untuk memulai belanja
                   </p>
 
@@ -360,7 +362,7 @@ export default function RetailStore() {
                       setSelectedProduct(null);
                       setActivePage('store');
                     }}
-                    className="vivere-btn vivere-btn-primary"
+                    className="retail-btn retail-btn-primary"
                     style={{ fontSize: '12px', padding: '10px 20px', borderRadius: '4px' }}
                   >
                     Belanja Sekarang
@@ -368,20 +370,20 @@ export default function RetailStore() {
                 </div>
               ) : (
                 /* Cart Items List */
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--vivere-space-5)' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--retail-space-5)' }}>
                   {cart.map(item => (
                     <div key={item.product.id} style={{
                       display: 'flex',
-                      gap: 'var(--vivere-space-4)',
-                      borderBottom: '1px solid var(--vivere-surface-muted)',
-                      paddingBottom: 'var(--vivere-space-4)'
+                      gap: 'var(--retail-space-4)',
+                      borderBottom: '1px solid var(--retail-surface-muted)',
+                      paddingBottom: 'var(--retail-space-4)'
                     }}>
                       {/* Image Thumbnail */}
                       <div style={{
                         width: '80px',
                         height: '80px',
-                        backgroundColor: 'var(--vivere-surface-raised)',
-                        borderRadius: 'var(--vivere-radius-xs)',
+                        backgroundColor: 'var(--retail-surface-raised)',
+                        borderRadius: 'var(--retail-radius-xs)',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -393,20 +395,20 @@ export default function RetailStore() {
                       {/* Info & Controls */}
                       <div style={{ flexGrow: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                         <div>
-                          <h4 style={{ fontSize: '13px', fontWeight: 700, textTransform: 'uppercase', margin: '0 0 var(--vivere-space-1) 0', color: 'var(--vivere-text-primary)' }}>
+                          <h4 style={{ fontSize: '13px', fontWeight: 700, textTransform: 'uppercase', margin: '0 0 var(--retail-space-1) 0', color: 'var(--retail-text-primary)' }}>
                             {item.product.name}
                           </h4>
-                          <span style={{ fontSize: '12px', color: 'var(--vivere-text-secondary)' }}>
+                          <span style={{ fontSize: '12px', color: 'var(--retail-text-secondary)' }}>
                             {item.product.priceFormatted}
                           </span>
                         </div>
 
                         {/* Quantity controls */}
-                        <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--vivere-space-3)' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--retail-space-3)' }}>
                           <div style={{
                             display: 'flex',
                             alignItems: 'center',
-                            border: '1px solid var(--vivere-surface-muted)',
+                            border: '1px solid var(--retail-surface-muted)',
                             borderRadius: '4px',
                             overflow: 'hidden'
                           }}>
@@ -452,27 +454,27 @@ export default function RetailStore() {
             {/* Drawer Footer (Only if cart not empty) */}
             {cart.length > 0 && (
               <div style={{
-                borderTop: '1px solid var(--vivere-surface-muted)',
-                paddingTop: 'var(--vivere-space-5)',
-                marginTop: 'var(--vivere-space-4)'
+                borderTop: '1px solid var(--retail-surface-muted)',
+                paddingTop: 'var(--retail-space-5)',
+                marginTop: 'var(--retail-space-4)'
               }}>
                 <div style={{
                   display: 'flex',
                   justifyContent: 'space-between',
                   alignItems: 'center',
-                  marginBottom: 'var(--vivere-space-5)'
+                  marginBottom: 'var(--retail-space-5)'
                 }}>
-                  <span style={{ fontSize: '13px', fontWeight: 600, color: 'var(--vivere-text-secondary)' }}>
+                  <span style={{ fontSize: '13px', fontWeight: 600, color: 'var(--retail-text-secondary)' }}>
                     Total Item
                   </span>
-                  <span style={{ fontSize: '16px', fontWeight: 700, color: 'var(--vivere-text-primary)' }}>
+                  <span style={{ fontSize: '16px', fontWeight: 700, color: 'var(--retail-text-primary)' }}>
                     {cartCount} Unit
                   </span>
                 </div>
 
                 <button 
                   onClick={handleCheckout}
-                  className="vivere-btn vivere-btn-primary"
+                  className="retail-btn retail-btn-primary"
                   style={{ width: '100%', padding: '12px 0', fontSize: '12px' }}
                 >
                   Checkout / Kirim Inquiry

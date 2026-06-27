@@ -3,30 +3,30 @@ import React from 'react';
 export default function Hero() {
   return (
     <section style={{ 
-      backgroundColor: 'var(--vivere-surface-raised)',
-      padding: 'var(--vivere-space-10) 0',
+      backgroundColor: 'var(--retail-surface-raised)',
+      padding: 'var(--retail-space-10) 0',
       textAlign: 'center',
-      borderBottom: '1px solid var(--vivere-surface-muted)'
+      borderBottom: '1px solid var(--retail-surface-muted)'
     }}>
-      <div className="vivere-container">
-        <h1 className="vivere-hero-heading" style={{ marginBottom: 'var(--vivere-space-4)' }}>
+      <div className="retail-container">
+        <h1 className="retail-hero-heading" style={{ marginBottom: 'var(--retail-space-4)' }}>
           Elevate Your Space
         </h1>
-        <p className="vivere-subtext" style={{ maxWidth: '600px', margin: '0 auto var(--vivere-space-8)' }}>
+        <p className="retail-subtext" style={{ maxWidth: '600px', margin: '0 auto var(--retail-space-8)' }}>
           Discover our new collection of premium furniture and home accessories. 
           Designed with functional elegance and timeless minimalism.
         </p>
         
-        <div className="vivere-hero-buttons" style={{ marginBottom: 'var(--vivere-space-8)' }}>
-          <button className="vivere-btn vivere-btn-primary">Shop Collection</button>
-          <button className="vivere-btn vivere-btn-secondary">View Lookbook</button>
+        <div className="retail-hero-buttons" style={{ marginBottom: 'var(--retail-space-8)' }}>
+          <button className="retail-btn retail-btn-primary">Shop Collection</button>
+          <button className="retail-btn retail-btn-secondary">View Lookbook</button>
         </div>
 
         {/* Premium Interactive Hero Billboard */}
         <div 
-          className="vivere-hero-billboard-container"
+          className="retail-hero-billboard-container"
           style={{
-            marginTop: 'var(--vivere-space-8)',
+            marginTop: 'var(--retail-space-8)',
             height: '480px'
           }}
         >
@@ -34,7 +34,7 @@ export default function Hero() {
           <img 
             src="/images/retail/hero_living_room_1780307411390.png" 
             alt="Elegant Living Room" 
-            className="vivere-hero-billboard-img"
+            className="retail-hero-billboard-img"
           />
           
           {/* Dark Overlay Gradient */}
@@ -51,7 +51,7 @@ export default function Hero() {
             position: 'relative',
             zIndex: 3,
             color: 'white',
-            padding: 'var(--vivere-space-8) var(--vivere-space-8)',
+            padding: 'var(--retail-space-8) var(--retail-space-8)',
             textAlign: 'left',
             maxWidth: '650px',
             textShadow: '0 2px 4px rgba(0,0,0,0.2)'
@@ -63,7 +63,7 @@ export default function Hero() {
               letterSpacing: '3px',
               color: 'rgba(255, 255, 255, 0.75)',
               display: 'block',
-              marginBottom: 'var(--vivere-space-2)'
+              marginBottom: 'var(--retail-space-2)'
             }}>
               Curated Living Spaces
             </span>
@@ -72,7 +72,7 @@ export default function Hero() {
               fontWeight: 800,
               textTransform: 'uppercase',
               letterSpacing: '1px',
-              marginBottom: 'var(--vivere-space-4)',
+              marginBottom: 'var(--retail-space-4)',
               lineHeight: 1.2,
               color: 'white'
             }}>
@@ -83,12 +83,12 @@ export default function Hero() {
               fontWeight: 400,
               lineHeight: 1.6,
               color: 'rgba(255, 255, 255, 0.85)',
-              marginBottom: 'var(--vivere-space-6)',
+              marginBottom: 'var(--retail-space-6)',
               letterSpacing: '0.2px'
             }}>
               Handcrafted in solid European white oak and premium textured linen, our signature living room set anchors your home with elegant clean silhouettes, subtle organic curves, and unmatched functional longevity.
             </p>
-            <button className="vivere-btn vivere-hero-billboard-btn">
+            <button className="retail-btn retail-hero-billboard-btn">
               Explore Living Room
             </button>
           </div>

@@ -38,24 +38,24 @@ export default function CollectionSlider({
   }, []);
 
   return (
-    <section style={{ backgroundColor: 'var(--nexus-surface-strong)', padding: 'var(--nexus-space-8) 0' }}>
-      <div className="nexus-container">
-        <h2 className="nexus-heading" style={{
-          borderBottom: '1px solid var(--nexus-surface-muted)',
-          paddingBottom: 'var(--nexus-space-3)',
-          marginBottom: 'var(--nexus-space-6)',
+    <section style={{ backgroundColor: 'var(--dist-surface-strong)', padding: 'var(--dist-space-8) 0' }}>
+      <div className="dist-container">
+        <h2 className="dist-heading" style={{
+          borderBottom: '1px solid var(--dist-surface-muted)',
+          paddingBottom: 'var(--dist-space-3)',
+          marginBottom: 'var(--dist-space-6)',
           textAlign: isLeft ? 'left' : 'right'
         }}>
           {title}
         </h2>
 
-        <div className={`nexus-slider-grid ${isLeft ? 'layout-left' : 'layout-right'}`}>
+        <div className={`dist-slider-grid ${isLeft ? 'layout-left' : 'layout-right'}`}>
           {/* Spotlight */}
-          <div className="nexus-slider-spotlight-wrap">
+          <div className="dist-slider-spotlight-wrap">
             {tagline && (
-              <span className="nexus-spotlight-tagline">{tagline}</span>
+              <span className="dist-spotlight-tagline">{tagline}</span>
             )}
-            <div className="nexus-slider-spotlight">
+            <div className="dist-slider-spotlight">
               {/* 📷 IMAGE NEEDED: spotlightImage passed as prop */}
               <div style={{
                 width: '100%', height: '100%',
@@ -79,23 +79,23 @@ export default function CollectionSlider({
 
               <div style={{
                 position: 'absolute', bottom: 0, left: 0, width: '100%',
-                padding: 'var(--nexus-space-6) var(--nexus-space-5)',
+                padding: 'var(--dist-space-6) var(--dist-space-5)',
                 textAlign: 'center', color: 'white', zIndex: 2
               }}>
-                <h3 style={{ fontSize: '28px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '2px', marginBottom: 'var(--nexus-space-3)', lineHeight: 1.1 }}
+                <h3 style={{ fontSize: '28px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '2px', marginBottom: 'var(--dist-space-3)', lineHeight: 1.1 }}
                   dangerouslySetInnerHTML={{ __html: spotlightText }}>
                 </h3>
                 {spotlightDesc && (
                   <p style={{
                     fontSize: '12px', fontWeight: 400, lineHeight: 1.6,
                     color: 'rgba(255, 255, 255, 0.85)',
-                    marginBottom: 'var(--nexus-space-4)',
+                    marginBottom: 'var(--dist-space-4)',
                     maxWidth: '260px', marginLeft: 'auto', marginRight: 'auto'
                   }}>
                     {spotlightDesc}
                   </p>
                 )}
-                <button className="nexus-btn" style={{
+                <button className="dist-btn" style={{
                   backgroundColor: 'transparent', color: 'white',
                   borderColor: 'white', borderWidth: '2px',
                   padding: '8px 24px', fontSize: '12px'
@@ -108,18 +108,18 @@ export default function CollectionSlider({
 
           {/* Carousel */}
           <div
-            className="nexus-slider-carousel-wrap"
+            className="dist-slider-carousel-wrap"
             onMouseEnter={() => { isHovered.current = true; }}
             onMouseLeave={() => { isHovered.current = false; }}
           >
-            <div className="nexus-horizontal-scroll" ref={scrollRef}>
+            <div className="dist-horizontal-scroll" ref={scrollRef}>
               {products.map((item, index) => (
                 <div
                   key={item.id || index}
-                  className="nexus-snap-child nexus-product-card-premium"
+                  className="dist-snap-child dist-product-card-premium"
                   onClick={() => onViewDetail && onViewDetail(item)}
                 >
-                  <div className="nexus-product-image-box">
+                  <div className="dist-product-image-box">
                     {/* 📷 IMAGE NEEDED: product image (item.img) */}
                     <div style={{
                       width: '100%', height: '100%',
@@ -136,14 +136,14 @@ export default function CollectionSlider({
                     <img src={item.img} alt={item.name} onError={(e) => { e.target.style.display = 'none'; }} />
 
                     {item.tag && (
-                      <div className="nexus-product-badge">{item.tag}</div>
+                      <div className="dist-product-badge">{item.tag}</div>
                     )}
 
                     <div className="product-card-overlay" style={{
                       position: 'absolute',
-                      bottom: 'var(--nexus-space-4)',
-                      left: 'var(--nexus-space-3)',
-                      right: 'var(--nexus-space-3)',
+                      bottom: 'var(--dist-space-4)',
+                      left: 'var(--dist-space-3)',
+                      right: 'var(--dist-space-3)',
                       display: 'flex',
                       justifyContent: 'center',
                       zIndex: 3
@@ -153,22 +153,22 @@ export default function CollectionSlider({
                           e.stopPropagation();
                           onAddToCart && onAddToCart(item);
                         }}
-                        className="nexus-btn nexus-btn-primary"
-                        style={{ width: '100%', fontSize: '12px', padding: 'var(--nexus-space-2)' }}
+                        className="dist-btn dist-btn-primary"
+                        style={{ width: '100%', fontSize: '12px', padding: 'var(--dist-space-2)' }}
                       >
                         Add to Cart
                       </button>
                     </div>
                   </div>
 
-                  <h4 style={{ fontSize: 'var(--nexus-text-sm)', fontWeight: 700, marginBottom: 'var(--nexus-space-2)', color: 'var(--nexus-text-primary)' }}>
+                  <h4 style={{ fontSize: 'var(--dist-text-sm)', fontWeight: 700, marginBottom: 'var(--dist-space-2)', color: 'var(--dist-text-primary)' }}>
                     {item.name}
                   </h4>
                   {item.desc && (
                     <p style={{
                       fontSize: '12px', fontWeight: 400,
-                      color: 'var(--nexus-text-secondary)',
-                      marginBottom: 'var(--nexus-space-2)',
+                      color: 'var(--dist-text-secondary)',
+                      marginBottom: 'var(--dist-space-2)',
                       lineHeight: 1.4, opacity: 0.75,
                       minHeight: '34px',
                       display: '-webkit-box',
@@ -181,14 +181,14 @@ export default function CollectionSlider({
                     </p>
                   )}
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <span style={{ fontSize: 'var(--nexus-text-sm)', color: 'var(--nexus-text-primary)', fontWeight: 600 }}>
+                    <span style={{ fontSize: 'var(--dist-text-sm)', color: 'var(--dist-text-primary)', fontWeight: 600 }}>
                       {item.priceFormatted ?? item.price}
                     </span>
                     {item.moq && (
                       <span style={{
-                        fontSize: '11px', color: 'var(--nexus-brand-primary)',
+                        fontSize: '11px', color: 'var(--dist-brand-primary)',
                         fontWeight: 600, backgroundColor: '#EFF6FF',
-                        padding: '2px 8px', borderRadius: 'var(--nexus-radius-xs)'
+                        padding: '2px 8px', borderRadius: 'var(--dist-radius-xs)'
                       }}>
                         MOQ: {item.moq}
                       </span>

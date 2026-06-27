@@ -43,30 +43,30 @@ export default function CollectionSlider({
   }, []);
   
   return (
-    <section style={{ backgroundColor: 'var(--vivere-surface-strong)', padding: 'var(--vivere-space-10) 0' }}>
-      <div className="vivere-container">
+    <section style={{ backgroundColor: 'var(--retail-surface-strong)', padding: 'var(--retail-space-10) 0' }}>
+      <div className="retail-container">
         
         {/* Header Title */}
-        <h2 className="vivere-heading" style={{ 
-          borderBottom: '1px solid var(--vivere-surface-muted)', 
-          paddingBottom: 'var(--vivere-space-4)', 
-          marginBottom: 'var(--vivere-space-8)',
+        <h2 className="retail-heading" style={{ 
+          borderBottom: '1px solid var(--retail-surface-muted)', 
+          paddingBottom: 'var(--retail-space-4)', 
+          marginBottom: 'var(--retail-space-8)',
           textAlign: isLeft ? 'left' : 'right'
         }}>
           {title}
         </h2>
 
         {/* Asymmetric Grid Container */}
-        <div className={`vivere-slider-grid ${isLeft ? 'layout-left' : 'layout-right'}`}>
+        <div className={`retail-slider-grid ${isLeft ? 'layout-left' : 'layout-right'}`}>
           
           {/* SPOTLIGHT WRAPPER COLUMN */}
-          <div className="vivere-slider-spotlight-wrap">
+          <div className="retail-slider-spotlight-wrap">
             {tagline && (
-              <span className="vivere-spotlight-tagline">
+              <span className="retail-spotlight-tagline">
                 {tagline}
               </span>
             )}
-            <div className="vivere-slider-spotlight">
+            <div className="retail-slider-spotlight">
               <img src={spotlightImage} alt={spotlightText} />
               
               {/* Gradient Overlay */}
@@ -83,12 +83,12 @@ export default function CollectionSlider({
                 bottom: 0,
                 left: 0,
                 width: '100%',
-                padding: 'var(--vivere-space-8) var(--vivere-space-6)',
+                padding: 'var(--retail-space-8) var(--retail-space-6)',
                 textAlign: 'center',
                 color: 'white',
                 zIndex: 2
               }}>
-                <h3 style={{ fontSize: '32px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '2px', marginBottom: 'var(--vivere-space-4)', lineHeight: 1.1 }} dangerouslySetInnerHTML={{ __html: spotlightText }}>
+                <h3 style={{ fontSize: '32px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '2px', marginBottom: 'var(--retail-space-4)', lineHeight: 1.1 }} dangerouslySetInnerHTML={{ __html: spotlightText }}>
                 </h3>
                 {spotlightDesc && (
                   <p style={{
@@ -96,7 +96,7 @@ export default function CollectionSlider({
                     fontWeight: 400,
                     lineHeight: 1.6,
                     color: 'rgba(255, 255, 255, 0.85)',
-                    marginBottom: 'var(--vivere-space-5)',
+                    marginBottom: 'var(--retail-space-5)',
                     maxWidth: '260px',
                     marginLeft: 'auto',
                     marginRight: 'auto',
@@ -105,7 +105,7 @@ export default function CollectionSlider({
                     {spotlightDesc}
                   </p>
                 )}
-                <button className="vivere-btn" style={{ 
+                <button className="retail-btn" style={{ 
                   backgroundColor: 'transparent', 
                   color: 'white', 
                   borderColor: 'white',
@@ -121,23 +121,23 @@ export default function CollectionSlider({
 
           {/* HORIZONTAL CAROUSEL COLUMN */}
           <div 
-            className="vivere-slider-carousel-wrap"
+            className="retail-slider-carousel-wrap"
             onMouseEnter={() => { isHovered.current = true; }}
             onMouseLeave={() => { isHovered.current = false; }}
           >
-            <div className="vivere-horizontal-scroll" ref={scrollRef}>
+            <div className="retail-horizontal-scroll" ref={scrollRef}>
               {products.map((item, index) => (
                 <div 
                   key={item.id || index} 
-                  className="vivere-snap-child vivere-product-card-premium"
+                  className="retail-snap-child retail-product-card-premium"
                   onClick={() => onViewDetail && onViewDetail(item)}
                 >
-                  <div className="vivere-product-image-box">
+                  <div className="retail-product-image-box">
                     <img src={item.img} alt={item.name} />
                     
                     {/* Tag Overlay */}
                     {item.tag && (
-                      <div className="vivere-product-badge">
+                      <div className="retail-product-badge">
                         {item.tag}
                       </div>
                     )}
@@ -145,9 +145,9 @@ export default function CollectionSlider({
                     {/* Hover Add to Cart Button */}
                     <div className="product-card-overlay" style={{
                       position: 'absolute',
-                      bottom: 'var(--vivere-space-5)',
-                      left: 'var(--vivere-space-4)',
-                      right: 'var(--vivere-space-4)',
+                      bottom: 'var(--retail-space-5)',
+                      left: 'var(--retail-space-4)',
+                      right: 'var(--retail-space-4)',
                       display: 'flex',
                       justifyContent: 'center',
                       zIndex: 3
@@ -157,23 +157,23 @@ export default function CollectionSlider({
                           e.stopPropagation();
                           onAddToCart && onAddToCart(item);
                         }}
-                        className="vivere-btn vivere-btn-primary" 
-                        style={{ width: '100%', fontSize: '12px', padding: 'var(--vivere-space-3)' }}
+                        className="retail-btn retail-btn-primary" 
+                        style={{ width: '100%', fontSize: '12px', padding: 'var(--retail-space-3)' }}
                       >
                         Masukkan Keranjang
                       </button>
                     </div>
                   </div>
                   
-                  <h4 style={{ fontSize: 'var(--vivere-text-md)', fontWeight: 700, textTransform: 'uppercase', marginBottom: 'var(--vivere-space-2)', color: 'var(--vivere-text-primary)' }}>
+                  <h4 style={{ fontSize: 'var(--retail-text-md)', fontWeight: 700, textTransform: 'uppercase', marginBottom: 'var(--retail-space-2)', color: 'var(--retail-text-primary)' }}>
                     {item.name}
                   </h4>
                   {item.desc && (
                     <p style={{
                       fontSize: '11px',
                       fontWeight: 500,
-                      color: 'var(--vivere-text-secondary)',
-                      marginBottom: 'var(--vivere-space-3)',
+                      color: 'var(--retail-text-secondary)',
+                      marginBottom: 'var(--retail-space-3)',
                       lineHeight: 1.4,
                       opacity: 0.75,
                       minHeight: '32px',
@@ -186,7 +186,7 @@ export default function CollectionSlider({
                       {item.desc}
                     </p>
                   )}
-                  <p style={{ fontSize: 'var(--vivere-text-sm)', color: 'var(--vivere-text-secondary)', fontWeight: 600 }}>
+                  <p style={{ fontSize: 'var(--retail-text-sm)', color: 'var(--retail-text-secondary)', fontWeight: 600 }}>
                     {item.priceFormatted ?? item.price}
                   </p>
                 </div>

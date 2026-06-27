@@ -11,14 +11,14 @@ export default function StorePage({ products = [], onAddToCart, onViewDetail }) 
     : products.filter(p => p.tag === selectedCategory);
 
   return (
-    <div style={{ backgroundColor: 'var(--vivere-surface-raised)', padding: 'var(--vivere-space-10) 0' }}>
-      <div className="vivere-container">
+    <div style={{ backgroundColor: 'var(--retail-surface-raised)', padding: 'var(--retail-space-10) 0' }}>
+      <div className="retail-container">
         {/* Title */}
         <ScrollReveal>
-          <h1 className="vivere-heading" style={{ textAlign: 'center', fontSize: 'var(--vivere-text-xl)', marginBottom: 'var(--vivere-space-4)' }}>
-            Our <span style={{ color: 'var(--vivere-border-strong)' }}>Catalog</span>
+          <h1 className="retail-heading" style={{ textAlign: 'center', fontSize: 'var(--retail-text-xl)', marginBottom: 'var(--retail-space-4)' }}>
+            Our <span style={{ color: 'var(--retail-border-strong)' }}>Catalog</span>
           </h1>
-          <p className="vivere-subtext" style={{ textAlign: 'center', maxWidth: '600px', margin: '0 auto var(--vivere-space-8)' }}>
+          <p className="retail-subtext" style={{ textAlign: 'center', maxWidth: '600px', margin: '0 auto var(--retail-space-8)' }}>
             Kami menghadirkan produk dengan kualitas terbaik untuk Anda. Silakan telusuri katalog mebel kami dan klik detail untuk informasi lebih lanjut.
           </p>
         </ScrollReveal>
@@ -28,20 +28,20 @@ export default function StorePage({ products = [], onAddToCart, onViewDetail }) 
           <div style={{
             display: 'flex',
             justifyContent: 'center',
-            gap: 'var(--vivere-space-3)',
-            marginBottom: 'var(--vivere-space-8)',
+            gap: 'var(--retail-space-3)',
+            marginBottom: 'var(--retail-space-8)',
             flexWrap: 'wrap'
           }}>
             {CATEGORIES.map(cat => (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className="vivere-btn"
+                className="retail-btn"
                 style={{
-                  backgroundColor: selectedCategory === cat ? 'var(--vivere-text-primary)' : 'transparent',
-                  color: selectedCategory === cat ? 'var(--vivere-surface-strong)' : 'var(--vivere-text-primary)',
-                  borderColor: 'var(--vivere-text-primary)',
-                  padding: 'var(--vivere-space-3) var(--vivere-space-6)',
+                  backgroundColor: selectedCategory === cat ? 'var(--retail-text-primary)' : 'transparent',
+                  color: selectedCategory === cat ? 'var(--retail-surface-strong)' : 'var(--retail-text-primary)',
+                  borderColor: 'var(--retail-text-primary)',
+                  padding: 'var(--retail-space-3) var(--retail-space-6)',
                   fontSize: '12px'
                 }}
               >
@@ -56,42 +56,42 @@ export default function StorePage({ products = [], onAddToCart, onViewDetail }) 
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',
-            gap: 'var(--vivere-space-8)'
+            gap: 'var(--retail-space-8)'
           }}>
             {filteredProducts.map(product => (
               <div 
                 key={product.id} 
-                className="vivere-product-card-premium" 
+                className="retail-product-card-premium" 
                 onClick={() => onViewDetail(product)}
                 style={{
-                  backgroundColor: 'var(--vivere-surface-strong)',
-                  border: '1px solid var(--vivere-surface-muted)',
-                  borderRadius: 'var(--vivere-radius-xs)',
-                  padding: 'var(--vivere-space-5)',
+                  backgroundColor: 'var(--retail-surface-strong)',
+                  border: '1px solid var(--retail-surface-muted)',
+                  borderRadius: 'var(--retail-radius-xs)',
+                  padding: 'var(--retail-space-5)',
                   display: 'flex',
                   flexDirection: 'column',
-                  boxShadow: 'var(--vivere-shadow-1)',
+                  boxShadow: 'var(--retail-shadow-1)',
                   textAlign: 'left',
                   cursor: 'pointer'
                 }}
               >
-                <div className="vivere-product-image-box" style={{ 
+                <div className="retail-product-image-box" style={{ 
                   height: '240px', 
-                  backgroundColor: 'var(--vivere-surface-raised)',
-                  marginBottom: 'var(--vivere-space-4)'
+                  backgroundColor: 'var(--retail-surface-raised)',
+                  marginBottom: 'var(--retail-space-4)'
                 }}>
                   <img src={product.img} alt={product.name} style={{ maxWidth: '85%', maxHeight: '85%' }} />
                   
                   {product.tag && (
-                    <span className="vivere-product-badge">{product.tag}</span>
+                    <span className="retail-product-badge">{product.tag}</span>
                   )}
                   
                   {/* Add to Cart Overlay */}
                   <div className="product-card-overlay" style={{
                     position: 'absolute',
-                    bottom: 'var(--vivere-space-3)',
-                    left: 'var(--vivere-space-3)',
-                    right: 'var(--vivere-space-3)',
+                    bottom: 'var(--retail-space-3)',
+                    left: 'var(--retail-space-3)',
+                    right: 'var(--retail-space-3)',
                     zIndex: 3
                   }}>
                     <button 
@@ -99,8 +99,8 @@ export default function StorePage({ products = [], onAddToCart, onViewDetail }) 
                         e.stopPropagation();
                         onAddToCart(product);
                       }}
-                      className="vivere-btn vivere-btn-primary" 
-                      style={{ width: '100%', fontSize: '11px', padding: 'var(--vivere-space-3)' }}
+                      className="retail-btn retail-btn-primary" 
+                      style={{ width: '100%', fontSize: '11px', padding: 'var(--retail-space-3)' }}
                     >
                       Masukkan Keranjang
                     </button>
@@ -111,8 +111,8 @@ export default function StorePage({ products = [], onAddToCart, onViewDetail }) 
                 <h3 style={{ 
                   fontSize: '15px', 
                   fontWeight: 700, 
-                  marginBottom: 'var(--vivere-space-2)',
-                  color: 'var(--vivere-text-primary)',
+                  marginBottom: 'var(--retail-space-2)',
+                  color: 'var(--retail-text-primary)',
                   textTransform: 'uppercase',
                   letterSpacing: '0.5px'
                 }}>
@@ -121,9 +121,9 @@ export default function StorePage({ products = [], onAddToCart, onViewDetail }) 
                 
                 <p style={{
                   fontSize: '11px',
-                  color: 'var(--vivere-text-secondary)',
+                  color: 'var(--retail-text-secondary)',
                   lineHeight: 1.4,
-                  marginBottom: 'var(--vivere-space-3)',
+                  marginBottom: 'var(--retail-space-3)',
                   minHeight: '32px',
                   opacity: 0.8,
                   display: '-webkit-box',
@@ -140,11 +140,11 @@ export default function StorePage({ products = [], onAddToCart, onViewDetail }) 
                   display: 'flex', 
                   justifyContent: 'space-between', 
                   alignItems: 'center',
-                  borderTop: '1px solid var(--vivere-surface-muted)',
-                  paddingTop: 'var(--vivere-space-4)',
-                  gap: 'var(--vivere-space-3)'
+                  borderTop: '1px solid var(--retail-surface-muted)',
+                  paddingTop: 'var(--retail-space-4)',
+                  gap: 'var(--retail-space-3)'
                 }}>
-                  <span style={{ fontSize: '14px', fontWeight: 700, color: 'var(--vivere-text-primary)' }}>
+                  <span style={{ fontSize: '14px', fontWeight: 700, color: 'var(--retail-text-primary)' }}>
                     {product.priceFormatted}
                   </span>
                   
@@ -153,14 +153,14 @@ export default function StorePage({ products = [], onAddToCart, onViewDetail }) 
                       e.stopPropagation();
                       onViewDetail(product);
                     }}
-                    className="vivere-btn"
+                    className="retail-btn"
                     style={{
                       marginLeft: 'auto',
                       padding: '6px 12px',
                       fontSize: '11px',
                       backgroundColor: 'transparent',
-                      color: 'var(--vivere-border-strong)',
-                      borderColor: 'var(--vivere-border-strong)'
+                      color: 'var(--retail-border-strong)',
+                      borderColor: 'var(--retail-border-strong)'
                     }}
                   >
                     Detail

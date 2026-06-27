@@ -35,27 +35,27 @@ export default function CategoryGrid({ onNavigate }) {
   };
 
   return (
-    <section className="vivere-container" style={{ padding: 'var(--vivere-space-7) var(--vivere-space-7) var(--vivere-space-10) var(--vivere-space-7)' }}>
+    <section className="retail-container" style={{ padding: 'var(--retail-space-7) var(--retail-space-7) var(--retail-space-10) var(--retail-space-7)' }}>
       
       {/* Visual Hierarchy: Title & Subtitle */}
-      <div style={{ textAlign: 'center', marginBottom: 'var(--vivere-space-8)' }}>
+      <div style={{ textAlign: 'center', marginBottom: 'var(--retail-space-8)' }}>
         <span style={{
           display: 'block',
           fontSize: '11px',
           fontWeight: 700,
           textTransform: 'uppercase',
           letterSpacing: '2px',
-          color: 'var(--vivere-text-secondary)',
-          marginBottom: 'var(--vivere-space-2)'
+          color: 'var(--retail-text-secondary)',
+          marginBottom: 'var(--retail-space-2)'
         }}>
           Curated Rooms
         </span>
-        <h2 className="vivere-heading" style={{ fontSize: 'var(--vivere-text-lg)', margin: '0 0 10px 0', letterSpacing: '1.5px' }}>
+        <h2 className="retail-heading" style={{ fontSize: 'var(--retail-text-lg)', margin: '0 0 10px 0', letterSpacing: '1.5px' }}>
           Shop by Category
         </h2>
         <p style={{ 
           fontSize: '13.5px', 
-          color: 'var(--vivere-text-secondary)', 
+          color: 'var(--retail-text-secondary)', 
           margin: 0, 
           maxWidth: '520px', 
           marginLeft: 'auto', 
@@ -70,17 +70,17 @@ export default function CategoryGrid({ onNavigate }) {
       <div style={{
         display: 'grid',
         gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-        gap: 'var(--vivere-space-7)'
+        gap: 'var(--retail-space-7)'
       }}>
         {CATEGORIES.map(cat => (
           <div 
             key={cat.id} 
-            className="vivere-category-card" 
+            className="retail-category-card" 
             onClick={handleCategoryClick}
           >
             <img src={cat.img} alt={cat.title} />
-            <div className="vivere-category-overlay" />
-            <div className="vivere-category-content">
+            <div className="retail-category-overlay" />
+            <div className="retail-category-content">
               <h3 style={{ 
                 fontSize: '16px', 
                 fontWeight: 700, 
@@ -91,7 +91,7 @@ export default function CategoryGrid({ onNavigate }) {
                 display: 'flex',
                 alignItems: 'center'
               }}>
-                {cat.title} <span className="vivere-category-arrow">→</span>
+                {cat.title} <span className="retail-category-arrow">→</span>
               </h3>
               <p style={{ 
                 fontSize: '12px', 
@@ -107,24 +107,24 @@ export default function CategoryGrid({ onNavigate }) {
       </div>
 
       {/* View All Collections Link */}
-      <div style={{ textAlign: 'center', marginTop: 'var(--vivere-space-8)' }}>
+      <div style={{ textAlign: 'center', marginTop: 'var(--retail-space-8)' }}>
         <button 
           onClick={handleCategoryClick}
           style={{
             background: 'none',
             border: 'none',
-            color: 'var(--vivere-border-strong)',
+            color: 'var(--retail-border-strong)',
             fontSize: '13px',
             fontWeight: 700,
             textTransform: 'uppercase',
             letterSpacing: '1px',
             cursor: 'pointer',
-            borderBottom: '1px solid var(--vivere-border-strong)',
+            borderBottom: '1px solid var(--retail-border-strong)',
             padding: '2px 0 4px 0',
             transition: 'color 0.2s, border-color 0.2s'
           }}
-          onMouseEnter={(e) => e.currentTarget.style.color = 'var(--vivere-text-primary)'}
-          onMouseLeave={(e) => e.currentTarget.style.color = 'var(--vivere-border-strong)'}
+          onMouseEnter={(e) => e.currentTarget.style.color = 'var(--retail-text-primary)'}
+          onMouseLeave={(e) => e.currentTarget.style.color = 'var(--retail-border-strong)'}
         >
           View All Collections →
         </button>

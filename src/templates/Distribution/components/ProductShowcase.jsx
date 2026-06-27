@@ -7,52 +7,52 @@ export default function ProductShowcase({ products = [], onAddToCart, onViewDeta
 
   return (
     <section style={{
-      backgroundColor: 'var(--nexus-surface-raised)',
-      padding: 'var(--nexus-space-8) 0',
-      borderBottom: '1px solid var(--nexus-surface-muted)'
+      backgroundColor: 'var(--dist-surface-raised)',
+      padding: 'var(--dist-space-8) 0',
+      borderBottom: '1px solid var(--dist-surface-muted)'
     }}>
-      <div className="nexus-container">
-        <div style={{ textAlign: 'center', marginBottom: 'var(--nexus-space-6)' }}>
+      <div className="dist-container">
+        <div style={{ textAlign: 'center', marginBottom: 'var(--dist-space-6)' }}>
           <span style={{
             fontSize: '12px', fontWeight: 700, textTransform: 'uppercase',
-            letterSpacing: '2px', color: 'var(--nexus-brand-primary)'
+            letterSpacing: '2px', color: 'var(--dist-brand-primary)'
           }}>
             Featured
           </span>
           <h2 style={{
             fontSize: '24px', fontWeight: 700,
-            marginTop: 'var(--nexus-space-2)', color: 'var(--nexus-text-primary)'
+            marginTop: 'var(--dist-space-2)', color: 'var(--dist-text-primary)'
           }}>
-            Popular <span style={{ color: 'var(--nexus-brand-primary)' }}>Products</span>
+            Popular <span style={{ color: 'var(--dist-brand-primary)' }}>Products</span>
           </h2>
         </div>
 
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))',
-          gap: 'var(--nexus-space-5)'
+          gap: 'var(--dist-space-5)'
         }}>
           {displayProducts.map(product => (
             <div
               key={product.id}
-              className="nexus-product-card-premium"
+              className="dist-product-card-premium"
               onClick={() => onViewDetail && onViewDetail(product)}
               style={{
-                backgroundColor: 'var(--nexus-surface-strong)',
-                border: '1px solid var(--nexus-surface-muted)',
-                borderRadius: 'var(--nexus-radius-sm)',
-                padding: 'var(--nexus-space-4)',
+                backgroundColor: 'var(--dist-surface-strong)',
+                border: '1px solid var(--dist-surface-muted)',
+                borderRadius: 'var(--dist-radius-sm)',
+                padding: 'var(--dist-space-4)',
                 display: 'flex',
                 flexDirection: 'column',
-                boxShadow: 'var(--nexus-shadow-sm)',
+                boxShadow: 'var(--dist-shadow-sm)',
                 textAlign: 'left',
                 cursor: 'pointer'
               }}
             >
-              <div className="nexus-product-image-box" style={{
+              <div className="dist-product-image-box" style={{
                 height: '200px',
-                backgroundColor: 'var(--nexus-surface-raised)',
-                marginBottom: 'var(--nexus-space-3)',
+                backgroundColor: 'var(--dist-surface-raised)',
+                marginBottom: 'var(--dist-space-3)',
                 position: 'relative'
               }}>
                 {/* 📷 IMAGE NEEDED: product image */}
@@ -70,14 +70,14 @@ export default function ProductShowcase({ products = [], onAddToCart, onViewDeta
                 <img src={product.img} alt={product.name} style={{ maxWidth: '85%', maxHeight: '85%' }} onError={(e) => { e.target.style.display = 'none'; }} />
 
                 {product.tag && (
-                  <span className="nexus-product-badge">{product.tag}</span>
+                  <span className="dist-product-badge">{product.tag}</span>
                 )}
 
                 <div className="product-card-overlay" style={{
                   position: 'absolute',
-                  bottom: 'var(--nexus-space-2)',
-                  left: 'var(--nexus-space-2)',
-                  right: 'var(--nexus-space-2)',
+                  bottom: 'var(--dist-space-2)',
+                  left: 'var(--dist-space-2)',
+                  right: 'var(--dist-space-2)',
                   zIndex: 3
                 }}>
                   <button
@@ -85,8 +85,8 @@ export default function ProductShowcase({ products = [], onAddToCart, onViewDeta
                       e.stopPropagation();
                       onAddToCart && onAddToCart(product);
                     }}
-                    className="nexus-btn nexus-btn-primary"
-                    style={{ width: '100%', fontSize: '12px', padding: 'var(--nexus-space-2)' }}
+                    className="dist-btn dist-btn-primary"
+                    style={{ width: '100%', fontSize: '12px', padding: 'var(--dist-space-2)' }}
                   >
                     Add to Cart
                   </button>
@@ -95,8 +95,8 @@ export default function ProductShowcase({ products = [], onAddToCart, onViewDeta
 
               <h3 style={{
                 fontSize: '14px', fontWeight: 700,
-                marginBottom: 'var(--nexus-space-1)',
-                color: 'var(--nexus-text-primary)'
+                marginBottom: 'var(--dist-space-1)',
+                color: 'var(--dist-text-primary)'
               }}>
                 {product.name}
               </h3>
@@ -104,16 +104,16 @@ export default function ProductShowcase({ products = [], onAddToCart, onViewDeta
               <div style={{
                 marginTop: 'auto',
                 display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-                paddingTop: 'var(--nexus-space-2)'
+                paddingTop: 'var(--dist-space-2)'
               }}>
-                <span style={{ fontSize: '14px', fontWeight: 700, color: 'var(--nexus-text-primary)' }}>
+                <span style={{ fontSize: '14px', fontWeight: 700, color: 'var(--dist-text-primary)' }}>
                   {product.priceFormatted}
                 </span>
                 {product.moq && (
                   <span style={{
-                    fontSize: '11px', color: 'var(--nexus-brand-primary)',
+                    fontSize: '11px', color: 'var(--dist-brand-primary)',
                     fontWeight: 600, backgroundColor: '#EFF6FF',
-                    padding: '2px 6px', borderRadius: 'var(--nexus-radius-xs)'
+                    padding: '2px 6px', borderRadius: 'var(--dist-radius-xs)'
                   }}>
                     MOQ: {product.moq}
                   </span>

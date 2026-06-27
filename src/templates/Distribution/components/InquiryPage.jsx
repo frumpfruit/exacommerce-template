@@ -39,27 +39,27 @@ export default function InquiryPage({ inquiryItems = [], onRemoveItem, onNavigat
 
   if (submitted) {
     return (
-      <div style={{ backgroundColor: 'var(--nexus-surface-raised)', padding: 'var(--nexus-space-10) 0', minHeight: '60vh', display: 'flex', alignItems: 'center' }}>
-        <div className="nexus-container" style={{ textAlign: 'center', maxWidth: '600px' }}>
+      <div style={{ backgroundColor: 'var(--dist-surface-raised)', padding: 'var(--dist-space-10) 0', minHeight: '60vh', display: 'flex', alignItems: 'center' }}>
+        <div className="dist-container" style={{ textAlign: 'center', maxWidth: '600px' }}>
           <div style={{
             width: '80px', height: '80px', borderRadius: '50%',
             backgroundColor: '#F0FDF4', display: 'flex', alignItems: 'center', justifyContent: 'center',
-            margin: '0 auto var(--nexus-space-5)'
+            margin: '0 auto var(--dist-space-5)'
           }}>
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#16A34A" strokeWidth="2.5">
               <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
               <polyline points="22 4 12 14.01 9 11.01"></polyline>
             </svg>
           </div>
-          <h1 style={{ fontSize: '28px', fontWeight: 800, marginBottom: 'var(--nexus-space-3)' }}>
+          <h1 style={{ fontSize: '28px', fontWeight: 800, marginBottom: 'var(--dist-space-3)' }}>
             RFQ Submitted Successfully
           </h1>
-          <p style={{ fontSize: '15px', color: 'var(--nexus-text-secondary)', lineHeight: 1.6, marginBottom: 'var(--nexus-space-6)' }}>
+          <p style={{ fontSize: '15px', color: 'var(--dist-text-secondary)', lineHeight: 1.6, marginBottom: 'var(--dist-space-6)' }}>
             Thank you, {formData.picName}. Your Request for Quotation (RFQ) has been received. Our sales team will review your requirements and send a formal quotation to <strong>{formData.email}</strong> within 24 business hours.
           </p>
           <button 
             onClick={() => onNavigate('home')}
-            className="nexus-btn nexus-btn-primary"
+            className="dist-btn dist-btn-primary"
             style={{ padding: '12px 32px', fontSize: '14px' }}
           >
             Return to Homepage
@@ -70,18 +70,18 @@ export default function InquiryPage({ inquiryItems = [], onRemoveItem, onNavigat
   }
 
   return (
-    <div style={{ backgroundColor: 'var(--nexus-surface-raised)', padding: 'var(--nexus-space-8) 0', minHeight: '80vh' }}>
-      <div className="nexus-container" style={{ maxWidth: '1000px' }}>
+    <div style={{ backgroundColor: 'var(--dist-surface-raised)', padding: 'var(--dist-space-8) 0', minHeight: '80vh' }}>
+      <div className="dist-container" style={{ maxWidth: '1000px' }}>
         
         <ScrollReveal>
-          <div style={{ textAlign: 'center', marginBottom: 'var(--nexus-space-6)' }}>
-            <span style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--nexus-brand-primary)' }}>
+          <div style={{ textAlign: 'center', marginBottom: 'var(--dist-space-6)' }}>
+            <span style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--dist-brand-primary)' }}>
               Procurement
             </span>
-            <h1 style={{ fontSize: '28px', fontWeight: 800, marginTop: 'var(--nexus-space-2)' }}>
-              Request for <span style={{ color: 'var(--nexus-brand-primary)' }}>Quotation</span> (RFQ)
+            <h1 style={{ fontSize: '28px', fontWeight: 800, marginTop: 'var(--dist-space-2)' }}>
+              Request for <span style={{ color: 'var(--dist-brand-primary)' }}>Quotation</span> (RFQ)
             </h1>
-            <p style={{ fontSize: '14px', color: 'var(--nexus-text-secondary)', maxWidth: '600px', margin: 'var(--nexus-space-3) auto 0', lineHeight: 1.6 }}>
+            <p style={{ fontSize: '14px', color: 'var(--dist-text-secondary)', maxWidth: '600px', margin: 'var(--dist-space-3) auto 0', lineHeight: 1.6 }}>
               Complete the form below to receive a formal quotation with bulk volume pricing and estimated delivery timelines.
             </p>
           </div>
@@ -91,58 +91,58 @@ export default function InquiryPage({ inquiryItems = [], onRemoveItem, onNavigat
           <div style={{
             display: 'grid',
             gridTemplateColumns: '1fr',
-            gap: 'var(--nexus-space-6)'
+            gap: 'var(--dist-space-6)'
           }}>
             
             {/* Left: Items List */}
             <ScrollReveal delay={100}>
               <div style={{
-                backgroundColor: 'var(--nexus-surface-strong)',
-                border: '1px solid var(--nexus-surface-muted)',
-                borderRadius: 'var(--nexus-radius-sm)',
-                padding: 'var(--nexus-space-5)',
-                boxShadow: 'var(--nexus-shadow-sm)'
+                backgroundColor: 'var(--dist-surface-strong)',
+                border: '1px solid var(--dist-surface-muted)',
+                borderRadius: 'var(--dist-radius-sm)',
+                padding: 'var(--dist-space-5)',
+                boxShadow: 'var(--dist-shadow-sm)'
               }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 'var(--nexus-space-4)', borderBottom: '1px solid var(--nexus-surface-muted)', paddingBottom: 'var(--nexus-space-3)' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 'var(--dist-space-4)', borderBottom: '1px solid var(--dist-surface-muted)', paddingBottom: 'var(--dist-space-3)' }}>
                   <h2 style={{ fontSize: '16px', fontWeight: 700, margin: 0 }}>
                     Requested Items ({inquiryItems.length})
                   </h2>
                   <button 
                     type="button" 
                     onClick={() => onNavigate('store')}
-                    style={{ background: 'none', border: 'none', color: 'var(--nexus-brand-primary)', fontSize: '13px', fontWeight: 600, cursor: 'pointer' }}
+                    style={{ background: 'none', border: 'none', color: 'var(--dist-brand-primary)', fontSize: '13px', fontWeight: 600, cursor: 'pointer' }}
                   >
                     + Add More Items
                   </button>
                 </div>
 
                 {inquiryItems.length === 0 ? (
-                  <div style={{ padding: 'var(--nexus-space-8) 0', textAlign: 'center', backgroundColor: 'var(--nexus-surface-raised)', borderRadius: 'var(--nexus-radius-xs)' }}>
-                    <p style={{ fontSize: '14px', color: 'var(--nexus-text-secondary)', marginBottom: 'var(--nexus-space-3)' }}>
+                  <div style={{ padding: 'var(--dist-space-8) 0', textAlign: 'center', backgroundColor: 'var(--dist-surface-raised)', borderRadius: 'var(--dist-radius-xs)' }}>
+                    <p style={{ fontSize: '14px', color: 'var(--dist-text-secondary)', marginBottom: 'var(--dist-space-3)' }}>
                       No items added to your RFQ yet.
                     </p>
                     <button 
                       type="button" 
                       onClick={() => onNavigate('store')}
-                      className="nexus-btn nexus-btn-primary"
+                      className="dist-btn dist-btn-primary"
                     >
                       Browse Catalog
                     </button>
                   </div>
                 ) : (
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--nexus-space-4)' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--dist-space-4)' }}>
                     {inquiryItems.map((item, idx) => (
                       <div key={item.id + idx} style={{
                         display: 'flex',
-                        gap: 'var(--nexus-space-4)',
-                        paddingBottom: 'var(--nexus-space-4)',
-                        borderBottom: idx === inquiryItems.length - 1 ? 'none' : '1px solid var(--nexus-surface-muted)'
+                        gap: 'var(--dist-space-4)',
+                        paddingBottom: 'var(--dist-space-4)',
+                        borderBottom: idx === inquiryItems.length - 1 ? 'none' : '1px solid var(--dist-surface-muted)'
                       }}>
                         <div style={{
                           width: '80px', height: '80px',
-                          backgroundColor: 'var(--nexus-surface-raised)',
-                          borderRadius: 'var(--nexus-radius-xs)',
-                          border: '1px solid var(--nexus-surface-muted)',
+                          backgroundColor: 'var(--dist-surface-raised)',
+                          borderRadius: 'var(--dist-radius-xs)',
+                          border: '1px solid var(--dist-surface-muted)',
                           display: 'flex', alignItems: 'center', justifyContent: 'center'
                         }}>
                           <img src={item.img} alt={item.name} style={{ maxWidth: '80%', maxHeight: '80%', objectFit: 'contain' }} onError={(e) => { e.target.style.display = 'none'; }} />
@@ -152,7 +152,7 @@ export default function InquiryPage({ inquiryItems = [], onRemoveItem, onNavigat
                           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                             <div>
                               <h3 style={{ fontSize: '14px', fontWeight: 700, margin: '0 0 4px 0' }}>{item.name}</h3>
-                              <div style={{ fontSize: '12px', color: 'var(--nexus-text-secondary)' }}>
+                              <div style={{ fontSize: '12px', color: 'var(--dist-text-secondary)' }}>
                                 Est. Price: {item.priceFormatted}
                               </div>
                             </div>
@@ -172,7 +172,7 @@ export default function InquiryPage({ inquiryItems = [], onRemoveItem, onNavigat
                           
                           <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '12px', marginTop: '12px' }}>
                             <div>
-                              <label style={{ display: 'block', fontSize: '11px', fontWeight: 600, color: 'var(--nexus-text-secondary)', marginBottom: '4px' }}>
+                              <label style={{ display: 'block', fontSize: '11px', fontWeight: 600, color: 'var(--dist-text-secondary)', marginBottom: '4px' }}>
                                 Target Quantity (Min: {item.moq || '1'})
                               </label>
                               <input 
@@ -197,31 +197,31 @@ export default function InquiryPage({ inquiryItems = [], onRemoveItem, onNavigat
             {/* Right: Company Details Form */}
             <ScrollReveal delay={200}>
               <div style={{
-                backgroundColor: 'var(--nexus-surface-strong)',
-                border: '1px solid var(--nexus-surface-muted)',
-                borderRadius: 'var(--nexus-radius-sm)',
-                padding: 'var(--nexus-space-5)',
-                boxShadow: 'var(--nexus-shadow-sm)'
+                backgroundColor: 'var(--dist-surface-strong)',
+                border: '1px solid var(--dist-surface-muted)',
+                borderRadius: 'var(--dist-radius-sm)',
+                padding: 'var(--dist-space-5)',
+                boxShadow: 'var(--dist-shadow-sm)'
               }}>
-                <h2 style={{ fontSize: '16px', fontWeight: 700, marginBottom: 'var(--nexus-space-4)', borderBottom: '1px solid var(--nexus-surface-muted)', paddingBottom: 'var(--nexus-space-3)' }}>
+                <h2 style={{ fontSize: '16px', fontWeight: 700, marginBottom: 'var(--dist-space-4)', borderBottom: '1px solid var(--dist-surface-muted)', paddingBottom: 'var(--dist-space-3)' }}>
                   Company Information
                 </h2>
                 <style>{`
-                  .nexus-inquiry-grid {
+                  .dist-inquiry-grid {
                     display: grid;
                     grid-template-columns: 1fr 1fr;
-                    gap: var(--nexus-space-4);
-                    margin-bottom: var(--nexus-space-4);
+                    gap: var(--dist-space-4);
+                    margin-bottom: var(--dist-space-4);
                   }
                   @media (max-width: 768px) {
-                    .nexus-inquiry-grid {
+                    .dist-inquiry-grid {
                       grid-template-columns: 1fr;
                     }
                   }
                 `}</style>
-                <div className="nexus-inquiry-grid">
+                <div className="dist-inquiry-grid">
                   <div style={{ gridColumn: '1 / -1' }}>
-                    <label style={{ fontSize: '12px', fontWeight: 600, color: 'var(--nexus-text-primary)', display: 'block', marginBottom: '4px' }}>
+                    <label style={{ fontSize: '12px', fontWeight: 600, color: 'var(--dist-text-primary)', display: 'block', marginBottom: '4px' }}>
                       Company Name <span style={{ color: '#ef4444' }}>*</span>
                     </label>
                     <input 
@@ -232,7 +232,7 @@ export default function InquiryPage({ inquiryItems = [], onRemoveItem, onNavigat
                   </div>
                   
                   <div style={{ gridColumn: '1 / -1' }}>
-                    <label style={{ fontSize: '12px', fontWeight: 600, color: 'var(--nexus-text-primary)', display: 'block', marginBottom: '4px' }}>
+                    <label style={{ fontSize: '12px', fontWeight: 600, color: 'var(--dist-text-primary)', display: 'block', marginBottom: '4px' }}>
                       Tax ID / NPWP (Optional)
                     </label>
                     <input 
@@ -243,7 +243,7 @@ export default function InquiryPage({ inquiryItems = [], onRemoveItem, onNavigat
                   </div>
 
                   <div>
-                    <label style={{ fontSize: '12px', fontWeight: 600, color: 'var(--nexus-text-primary)', display: 'block', marginBottom: '4px' }}>
+                    <label style={{ fontSize: '12px', fontWeight: 600, color: 'var(--dist-text-primary)', display: 'block', marginBottom: '4px' }}>
                       Contact Person (PIC) <span style={{ color: '#ef4444' }}>*</span>
                     </label>
                     <input 
@@ -254,7 +254,7 @@ export default function InquiryPage({ inquiryItems = [], onRemoveItem, onNavigat
                   </div>
 
                   <div>
-                    <label style={{ fontSize: '12px', fontWeight: 600, color: 'var(--nexus-text-primary)', display: 'block', marginBottom: '4px' }}>
+                    <label style={{ fontSize: '12px', fontWeight: 600, color: 'var(--dist-text-primary)', display: 'block', marginBottom: '4px' }}>
                       Industry Sector
                     </label>
                     <select 
@@ -270,7 +270,7 @@ export default function InquiryPage({ inquiryItems = [], onRemoveItem, onNavigat
                   </div>
 
                   <div>
-                    <label style={{ fontSize: '12px', fontWeight: 600, color: 'var(--nexus-text-primary)', display: 'block', marginBottom: '4px' }}>
+                    <label style={{ fontSize: '12px', fontWeight: 600, color: 'var(--dist-text-primary)', display: 'block', marginBottom: '4px' }}>
                       Business Email <span style={{ color: '#ef4444' }}>*</span>
                     </label>
                     <input 
@@ -281,7 +281,7 @@ export default function InquiryPage({ inquiryItems = [], onRemoveItem, onNavigat
                   </div>
 
                   <div>
-                    <label style={{ fontSize: '12px', fontWeight: 600, color: 'var(--nexus-text-primary)', display: 'block', marginBottom: '4px' }}>
+                    <label style={{ fontSize: '12px', fontWeight: 600, color: 'var(--dist-text-primary)', display: 'block', marginBottom: '4px' }}>
                       Phone / WhatsApp <span style={{ color: '#ef4444' }}>*</span>
                     </label>
                     <input 
@@ -292,7 +292,7 @@ export default function InquiryPage({ inquiryItems = [], onRemoveItem, onNavigat
                   </div>
                   
                   <div style={{ gridColumn: '1 / -1' }}>
-                    <label style={{ fontSize: '12px', fontWeight: 600, color: 'var(--nexus-text-primary)', display: 'block', marginBottom: '4px' }}>
+                    <label style={{ fontSize: '12px', fontWeight: 600, color: 'var(--dist-text-primary)', display: 'block', marginBottom: '4px' }}>
                       Expected Delivery Date
                     </label>
                     <input 
@@ -303,7 +303,7 @@ export default function InquiryPage({ inquiryItems = [], onRemoveItem, onNavigat
                   </div>
 
                   <div style={{ gridColumn: '1 / -1' }}>
-                    <label style={{ fontSize: '12px', fontWeight: 600, color: 'var(--nexus-text-primary)', display: 'block', marginBottom: '4px' }}>
+                    <label style={{ fontSize: '12px', fontWeight: 600, color: 'var(--dist-text-primary)', display: 'block', marginBottom: '4px' }}>
                       Additional Notes / Shipping Address
                     </label>
                     <textarea 
@@ -315,18 +315,18 @@ export default function InquiryPage({ inquiryItems = [], onRemoveItem, onNavigat
                 </div>
 
                 <div style={{
-                  backgroundColor: 'var(--nexus-surface-raised)',
-                  padding: 'var(--nexus-space-4)',
-                  borderRadius: 'var(--nexus-radius-xs)',
-                  marginTop: 'var(--nexus-space-5)',
-                  border: '1px solid var(--nexus-surface-muted)'
+                  backgroundColor: 'var(--dist-surface-raised)',
+                  padding: 'var(--dist-space-4)',
+                  borderRadius: 'var(--dist-radius-xs)',
+                  marginTop: 'var(--dist-space-5)',
+                  border: '1px solid var(--dist-surface-muted)'
                 }}>
-                  <p style={{ fontSize: '12px', color: 'var(--nexus-text-secondary)', lineHeight: 1.5, margin: '0 0 var(--nexus-space-3) 0' }}>
+                  <p style={{ fontSize: '12px', color: 'var(--dist-text-secondary)', lineHeight: 1.5, margin: '0 0 var(--dist-space-3) 0' }}>
                     By submitting this RFQ, you agree that our sales team will contact you with a formal quotation. This is not a binding purchase contract until the quotation is approved.
                   </p>
                   <button 
                     type="submit" 
-                    className="nexus-btn nexus-btn-primary"
+                    className="dist-btn dist-btn-primary"
                     disabled={inquiryItems.length === 0}
                     style={{ 
                       width: '100%', padding: '14px', fontSize: '14px',

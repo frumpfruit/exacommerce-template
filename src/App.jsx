@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import RetailStore from './templates/Retail/RetailStore';
 import DistributionStore from './templates/Distribution/DistributionStore';
+import SupplementStore from './templates/Supplement/SupplementStore';
 
 // Pure, minimal geometric mockups (No emojis, no AI-slop)
 const MockupA = () => (
@@ -46,7 +47,7 @@ const MockupD = () => (
 const TEMPLATES = [
   { id: 'retail', title: 'Retail & Online Store (HAVEN)', category: 'E-commerce', svg: <MockupC /> },
   { id: 'distribution', title: 'Distribution & Wholesale (NEXUS)', category: 'E-commerce', svg: <MockupB /> },
-  { id: 'marketing', title: 'Marketing Site', category: 'Landing Page', svg: <MockupA /> },
+  { id: 'marketing', title: 'Supplement & Health Compro (NUTRIPRIDE)', category: 'Landing Page', svg: <MockupA /> },
   { id: 'dashboard', title: 'Web App Interface', category: 'Dashboard', svg: <MockupB /> },
   { id: 'profile', title: 'Creator Profile', category: 'Portfolio', svg: <MockupC /> },
   { id: 'analytics', title: 'Data Analytics', category: 'SaaS', svg: <MockupD /> },
@@ -163,6 +164,8 @@ export default function App() {
             <RetailStore />
           ) : currentRoute === 'distribution' ? (
             <DistributionStore />
+          ) : currentRoute === 'marketing' ? (
+            <SupplementStore />
           ) : (
             <div style={{ maxWidth: '800px', margin: '80px auto', textAlign: 'center', padding: '0 20px' }}>
               <h1 className="display-md" style={{ marginBottom: '15px' }}>

@@ -57,14 +57,14 @@ export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }
 
   if (success) {
     return (
-      <div style={{ backgroundColor: 'var(--vivere-surface-raised)', padding: 'var(--vivere-space-10) 0', minHeight: '60vh', display: 'flex', alignItems: 'center' }}>
-        <div className="vivere-container" style={{ maxWidth: '600px', width: '100%' }}>
+      <div style={{ backgroundColor: 'var(--retail-surface-raised)', padding: 'var(--retail-space-10) 0', minHeight: '60vh', display: 'flex', alignItems: 'center' }}>
+        <div className="retail-container" style={{ maxWidth: '600px', width: '100%' }}>
           <div style={{
-            backgroundColor: 'var(--vivere-surface-strong)',
-            border: '1px solid var(--vivere-surface-muted)',
-            borderRadius: 'var(--vivere-radius-xs)',
-            padding: 'var(--vivere-space-9) var(--vivere-space-8)',
-            boxShadow: 'var(--vivere-shadow-1)',
+            backgroundColor: 'var(--retail-surface-strong)',
+            border: '1px solid var(--retail-surface-muted)',
+            borderRadius: 'var(--retail-radius-xs)',
+            padding: 'var(--retail-space-9) var(--retail-space-8)',
+            boxShadow: 'var(--retail-shadow-1)',
             textAlign: 'center'
           }}>
             {/* Paper Airplane Success Icon */}
@@ -72,14 +72,14 @@ export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }
               width: '80px',
               height: '80px',
               borderRadius: '50%',
-              backgroundColor: 'var(--vivere-surface-raised)',
+              backgroundColor: 'var(--retail-surface-raised)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              margin: '0 auto var(--vivere-space-6)',
-              border: '2px solid var(--vivere-border-strong)'
+              margin: '0 auto var(--retail-space-6)',
+              border: '2px solid var(--retail-border-strong)'
             }}>
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--vivere-border-strong)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--retail-border-strong)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="22" y1="2" x2="11" y2="13"></line>
                 <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
               </svg>
@@ -90,25 +90,25 @@ export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }
               fontWeight: 700,
               textTransform: 'uppercase',
               letterSpacing: '1px',
-              color: 'var(--vivere-text-primary)',
-              marginBottom: 'var(--vivere-space-4)'
+              color: 'var(--retail-text-primary)',
+              marginBottom: 'var(--retail-space-4)'
             }}>
               Inquiry Terkirim!
             </h1>
 
             <p style={{
               fontSize: '14px',
-              color: 'var(--vivere-text-secondary)',
+              color: 'var(--retail-text-secondary)',
               lineHeight: 1.6,
-              marginBottom: 'var(--vivere-space-8)'
+              marginBottom: 'var(--retail-space-8)'
             }}>
               Terima kasih, <strong>{namaLengkap}</strong>. Permintaan inquiry Anda telah berhasil dikirim ke sales desk HAVEN. Salinan inquiry telah dikirimkan ke <strong>{email}</strong>. Tim kami akan segera menghubungi Anda.
             </p>
 
             <button
               onClick={onGoBack}
-              className="vivere-btn vivere-btn-primary"
-              style={{ width: '100%', padding: 'var(--vivere-space-4)' }}
+              className="retail-btn retail-btn-primary"
+              style={{ width: '100%', padding: 'var(--retail-space-4)' }}
             >
               Kembali ke Toko
             </button>
@@ -119,15 +119,15 @@ export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }
   }
 
   return (
-    <div style={{ backgroundColor: 'var(--vivere-surface-raised)', padding: 'var(--vivere-space-8) 0' }}>
-      <div className="vivere-container" style={{ maxWidth: '1000px' }}>
+    <div style={{ backgroundColor: 'var(--retail-surface-raised)', padding: 'var(--retail-space-8) 0' }}>
+      <div className="retail-container" style={{ maxWidth: '1000px' }}>
 
         {/* Main Header */}
-        <div style={{ marginBottom: 'var(--vivere-space-7)' }}>
-          <h1 style={{ fontSize: '24px', fontWeight: 700, color: 'var(--vivere-text-primary)', margin: '0 0 var(--vivere-space-1) 0' }}>
+        <div style={{ marginBottom: 'var(--retail-space-7)' }}>
+          <h1 style={{ fontSize: '24px', fontWeight: 700, color: 'var(--retail-text-primary)', margin: '0 0 var(--retail-space-1) 0' }}>
             Kirim Inquiry
           </h1>
-          <p style={{ fontSize: '13px', color: 'var(--vivere-text-secondary)', margin: 0 }}>
+          <p style={{ fontSize: '13px', color: 'var(--retail-text-secondary)', margin: 0 }}>
             Isi formulir berikut untuk menghubungi seller mengenai produk ini.
           </p>
         </div>
@@ -136,26 +136,26 @@ export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-          gap: 'var(--vivere-space-7)',
+          gap: 'var(--retail-space-7)',
           alignItems: 'start'
         }}>
 
           {/* LEFT PANEL: Ringkasan Produk */}
           <div style={{
-            backgroundColor: 'var(--vivere-surface-strong)',
-            border: '1px solid var(--vivere-surface-muted)',
-            borderRadius: 'var(--vivere-radius-xs)',
-            padding: 'var(--vivere-space-6)',
-            boxShadow: 'var(--vivere-shadow-1)'
+            backgroundColor: 'var(--retail-surface-strong)',
+            border: '1px solid var(--retail-surface-muted)',
+            borderRadius: 'var(--retail-radius-xs)',
+            padding: 'var(--retail-space-6)',
+            boxShadow: 'var(--retail-shadow-1)'
           }}>
             <h2 style={{
               fontSize: '15px',
               fontWeight: 700,
-              color: 'var(--vivere-text-primary)',
-              margin: '0 0 var(--vivere-space-5) 0',
+              color: 'var(--retail-text-primary)',
+              margin: '0 0 var(--retail-space-5) 0',
               display: 'flex',
               alignItems: 'center',
-              gap: 'var(--vivere-space-2)'
+              gap: 'var(--retail-space-2)'
             }}>
               {/* Shopping Cart Icon */}
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -167,23 +167,23 @@ export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }
             </h2>
 
             {/* List of items being checked out */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--vivere-space-6)' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--retail-space-6)' }}>
               {items.map((item, index) => {
                 const prod = item.product;
                 const activeQty = isSingleItem ? quantity : item.quantity;
                 return (
-                  <div key={prod.id || index} style={{ borderBottom: index < items.length - 1 ? '1px solid var(--vivere-surface-muted)' : 'none', paddingBottom: index < items.length - 1 ? 'var(--vivere-space-6)' : 0 }}>
+                  <div key={prod.id || index} style={{ borderBottom: index < items.length - 1 ? '1px solid var(--retail-surface-muted)' : 'none', paddingBottom: index < items.length - 1 ? 'var(--retail-space-6)' : 0 }}>
                     {/* Image Wrapper */}
                     <div style={{
-                      backgroundColor: 'var(--vivere-surface-raised)',
-                      borderRadius: 'var(--vivere-radius-xs)',
-                      padding: 'var(--vivere-space-4)',
+                      backgroundColor: 'var(--retail-surface-raised)',
+                      borderRadius: 'var(--retail-radius-xs)',
+                      padding: 'var(--retail-space-4)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                       height: '240px',
-                      marginBottom: 'var(--vivere-space-4)',
-                      border: '1px solid var(--vivere-surface-muted)'
+                      marginBottom: 'var(--retail-space-4)',
+                      border: '1px solid var(--retail-surface-muted)'
                     }}>
                       <img
                         src={prod.img}
@@ -196,17 +196,17 @@ export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }
                     <h3 style={{
                       fontSize: '16px',
                       fontWeight: 700,
-                      color: 'var(--vivere-text-primary)',
-                      margin: '0 0 var(--vivere-space-2) 0'
+                      color: 'var(--retail-text-primary)',
+                      margin: '0 0 var(--retail-space-2) 0'
                     }}>
                       {prod.name}
                     </h3>
 
                     {/* Tag badge */}
-                    <div style={{ marginBottom: 'var(--vivere-space-5)' }}>
+                    <div style={{ marginBottom: 'var(--retail-space-5)' }}>
                       <span style={{
-                        backgroundColor: 'var(--vivere-surface-muted)',
-                        color: 'var(--vivere-text-secondary)',
+                        backgroundColor: 'var(--retail-surface-muted)',
+                        color: 'var(--retail-text-secondary)',
                         fontSize: '11px',
                         fontWeight: 600,
                         padding: '4px 12px',
@@ -220,19 +220,19 @@ export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }
                     </div>
 
                     {/* Pricing and Stock Detail Row */}
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--vivere-space-3)' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--retail-space-3)' }}>
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                        <span style={{ fontSize: '13px', color: 'var(--vivere-text-secondary)' }}>Harga Satuan</span>
-                        <span style={{ fontSize: '14px', fontWeight: 600, color: 'var(--vivere-text-primary)' }}>
+                        <span style={{ fontSize: '13px', color: 'var(--retail-text-secondary)' }}>Harga Satuan</span>
+                        <span style={{ fontSize: '14px', fontWeight: 600, color: 'var(--retail-text-primary)' }}>
                           {prod.priceFormatted || `Rp ${prod.price}`}
                         </span>
                       </div>
 
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                        <span style={{ fontSize: '13px', color: 'var(--vivere-text-secondary)' }}>Stok Tersedia</span>
+                        <span style={{ fontSize: '13px', color: 'var(--retail-text-secondary)' }}>Stok Tersedia</span>
                         <span style={{
-                          backgroundColor: 'var(--vivere-surface-base)',
-                          color: 'var(--vivere-surface-strong)',
+                          backgroundColor: 'var(--retail-surface-base)',
+                          color: 'var(--retail-surface-strong)',
                           fontSize: '11px',
                           fontWeight: 700,
                           padding: '3px 10px',
@@ -243,15 +243,15 @@ export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }
                       </div>
 
                       {/* Quantity & Calculated Total */}
-                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px dashed var(--vivere-surface-muted)', paddingTop: 'var(--vivere-space-3)', marginTop: 'var(--vivere-space-1)' }}>
-                        <span style={{ fontSize: '13px', color: 'var(--vivere-text-secondary)', fontWeight: 600 }}>Jumlah Dipesan</span>
-                        <span style={{ fontSize: '13px', fontWeight: 700, color: 'var(--vivere-text-primary)' }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px dashed var(--retail-surface-muted)', paddingTop: 'var(--retail-space-3)', marginTop: 'var(--retail-space-1)' }}>
+                        <span style={{ fontSize: '13px', color: 'var(--retail-text-secondary)', fontWeight: 600 }}>Jumlah Dipesan</span>
+                        <span style={{ fontSize: '13px', fontWeight: 700, color: 'var(--retail-text-primary)' }}>
                           {activeQty} unit
                         </span>
                       </div>
 
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                        <span style={{ fontSize: '13px', color: 'var(--vivere-text-secondary)', fontWeight: 600 }}>Total Harga</span>
+                        <span style={{ fontSize: '13px', color: 'var(--retail-text-secondary)', fontWeight: 600 }}>Total Harga</span>
                         <span style={{ fontSize: '16px', fontWeight: 700, color: '#3b82f6' }}>
                           {formatTotal(prod.price, activeQty, prod.priceFormatted)}
                         </span>
@@ -264,14 +264,14 @@ export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }
               {/* Multi-item Grand Total */}
               {!isSingleItem && (
                 <div style={{
-                  borderTop: '2px solid var(--vivere-surface-muted)',
-                  paddingTop: 'var(--vivere-space-4)',
-                  marginTop: 'var(--vivere-space-2)',
+                  borderTop: '2px solid var(--retail-surface-muted)',
+                  paddingTop: 'var(--retail-space-4)',
+                  marginTop: 'var(--retail-space-2)',
                   display: 'flex',
                   justifyContent: 'space-between',
                   alignItems: 'center'
                 }}>
-                  <span style={{ fontSize: '14px', fontWeight: 700, color: 'var(--vivere-text-primary)' }}>Grand Total</span>
+                  <span style={{ fontSize: '14px', fontWeight: 700, color: 'var(--retail-text-primary)' }}>Grand Total</span>
                   <span style={{ fontSize: '18px', fontWeight: 800, color: '#3b82f6' }}>
                     {calculateCartGrandTotal()}
                   </span>
@@ -282,22 +282,22 @@ export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }
 
           {/* RIGHT PANEL: Formulir Inquiry */}
           <div style={{
-            backgroundColor: 'var(--vivere-surface-strong)',
-            border: '1px solid var(--vivere-surface-muted)',
-            borderRadius: 'var(--vivere-radius-xs)',
-            padding: 'var(--vivere-space-7)',
-            boxShadow: 'var(--vivere-shadow-1)'
+            backgroundColor: 'var(--retail-surface-strong)',
+            border: '1px solid var(--retail-surface-muted)',
+            borderRadius: 'var(--retail-radius-xs)',
+            padding: 'var(--retail-space-7)',
+            boxShadow: 'var(--retail-shadow-1)'
           }}>
             {/* Header */}
-            <div style={{ borderBottom: '1px solid var(--vivere-surface-muted)', paddingBottom: 'var(--vivere-space-4)', marginBottom: 'var(--vivere-space-6)' }}>
+            <div style={{ borderBottom: '1px solid var(--retail-surface-muted)', paddingBottom: 'var(--retail-space-4)', marginBottom: 'var(--retail-space-6)' }}>
               <h2 style={{
                 fontSize: '16px',
                 fontWeight: 700,
-                color: 'var(--vivere-text-primary)',
-                margin: '0 0 var(--vivere-space-1) 0',
+                color: 'var(--retail-text-primary)',
+                margin: '0 0 var(--retail-space-1) 0',
                 display: 'flex',
                 alignItems: 'center',
-                gap: 'var(--vivere-space-2)'
+                gap: 'var(--retail-space-2)'
               }}>
                 {/* Paper Airplane Icon */}
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" strokeWidth="2">
@@ -306,25 +306,25 @@ export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }
                 </svg>
                 Formulir Inquiry
               </h2>
-              <p style={{ fontSize: '12px', color: 'var(--vivere-text-secondary)', margin: 0 }}>
+              <p style={{ fontSize: '12px', color: 'var(--retail-text-secondary)', margin: 0 }}>
                 Lengkapi informasi dibawah untuk mengirim inquiry kepada seller
               </p>
             </div>
 
-            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 'var(--vivere-space-6)' }}>
+            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 'var(--retail-space-6)' }}>
 
               {/* SECTION: Informasi Pribadi */}
               <div>
                 <h3 style={{
                   fontSize: '13px',
                   fontWeight: 700,
-                  color: 'var(--vivere-text-primary)',
-                  margin: '0 0 var(--vivere-space-4) 0',
+                  color: 'var(--retail-text-primary)',
+                  margin: '0 0 var(--retail-space-4) 0',
                   display: 'flex',
                   alignItems: 'center',
-                  gap: 'var(--vivere-space-2)',
-                  borderBottom: '1px dashed var(--vivere-surface-muted)',
-                  paddingBottom: 'var(--vivere-space-2)'
+                  gap: 'var(--retail-space-2)',
+                  borderBottom: '1px dashed var(--retail-surface-muted)',
+                  paddingBottom: 'var(--retail-space-2)'
                 }}>
                   {/* User Icon */}
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -338,12 +338,12 @@ export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }
                 <div style={{
                   display: 'grid',
                   gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-                  gap: 'var(--vivere-space-4)',
-                  marginBottom: 'var(--vivere-space-4)'
+                  gap: 'var(--retail-space-4)',
+                  marginBottom: 'var(--retail-space-4)'
                 }}>
                   {/* Nama Lengkap */}
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--vivere-space-1)' }}>
-                    <label style={{ fontSize: '12px', fontWeight: 600, color: 'var(--vivere-text-primary)' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--retail-space-1)' }}>
+                    <label style={{ fontSize: '12px', fontWeight: 600, color: 'var(--retail-text-primary)' }}>
                       Nama Lengkap <span style={{ color: '#ef4444' }}>*</span>
                     </label>
                     <div style={{ position: 'relative' }}>
@@ -365,7 +365,7 @@ export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }
                           border: '1px solid #d1d5db',
                           borderRadius: '6px',
                           fontFamily: 'inherit',
-                          fontSize: 'var(--vivere-text-sm)',
+                          fontSize: 'var(--retail-text-sm)',
                           outline: 'none'
                         }}
                       />
@@ -373,8 +373,8 @@ export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }
                   </div>
 
                   {/* Email */}
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--vivere-space-1)' }}>
-                    <label style={{ fontSize: '12px', fontWeight: 600, color: 'var(--vivere-text-primary)' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--retail-space-1)' }}>
+                    <label style={{ fontSize: '12px', fontWeight: 600, color: 'var(--retail-text-primary)' }}>
                       Email <span style={{ color: '#ef4444' }}>*</span>
                     </label>
                     <div style={{ position: 'relative' }}>
@@ -396,7 +396,7 @@ export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }
                           border: '1px solid #d1d5db',
                           borderRadius: '6px',
                           fontFamily: 'inherit',
-                          fontSize: 'var(--vivere-text-sm)',
+                          fontSize: 'var(--retail-text-sm)',
                           outline: 'none'
                         }}
                       />
@@ -405,8 +405,8 @@ export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }
                 </div>
 
                 {/* No. Telepon */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--vivere-space-1)' }}>
-                  <label style={{ fontSize: '12px', fontWeight: 600, color: 'var(--vivere-text-primary)' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--retail-space-1)' }}>
+                  <label style={{ fontSize: '12px', fontWeight: 600, color: 'var(--retail-text-primary)' }}>
                     No. Telepon <span style={{ color: '#ef4444' }}>*</span>
                   </label>
                   <div style={{ position: 'relative' }}>
@@ -427,7 +427,7 @@ export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }
                         border: '1px solid #d1d5db',
                         borderRadius: '6px',
                         fontFamily: 'inherit',
-                        fontSize: 'var(--vivere-text-sm)',
+                        fontSize: 'var(--retail-text-sm)',
                         outline: 'none'
                       }}
                     />
@@ -443,13 +443,13 @@ export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }
                 <h3 style={{
                   fontSize: '13px',
                   fontWeight: 700,
-                  color: 'var(--vivere-text-primary)',
-                  margin: '0 0 var(--vivere-space-4) 0',
+                  color: 'var(--retail-text-primary)',
+                  margin: '0 0 var(--retail-space-4) 0',
                   display: 'flex',
                   alignItems: 'center',
-                  gap: 'var(--vivere-space-2)',
-                  borderBottom: '1px dashed var(--vivere-surface-muted)',
-                  paddingBottom: 'var(--vivere-space-2)'
+                  gap: 'var(--retail-space-2)',
+                  borderBottom: '1px dashed var(--retail-surface-muted)',
+                  paddingBottom: 'var(--retail-space-2)'
                 }}>
                   {/* Box Icon */}
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -464,13 +464,13 @@ export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }
                 <div style={{
                   display: 'grid',
                   gridTemplateColumns: '1fr 1fr',
-                  gap: 'var(--vivere-space-4)',
-                  marginBottom: 'var(--vivere-space-4)',
+                  gap: 'var(--retail-space-4)',
+                  marginBottom: 'var(--retail-space-4)',
                   alignItems: 'end'
                 }}>
                   {/* Quantity */}
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--vivere-space-1)' }}>
-                    <label style={{ fontSize: '12px', fontWeight: 600, color: 'var(--vivere-text-primary)' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--retail-space-1)' }}>
+                    <label style={{ fontSize: '12px', fontWeight: 600, color: 'var(--retail-text-primary)' }}>
                       Quantity <span style={{ color: '#ef4444' }}>*</span>
                     </label>
                     <div style={{ position: 'relative' }}>
@@ -493,7 +493,7 @@ export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }
                           border: '1px solid #d1d5db',
                           borderRadius: '6px',
                           fontFamily: 'inherit',
-                          fontSize: 'var(--vivere-text-sm)',
+                          fontSize: 'var(--retail-text-sm)',
                           outline: 'none'
                         }}
                       />
@@ -501,8 +501,8 @@ export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }
                   </div>
 
                   {/* Expected Price */}
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--vivere-space-1)' }}>
-                    <label style={{ fontSize: '12px', fontWeight: 600, color: 'var(--vivere-text-secondary)' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--retail-space-1)' }}>
+                    <label style={{ fontSize: '12px', fontWeight: 600, color: 'var(--retail-text-secondary)' }}>
                       Harga/Unit <span style={{ fontSize: '10px', color: '#9ca3af' }}>(opsional)</span>
                     </label>
                     <div style={{ position: 'relative' }}>
@@ -529,7 +529,7 @@ export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }
                           border: '1px solid #d1d5db',
                           borderRadius: '6px',
                           fontFamily: 'inherit',
-                          fontSize: 'var(--vivere-text-sm)',
+                          fontSize: 'var(--retail-text-sm)',
                           outline: 'none'
                         }}
                       />
@@ -538,8 +538,8 @@ export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }
                 </div>
 
                 {/* Pesan */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--vivere-space-1)' }}>
-                  <label style={{ fontSize: '12px', fontWeight: 600, color: 'var(--vivere-text-primary)' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--retail-space-1)' }}>
+                  <label style={{ fontSize: '12px', fontWeight: 600, color: 'var(--retail-text-primary)' }}>
                     Pesan <span style={{ color: '#ef4444' }}>*</span>
                   </label>
                   <div style={{ position: 'relative' }}>
@@ -560,7 +560,7 @@ export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }
                         border: '1px solid #d1d5db',
                         borderRadius: '6px',
                         fontFamily: 'inherit',
-                        fontSize: 'var(--vivere-text-sm)',
+                        fontSize: 'var(--retail-text-sm)',
                         outline: 'none',
                         resize: 'vertical'
                       }}
@@ -574,29 +574,29 @@ export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
-                gap: 'var(--vivere-space-4)',
-                borderTop: '1px solid var(--vivere-surface-muted)',
-                paddingTop: 'var(--vivere-space-6)',
-                marginTop: 'var(--vivere-space-2)'
+                gap: 'var(--retail-space-4)',
+                borderTop: '1px solid var(--retail-surface-muted)',
+                paddingTop: 'var(--retail-space-6)',
+                marginTop: 'var(--retail-space-2)'
               }}>
                 <button
                   type="button"
                   onClick={onGoBack}
                   style={{
-                    backgroundColor: 'var(--vivere-surface-strong)',
+                    backgroundColor: 'var(--retail-surface-strong)',
                     border: '1px solid #d1d5db',
                     borderRadius: '6px',
                     padding: '10px 20px',
                     cursor: 'pointer',
                     fontSize: '14px',
                     fontWeight: 600,
-                    color: 'var(--vivere-text-primary)',
+                    color: 'var(--retail-text-primary)',
                     display: 'inline-flex',
                     alignItems: 'center',
-                    gap: 'var(--vivere-space-2)',
+                    gap: 'var(--retail-space-2)',
                     transition: 'all 0.2s ease'
                   }}
-                  className="vivere-btn-back"
+                  className="retail-btn-back"
                 >
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <line x1="19" y1="12" x2="5" y2="12"></line>
@@ -619,11 +619,11 @@ export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }
                     display: 'inline-flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    gap: 'var(--vivere-space-2)',
+                    gap: 'var(--retail-space-2)',
                     transition: 'all 0.2s ease',
                     flexGrow: 1
                   }}
-                  className="vivere-btn-submit-inquiry"
+                  className="retail-btn-submit-inquiry"
                 >
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <line x1="22" y1="2" x2="11" y2="13"></line>

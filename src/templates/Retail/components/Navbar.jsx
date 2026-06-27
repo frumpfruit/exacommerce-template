@@ -19,44 +19,44 @@ export default function Navbar({ activePage, onNavigate, cartCount, onOpenCart }
 
   return (
     <header style={{ 
-      borderBottom: '1px solid var(--vivere-surface-muted)',
-      backgroundColor: 'var(--vivere-surface-strong)',
+      borderBottom: '1px solid var(--retail-surface-muted)',
+      backgroundColor: 'var(--retail-surface-strong)',
       position: 'sticky',
       top: 0,
       zIndex: 100
     }}>
       {/* Announcement Bar */}
       <div style={{
-        backgroundColor: 'var(--vivere-surface-base)',
-        color: 'var(--vivere-surface-strong)',
+        backgroundColor: 'var(--retail-surface-base)',
+        color: 'var(--retail-surface-strong)',
         textAlign: 'center',
-        padding: 'var(--vivere-space-2)',
-        fontSize: 'var(--vivere-text-xs)',
+        padding: 'var(--retail-space-2)',
+        fontSize: 'var(--retail-text-xs)',
         fontWeight: 600,
         letterSpacing: '0.5px'
       }}>
         Premium Furniture & Home Accessories • Free Shipping on Orders Over $100
       </div>
 
-      <div className="vivere-container" style={{
+      <div className="retail-container" style={{
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-        paddingTop: 'var(--vivere-space-5)',
-        paddingBottom: 'var(--vivere-space-5)',
+        paddingTop: 'var(--retail-space-5)',
+        paddingBottom: 'var(--retail-space-5)',
         position: 'relative'
       }}>
         {/* Left Side: Hamburger, Logo, Links */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--vivere-space-8)' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--retail-space-8)' }}>
           {/* Hamburger Menu (Mobile Only) */}
           <button 
-            className="vivere-mobile-menu-btn"
+            className="retail-mobile-menu-btn"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             style={{
               background: 'none',
               border: 'none',
               cursor: 'pointer',
-              color: 'var(--vivere-text-primary)',
+              color: 'var(--retail-text-primary)',
               alignItems: 'center'
             }}
           >
@@ -80,19 +80,19 @@ export default function Navbar({ activePage, onNavigate, cartCount, onOpenCart }
           <div 
             onClick={() => handleNavClick('home')}
             style={{
-              fontSize: 'var(--vivere-text-xl)',
+              fontSize: 'var(--retail-text-xl)',
               fontWeight: 700,
               letterSpacing: '2px',
               cursor: 'pointer',
-              color: 'var(--vivere-text-primary)'
+              color: 'var(--retail-text-primary)'
             }}
-            className="vivere-logo"
+            className="retail-logo"
           >
             HAVEN
           </div>
 
           {/* Navigation Links (Desktop Only) */}
-          <nav className="vivere-nav-links" style={{ alignItems: 'center' }}>
+          <nav className="retail-nav-links" style={{ alignItems: 'center' }}>
             {MENU_ITEMS.map((item) => {
               const isActive = activePage === item.key;
               return (
@@ -107,11 +107,11 @@ export default function Navbar({ activePage, onNavigate, cartCount, onOpenCart }
                     fontSize: '13px',
                     fontWeight: 600,
                     letterSpacing: '1px',
-                    color: isActive ? 'var(--vivere-border-strong)' : 'var(--vivere-text-primary)',
+                    color: isActive ? 'var(--retail-border-strong)' : 'var(--retail-text-primary)',
                     position: 'relative',
                     transition: 'color 0.2s'
                   }}
-                  className="vivere-nav-link-item"
+                  className="retail-nav-link-item"
                 >
                   {item.label}
                   {isActive && (
@@ -121,7 +121,7 @@ export default function Navbar({ activePage, onNavigate, cartCount, onOpenCart }
                       left: 0,
                       right: 0,
                       height: '2px',
-                      backgroundColor: 'var(--vivere-border-strong)',
+                      backgroundColor: 'var(--retail-border-strong)',
                       borderRadius: '1px'
                     }} />
                   )}
@@ -132,7 +132,7 @@ export default function Navbar({ activePage, onNavigate, cartCount, onOpenCart }
         </div>
 
         {/* Right Actions */}
-        <div style={{ display: 'flex', gap: 'var(--vivere-space-6)', alignItems: 'center' }}>
+        <div style={{ display: 'flex', gap: 'var(--retail-space-6)', alignItems: 'center' }}>
           {/* Direct WhatsApp Call-to-action */}
           <a 
             href="https://wa.me/6281234567890" 
@@ -141,8 +141,8 @@ export default function Navbar({ activePage, onNavigate, cartCount, onOpenCart }
             style={{
               fontSize: '11px',
               fontWeight: 700,
-              color: 'var(--vivere-border-strong)',
-              border: '1px solid var(--vivere-border-strong)',
+              color: 'var(--retail-border-strong)',
+              border: '1px solid var(--retail-border-strong)',
               padding: '6px 14px',
               borderRadius: '2px',
               letterSpacing: '0.5px',
@@ -151,14 +151,14 @@ export default function Navbar({ activePage, onNavigate, cartCount, onOpenCart }
               alignItems: 'center',
               gap: '6px'
             }}
-            className="vivere-whatsapp-badge"
+            className="retail-whatsapp-badge"
           >
             <span>Design Advisory</span>
           </a>
 
           {/* Cart Trigger Button */}
           <button 
-            className="vivere-action-btn icon-cart" 
+            className="retail-action-btn icon-cart" 
             onClick={onOpenCart}
             style={{ position: 'relative', background: 'none', border: 'none', cursor: 'pointer', display: 'flex', padding: '6px' }}
           >
@@ -171,8 +171,8 @@ export default function Navbar({ activePage, onNavigate, cartCount, onOpenCart }
               position: 'absolute',
               top: '-3px',
               right: '-3px',
-              backgroundColor: 'var(--vivere-border-strong)',
-              color: 'var(--vivere-surface-strong)',
+              backgroundColor: 'var(--retail-border-strong)',
+              color: 'var(--retail-surface-strong)',
               fontSize: '9px',
               fontWeight: 700,
               width: '16px',
@@ -195,14 +195,14 @@ export default function Navbar({ activePage, onNavigate, cartCount, onOpenCart }
             top: '100%',
             left: 0,
             right: 0,
-            backgroundColor: 'var(--vivere-surface-strong)',
-            borderBottom: '1px solid var(--vivere-surface-muted)',
-            boxShadow: 'var(--vivere-shadow-1)',
+            backgroundColor: 'var(--retail-surface-strong)',
+            borderBottom: '1px solid var(--retail-surface-muted)',
+            boxShadow: 'var(--retail-shadow-1)',
             display: 'flex',
             flexDirection: 'column',
-            padding: 'var(--vivere-space-3) 0',
+            padding: 'var(--retail-space-3) 0',
             zIndex: 99
-          }} className="vivere-mobile-nav">
+          }} className="retail-mobile-nav">
             {MENU_ITEMS.map((item) => {
               const isActive = activePage === item.key;
               return (
@@ -212,13 +212,13 @@ export default function Navbar({ activePage, onNavigate, cartCount, onOpenCart }
                   style={{
                     background: 'none',
                     border: 'none',
-                    padding: 'var(--vivere-space-4) var(--vivere-space-6)',
+                    padding: 'var(--retail-space-4) var(--retail-space-6)',
                     cursor: 'pointer',
                     fontSize: '13px',
                     fontWeight: 600,
                     textAlign: 'left',
-                    color: isActive ? 'var(--vivere-border-strong)' : 'var(--vivere-text-primary)',
-                    backgroundColor: isActive ? 'var(--vivere-surface-raised)' : 'transparent',
+                    color: isActive ? 'var(--retail-border-strong)' : 'var(--retail-text-primary)',
+                    backgroundColor: isActive ? 'var(--retail-surface-raised)' : 'transparent',
                     width: '100%'
                   }}
                 >

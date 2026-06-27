@@ -45,40 +45,40 @@ export default function ProcessPage({ onNavigate }) {
   };
 
   return (
-    <div style={{ backgroundColor: 'var(--vivere-surface-strong)', color: 'var(--vivere-text-primary)' }}>
+    <div style={{ backgroundColor: 'var(--retail-surface-strong)', color: 'var(--retail-text-primary)' }}>
       
       {/* 1. Hero Section */}
       <section style={{ 
-        padding: 'var(--vivere-space-10) 0 var(--vivere-space-8) 0', 
-        borderBottom: '1px solid var(--vivere-surface-muted)',
-        backgroundColor: 'var(--vivere-surface-raised)'
+        padding: 'var(--retail-space-10) 0 var(--retail-space-8) 0', 
+        borderBottom: '1px solid var(--retail-surface-muted)',
+        backgroundColor: 'var(--retail-surface-raised)'
       }}>
         <ScrollReveal>
-          <div className="vivere-container" style={{ textAlign: 'center', maxWidth: '800px' }}>
+          <div className="retail-container" style={{ textAlign: 'center', maxWidth: '800px' }}>
             <span style={{
               display: 'block',
               fontSize: '11px',
               fontWeight: 700,
               textTransform: 'uppercase',
               letterSpacing: '3px',
-              color: 'var(--vivere-text-secondary)',
-              marginBottom: 'var(--vivere-space-3)'
+              color: 'var(--retail-text-secondary)',
+              marginBottom: 'var(--retail-space-3)'
             }}>
               How We Work
             </span>
-            <h1 className="vivere-heading" style={{ 
+            <h1 className="retail-heading" style={{ 
               fontSize: '36px', 
               lineHeight: 1.15, 
-              marginBottom: 'var(--vivere-space-4)',
+              marginBottom: 'var(--retail-space-4)',
               textTransform: 'uppercase',
               letterSpacing: '1px'
             }}>
-              From <span style={{ color: 'var(--vivere-border-strong)' }}>Concept</span> to <span style={{ color: 'var(--vivere-border-strong)' }}>Completion</span>
+              From <span style={{ color: 'var(--retail-border-strong)' }}>Concept</span> to <span style={{ color: 'var(--retail-border-strong)' }}>Completion</span>
             </h1>
-            <p className="vivere-subtext" style={{ 
+            <p className="retail-subtext" style={{ 
               fontSize: '15px', 
               lineHeight: 1.6, 
-              color: 'var(--vivere-text-secondary)',
+              color: 'var(--retail-text-secondary)',
               margin: '0 auto',
               maxWidth: '620px'
             }}>
@@ -89,8 +89,8 @@ export default function ProcessPage({ onNavigate }) {
       </section>
 
       {/* 2 - 6. Stepper Timeline Section */}
-      <section style={{ padding: 'var(--vivere-space-10) 0', borderBottom: '1px solid var(--vivere-surface-muted)' }}>
-        <div className="vivere-container" style={{ maxWidth: '840px', margin: '0 auto' }}>
+      <section style={{ padding: 'var(--retail-space-10) 0', borderBottom: '1px solid var(--retail-surface-muted)' }}>
+        <div className="retail-container" style={{ maxWidth: '840px', margin: '0 auto' }}>
           
           {/* Vertical Stepper Container */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: 0, position: 'relative' }}>
@@ -99,7 +99,7 @@ export default function ProcessPage({ onNavigate }) {
               const isLast = idx === STAGES.length - 1;
               return (
                 <ScrollReveal key={idx} delay={idx * 150} style={{ display: 'flex', width: '100%' }}>
-                  <div className="process-step-row" style={{ display: 'flex', gap: 'var(--vivere-space-6)', minHeight: '160px', width: '100%' }}>
+                  <div className="process-step-row" style={{ display: 'flex', gap: 'var(--retail-space-6)', minHeight: '160px', width: '100%' }}>
                     
                     {/* Left Column: Number & Stage Indicator */}
                     <div style={{ width: '80px', display: 'flex', flexDirection: 'column', alignItems: 'flex-end', flexShrink: 0 }}>
@@ -107,7 +107,7 @@ export default function ProcessPage({ onNavigate }) {
                         fontSize: '12px', 
                         fontWeight: 700, 
                         letterSpacing: '1.5px', 
-                        color: 'var(--vivere-text-secondary)',
+                        color: 'var(--retail-text-secondary)',
                         textTransform: 'uppercase',
                         marginTop: '3px'
                       }}>
@@ -122,8 +122,8 @@ export default function ProcessPage({ onNavigate }) {
                         width: '18px', 
                         height: '18px', 
                         borderRadius: '50%', 
-                        border: '2px solid var(--vivere-border-strong)', 
-                        backgroundColor: 'var(--vivere-surface-strong)',
+                        border: '2px solid var(--retail-border-strong)', 
+                        backgroundColor: 'var(--retail-surface-strong)',
                         zIndex: 2
                       }} />
                       {/* Vertical Connector Line */}
@@ -131,7 +131,7 @@ export default function ProcessPage({ onNavigate }) {
                         <div style={{ 
                           width: '2px', 
                           flexGrow: 1, 
-                          backgroundColor: 'var(--vivere-surface-muted)',
+                          backgroundColor: 'var(--retail-surface-muted)',
                           margin: '6px 0'
                         }} />
                       )}
@@ -140,10 +140,10 @@ export default function ProcessPage({ onNavigate }) {
                     {/* Right Column: Content Details */}
                     <div style={{ 
                       flexGrow: 1, 
-                      paddingBottom: isLast ? 0 : 'var(--vivere-space-9)', 
+                      paddingBottom: isLast ? 0 : 'var(--retail-space-9)', 
                       display: 'flex', 
                       flexDirection: 'column', 
-                      gap: 'var(--vivere-space-3)'
+                      gap: 'var(--retail-space-3)'
                     }}>
                       <h3 style={{ 
                         fontSize: '18px', 
@@ -151,16 +151,16 @@ export default function ProcessPage({ onNavigate }) {
                         textTransform: 'uppercase', 
                         letterSpacing: '0.5px', 
                         margin: 0,
-                        color: 'var(--vivere-text-primary)'
+                        color: 'var(--retail-text-primary)'
                       }}>
                         {stage.title}
                       </h3>
                       
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                        <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', color: 'var(--vivere-border-strong)' }}>
+                        <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', color: 'var(--retail-border-strong)' }}>
                           What We Do:
                         </span>
-                        <p style={{ fontSize: '13.5px', lineHeight: 1.6, color: 'var(--vivere-text-secondary)', margin: 0 }}>
+                        <p style={{ fontSize: '13.5px', lineHeight: 1.6, color: 'var(--retail-text-secondary)', margin: 0 }}>
                           {stage.todo}
                         </p>
                       </div>
@@ -170,17 +170,17 @@ export default function ProcessPage({ onNavigate }) {
                         alignSelf: 'flex-start',
                         marginTop: '4px',
                         padding: '8px 16px',
-                        backgroundColor: 'var(--vivere-surface-raised)',
-                        borderLeft: '2px solid var(--vivere-border-strong)',
+                        backgroundColor: 'var(--retail-surface-raised)',
+                        borderLeft: '2px solid var(--retail-border-strong)',
                         borderRadius: '2px',
                         display: 'flex',
                         alignItems: 'center',
                         gap: '8px'
                       }}>
-                        <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--vivere-text-secondary)' }}>
+                        <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--retail-text-secondary)' }}>
                           Output:
                         </span>
-                        <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--vivere-text-primary)' }}>
+                        <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--retail-text-primary)' }}>
                           {stage.output}
                         </span>
                       </div>
@@ -197,22 +197,22 @@ export default function ProcessPage({ onNavigate }) {
 
       {/* 7. Final CTA Section */}
       <section style={{ 
-        padding: 'var(--vivere-space-10) 0', 
+        padding: 'var(--retail-space-10) 0', 
         textAlign: 'center', 
-        backgroundColor: 'var(--vivere-surface-raised)'
+        backgroundColor: 'var(--retail-surface-raised)'
       }}>
-        <div className="vivere-container" style={{ maxWidth: '640px', margin: '0 auto' }}>
+        <div className="retail-container" style={{ maxWidth: '640px', margin: '0 auto' }}>
           <ScrollReveal>
             <h2 style={{
               fontSize: '26px',
               fontWeight: 700,
               textTransform: 'uppercase',
               letterSpacing: '1px',
-              marginBottom: 'var(--vivere-space-3)'
+              marginBottom: 'var(--retail-space-3)'
             }}>
-              Let's Create Your <span style={{ color: 'var(--vivere-border-strong)' }}>Ideal Living Space</span>
+              Let's Create Your <span style={{ color: 'var(--retail-border-strong)' }}>Ideal Living Space</span>
             </h2>
-            <p style={{ fontSize: '14px', color: 'var(--vivere-text-secondary)', lineHeight: 1.6, marginBottom: 'var(--vivere-space-7)' }}>
+            <p style={{ fontSize: '14px', color: 'var(--retail-text-secondary)', lineHeight: 1.6, marginBottom: 'var(--retail-space-7)' }}>
               Hubungi tim desainer interior dan arsitek kami hari ini untuk mulai merencanakan konsep hunian impian Anda. Kami siap melayani konsultasi personal baik secara daring maupun langsung di galeri kami.
             </p>
 
@@ -221,15 +221,15 @@ export default function ProcessPage({ onNavigate }) {
                 href="https://wa.me/6281234567890" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="vivere-btn vivere-btn-primary" 
+                className="retail-btn retail-btn-primary" 
                 style={{ fontSize: '12px', padding: '12px 28px', borderRadius: '4px' }}
               >
                 Schedule Consultation
               </a>
               <button 
                 onClick={handleContactNav}
-                className="vivere-btn vivere-btn-secondary" 
-                style={{ fontSize: '12px', padding: '12px 28px', borderRadius: '4px', border: '1px solid var(--vivere-text-primary)' }}
+                className="retail-btn retail-btn-secondary" 
+                style={{ fontSize: '12px', padding: '12px 28px', borderRadius: '4px', border: '1px solid var(--retail-text-primary)' }}
               >
                 Contact Us
               </button>

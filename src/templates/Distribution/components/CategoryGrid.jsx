@@ -36,35 +36,35 @@ export default function CategoryGrid({ onNavigate }) {
   return (
     <ScrollReveal>
       <section style={{
-        backgroundColor: 'var(--nexus-surface-raised)',
-        padding: 'var(--nexus-space-8) 0',
-        borderBottom: '1px solid var(--nexus-surface-muted)'
+        backgroundColor: 'var(--dist-surface-raised)',
+        padding: 'var(--dist-space-8) 0',
+        borderBottom: '1px solid var(--dist-surface-muted)'
       }}>
-        <div className="nexus-container">
-          <div style={{ textAlign: 'center', marginBottom: 'var(--nexus-space-6)' }}>
+        <div className="dist-container">
+          <div style={{ textAlign: 'center', marginBottom: 'var(--dist-space-6)' }}>
             <span style={{
               fontSize: '12px', fontWeight: 700, textTransform: 'uppercase',
-              letterSpacing: '2px', color: 'var(--nexus-brand-primary)'
+              letterSpacing: '2px', color: 'var(--dist-brand-primary)'
             }}>
               Product Categories
             </span>
             <h2 style={{
               fontSize: '24px', fontWeight: 700,
-              marginTop: 'var(--nexus-space-2)', color: 'var(--nexus-text-primary)'
+              marginTop: 'var(--dist-space-2)', color: 'var(--dist-text-primary)'
             }}>
-              Browse by <span style={{ color: 'var(--nexus-brand-primary)' }}>Industry</span>
+              Browse by <span style={{ color: 'var(--dist-brand-primary)' }}>Industry</span>
             </h2>
           </div>
 
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-            gap: 'var(--nexus-space-5)'
+            gap: 'var(--dist-space-5)'
           }}>
             {CATEGORIES.map((cat, idx) => (
               <div
                 key={idx}
-                className="nexus-category-card"
+                className="dist-category-card"
                 onClick={() => onNavigate && onNavigate('store')}
               >
                 {/* Placeholder background when image is missing */}
@@ -81,18 +81,18 @@ export default function CategoryGrid({ onNavigate }) {
                   </svg>
                 </div>
                 <img src={cat.img} alt={cat.title} onError={(e) => { e.target.style.display = 'none'; }} />
-                <div className="nexus-category-overlay"></div>
-                <div className="nexus-category-content">
+                <div className="dist-category-overlay"></div>
+                <div className="dist-category-content">
                   <span style={{
                     fontSize: '11px', fontWeight: 600, letterSpacing: '1px',
-                    color: 'var(--nexus-brand-accent)', textTransform: 'uppercase',
+                    color: 'var(--dist-brand-accent)', textTransform: 'uppercase',
                     marginBottom: '4px', display: 'block'
                   }}>
                     {cat.count}
                   </span>
                   <h3 style={{ fontSize: '18px', fontWeight: 700, marginBottom: '6px' }}>
                     {cat.title}
-                    <span className="nexus-category-arrow">→</span>
+                    <span className="dist-category-arrow">→</span>
                   </h3>
                   <p style={{ fontSize: '12px', lineHeight: 1.5, opacity: 0.85, margin: 0 }}>
                     {cat.desc}
