@@ -67,37 +67,62 @@ export const FinancialHero = ({
 
   return (
     <section
-      className={cn('relative w-full overflow-hidden bg-[#0A0F1D] text-white', className)}>
+      className={cn('relative w-full overflow-hidden text-white', className)}
+      style={{ backgroundColor: '#0A0F1D', position: 'relative', width: '100%', overflow: 'hidden' }}
+    >
       {/* 1. Grid Texture */}
       <div className="absolute inset-0 opacity-80" style={gridBackgroundStyle} />
       
       {/* 2. Soft Radial Glowing Lights */}
-      <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-blue-600/10 blur-[150px] pointer-events-none" />
-      <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full bg-indigo-600/10 blur-[130px] pointer-events-none" />
+      <div style={{
+        position: 'absolute', top: '-160px', right: '-160px',
+        width: '600px', height: '600px', borderRadius: '50%',
+        backgroundColor: 'rgba(37, 99, 235, 0.12)', filter: 'blur(150px)',
+        pointerEvents: 'none', zIndex: 1
+      }} />
+      <div style={{
+        position: 'absolute', bottom: '-160px', left: '-160px',
+        width: '500px', height: '500px', borderRadius: '50%',
+        backgroundColor: 'rgba(79, 70, 229, 0.12)', filter: 'blur(130px)',
+        pointerEvents: 'none', zIndex: 1
+      }} />
       
       {/* 3. Gradient Overlay */}
       <div
-        className="absolute inset-0 bg-gradient-to-b from-[#0A0F1D]/50 via-[#0A0F1D]/90 to-[#0A0F1D]" />
-
+        style={{
+          position: 'absolute', inset: 0,
+          background: 'linear-gradient(to bottom, rgba(10, 15, 29, 0.4) 0%, rgba(10, 15, 29, 0.85) 60%, rgba(10, 15, 29, 1) 100%)',
+          zIndex: 2
+        }}
+      />
+ 
       <motion.div
-        className="relative container mx-auto flex min-h-[80vh] items-center justify-between px-6 py-20 lg:flex-row flex-col gap-12"
+        className="relative container mx-auto flex min-h-[70vh] items-center justify-between px-6 py-16 lg:flex-row flex-col gap-12"
+        style={{ position: 'relative', zIndex: 3, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '48px' }}
         initial="hidden"
         animate="visible"
-        variants={containerVariants}>
+        variants={containerVariants}
+      >
         {/* Left: Text Content */}
         <div
-          className="flex flex-col items-center text-center lg:items-start lg:text-left lg:w-1/2 z-10">
+          className="flex flex-col items-center text-center lg:items-start lg:text-left lg:w-1/2"
+          style={{ display: 'flex', flexDirection: 'column', flex: 1, zIndex: 10 }}
+        >
           <motion.h1
-            className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl text-white leading-tight"
-            variants={itemVariants}>
+            className="text-4xl font-extrabold tracking-tight md:text-5xl lg:text-6xl"
+            style={{ color: '#ffffff', lineHeight: 1.15, margin: 0, fontWeight: 800 }}
+            variants={itemVariants}
+          >
             {title}
           </motion.h1>
           <motion.p
-            className="mt-6 max-w-xl text-lg text-slate-300/90"
-            variants={itemVariants}>
+            className="mt-6 max-w-xl text-lg"
+            style={{ color: 'rgba(226, 232, 240, 0.9)', margin: '24px 0 0 0', fontSize: '17px', lineHeight: 1.6 }}
+            variants={itemVariants}
+          >
             {description}
           </motion.p>
-          <motion.div variants={itemVariants} className="mt-8">
+          <motion.div variants={itemVariants} className="mt-8" style={{ marginTop: '32px' }}>
             {buttonLink ? (
               <a href={buttonLink} target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="h-12 px-8 text-base">
@@ -113,25 +138,54 @@ export const FinancialHero = ({
             )}
           </motion.div>
         </div>
-
+ 
         {/* Right: Card Images */}
         <motion.div
-          className="relative lg:w-1/2 w-full flex items-center justify-center min-h-[350px] md:min-h-[450px]"
-          variants={cardsVariants}>
+          className="relative lg:w-1/2 w-full flex items-center justify-center"
+          style={{
+            position: 'relative',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            minHeight: '280px',
+            flex: 1
+          }}
+          variants={cardsVariants}
+        >
           {/* Back Card */}
           <motion.img
             src={imageUrl2}
             alt="Financial Card Back"
             variants={cardItemVariants}
             whileHover={{ y: -10, rotate: -5, zIndex: 20, transition: { duration: 0.3 } }}
-            className="absolute w-[240px] md:w-[360px] h-[160px] md:h-[240px] rounded-2xl shadow-2xl object-cover transform rotate-[-6deg] translate-x-12 md:translate-x-20 z-0" />
+            style={{
+              position: 'absolute',
+              width: '260px',
+              height: '170px',
+              borderRadius: '16px',
+              boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
+              objectFit: 'cover',
+              transform: 'rotate(-6deg) translateX(40px)',
+              zIndex: 1
+            }}
+          />
           {/* Front Card */}
           <motion.img
             src={imageUrl1}
             alt="Financial Card Front"
             variants={cardItemVariants}
             whileHover={{ y: -10, rotate: 5, zIndex: 20, transition: { duration: 0.3 } }}
-            className="absolute w-[240px] md:w-[360px] h-[160px] md:h-[240px] rounded-2xl shadow-2xl object-cover transform rotate-[6deg] -translate-x-12 md:-translate-x-20 z-10" />
+            style={{
+              position: 'absolute',
+              width: '260px',
+              height: '170px',
+              borderRadius: '16px',
+              boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
+              objectFit: 'cover',
+              transform: 'rotate(6deg) translateX(-40px)',
+              zIndex: 2
+            }}
+          />
         </motion.div>
       </motion.div>
     </section>
