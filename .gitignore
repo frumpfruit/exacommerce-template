@@ -25,5 +25,8 @@ dist-ssr
 
 .vercel
 
-# Ignore AI Agents folder
-.agents
+# Ignore AI Agents and unnecessary folders
+.agents/
+skills-lock.json
+md/
+docs/
