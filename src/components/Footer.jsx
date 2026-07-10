@@ -134,9 +134,9 @@ export default function Footer({ dark = false }) {
       <div className={`px-6 md:px-12 lg:px-16 py-8 border-t flex flex-row items-center gap-4 md:gap-10 text-[10px] uppercase tracking-widest font-label font-bold whitespace-nowrap overflow-x-auto w-full ${
         dark ? 'border-white/10 text-gray-500' : 'border-gray-200 text-gray-400'
       }`}>
-        <span className="shrink-0">© 2026 Exantara</span>
         <Link className={`shrink-0 transition-colors ${dark ? 'hover:text-white' : 'hover:text-[#111827]'}`} to="/legal/terms">Syarat & Ketentuan</Link>
         <Link className={`shrink-0 transition-colors ${dark ? 'hover:text-white' : 'hover:text-[#111827]'}`} to="/legal/privacy">Kebijakan Privasi</Link>
+        <span className="shrink-0 ml-auto">© 2026 Exantara</span>
       </div>
     </footer>
   );
