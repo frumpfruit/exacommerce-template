@@ -123,7 +123,7 @@ export default function HargaPage() {
       <section className="px-margin-desktop py-32 max-w-container-max mx-auto text-center">
         <AnimatedSection>
           <motion.div
-            className="inline-block px-3 py-1 border border-blue-500/40 text-blue-400 font-label text-xs uppercase tracking-widest mb-8 bg-blue-500/5"
+            className="inline-block px-3 py-1 border border-gray-600 text-gray-200 font-label text-xs uppercase tracking-widest mb-8 bg-gray-800/50"
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -140,7 +140,7 @@ export default function HargaPage() {
             <span className={`text-sm font-bold transition-colors ${!isYearly ? 'text-white' : 'text-gray-500'}`}>Bulanan</span>
             <motion.button
               className="w-14 h-7 rounded-full p-1 flex items-center cursor-pointer border border-gray-600 relative"
-              style={{ backgroundColor: isYearly ? '#2563EB' : '#1a1a1a' }}
+              style={{ backgroundColor: isYearly ? '#555' : '#1a1a1a' }}
               onClick={() => setIsYearly(!isYearly)}
               whileTap={{ scale: 0.95 }}
               transition={{ duration: 0.2 }}
@@ -156,7 +156,7 @@ export default function HargaPage() {
               Tahunan
               {isYearly && (
                 <motion.span
-                  className="ml-2 text-xs bg-green-500/20 text-green-400 px-2 py-0.5 rounded-full"
+                  className="ml-2 text-xs bg-gray-800 border border-gray-600 text-gray-200 px-2 py-0.5 rounded-full"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                 >
@@ -176,10 +176,10 @@ export default function HargaPage() {
               <GlowCard
                 className={`flex flex-col rounded-xl border h-full ${
                   plan.highlight
-                    ? 'border-blue-500 bg-blue-950/30'
-                    : 'border-gray-700 bg-[#1a1a1a]'
+                    ? 'border-gray-400 bg-[#222]'
+                    : 'border-gray-800 bg-[#111]'
                 }`}
-                glowColor={plan.highlight ? 'rgba(37,99,235,0.2)' : 'rgba(255,255,255,0.05)'}
+                glowColor={plan.highlight ? 'rgba(255,255,255,0.1)' : 'rgba(255,255,255,0.02)'}
               >
                 <div className="p-8 flex flex-col flex-1">
                   <div className="mb-6">
@@ -187,7 +187,7 @@ export default function HargaPage() {
                       <h3 className="text-xl font-bold">{plan.name}</h3>
                       {plan.badge && (
                         <motion.span
-                          className="text-xs bg-blue-500 text-white px-2 py-0.5 rounded-full font-label font-bold uppercase tracking-wider"
+                          className="text-xs bg-white text-black px-2 py-0.5 rounded-full font-label font-bold uppercase tracking-wider"
                           initial={{ scale: 0.8, opacity: 0 }}
                           animate={{ scale: 1, opacity: 1 }}
                           transition={{ delay: 0.3 }}
@@ -221,8 +221,8 @@ export default function HargaPage() {
                       className={`w-full py-3 font-bold rounded transition-colors text-sm ${
                         plan.ctaVariant === 'primary'
                           ? plan.highlight
-                            ? 'bg-blue-600 text-white hover:bg-blue-500'
-                            : 'bg-white text-black hover:bg-gray-200'
+                            ? 'bg-white text-black hover:bg-gray-200'
+                            : 'bg-[#222] border border-gray-700 text-white hover:bg-gray-800'
                           : 'border border-gray-600 text-white hover:bg-gray-800'
                       }`}
                     >
@@ -233,7 +233,7 @@ export default function HargaPage() {
                   <ul className="space-y-3 text-sm text-gray-300 flex-grow">
                     {plan.features.map((f) => (
                       <li key={f} className="flex gap-2 items-start">
-                        <span className="material-symbols-outlined text-base text-green-400 shrink-0 mt-0.5 font-bold">check</span>
+                        <span className="material-symbols-outlined text-base text-white shrink-0 mt-0.5 font-bold">check</span>
                         {f}
                       </li>
                     ))}
@@ -252,39 +252,41 @@ export default function HargaPage() {
             <h2 className="text-4xl font-headline font-bold tracking-tight mb-4">Bandingkan Semua Fitur</h2>
             <p className="text-gray-400">Pilih paket yang tepat untuk kebutuhan bisnis Anda.</p>
           </AnimatedSection>
-          <AnimatedSection direction="scale" className="border border-gray-700 rounded-xl overflow-hidden">
-            <div className="grid grid-cols-5 border-b border-gray-700 bg-[#1a1a1a]">
-              {['Fitur', 'Basic', 'Grow', 'Advanced', 'Plus'].map((h, i) => (
-                <div key={h} className={`p-5 text-sm font-bold ${i > 0 ? 'text-center' : ''} ${i === 2 ? 'text-blue-400' : 'text-gray-300'} ${i < 4 ? 'border-r border-gray-700' : ''}`}>
-                  {h}
-                </div>
-              ))}
-            </div>
-            {[
-              { feature: 'Produk tak terbatas', vals: ['✓', '✓', '✓', '✓'] },
-              { feature: 'Akun staf', vals: ['2', '5', '15', '∞'] },
-              { feature: 'Biaya transaksi', vals: ['2%', '1%', '0.6%', '0.2%'] },
-              { feature: 'AI Sidekick', vals: ['Dasar', 'Standar', 'Pro', 'Enterprise'] },
-              { feature: 'Laporan analytics', vals: ['Dasar', '✓', '✓', 'Custom'] },
-              { feature: 'API akses', vals: ['✗', '✓', '✓', 'Unlimited'] },
-              { feature: 'Dukungan', vals: ['Email', 'Chat', 'Prioritas', 'Dedicated'] },
-            ].map(({ feature, vals }, ri) => (
-              <motion.div
-                key={feature}
-                className={`grid grid-cols-5 border-b border-gray-800 ${ri % 2 === 0 ? 'bg-[#111111]' : 'bg-[#151515]'}`}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: ri * 0.05 }}
-              >
-                <div className="p-5 text-sm text-gray-300 border-r border-gray-800">{feature}</div>
-                {vals.map((v, vi) => (
-                  <div key={vi} className={`p-5 text-sm text-center ${vi === 1 ? 'text-blue-400' : 'text-gray-400'} ${vi < 3 ? 'border-r border-gray-800' : ''}`}>
-                    {v === '✓' ? <span className="text-green-400 text-base">✓</span> : v === '✗' ? <span className="text-gray-600">✗</span> : v}
+          <AnimatedSection direction="scale" className="border border-gray-800 rounded-xl overflow-x-auto">
+            <div className="min-w-[800px]">
+              <div className="grid grid-cols-5 border-b border-gray-800 bg-[#161616]">
+                {['Fitur', 'Basic', 'Grow', 'Advanced', 'Plus'].map((h, i) => (
+                  <div key={h} className={`p-5 text-sm font-bold ${i > 0 ? 'text-center' : ''} ${i === 2 ? 'text-white' : 'text-gray-400'} ${i < 4 ? 'border-r border-gray-800' : ''}`}>
+                    {h}
                   </div>
                 ))}
-              </motion.div>
-            ))}
+              </div>
+              {[
+                { feature: 'Produk tak terbatas', vals: ['✓', '✓', '✓', '✓'] },
+                { feature: 'Akun staf', vals: ['2', '5', '15', '∞'] },
+                { feature: 'Biaya transaksi', vals: ['2%', '1%', '0.6%', '0.2%'] },
+                { feature: 'AI Sidekick', vals: ['Dasar', 'Standar', 'Pro', 'Enterprise'] },
+                { feature: 'Laporan analytics', vals: ['Dasar', '✓', '✓', 'Custom'] },
+                { feature: 'API akses', vals: ['✗', '✓', '✓', 'Unlimited'] },
+                { feature: 'Dukungan', vals: ['Email', 'Chat', 'Prioritas', 'Dedicated'] },
+              ].map(({ feature, vals }, ri) => (
+                <motion.div
+                  key={feature}
+                  className={`grid grid-cols-5 border-b border-gray-800 ${ri % 2 === 0 ? 'bg-[#111111]' : 'bg-[#151515]'}`}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: ri * 0.05 }}
+                >
+                  <div className="p-5 text-sm text-gray-300 border-r border-gray-800">{feature}</div>
+                  {vals.map((v, vi) => (
+                    <div key={vi} className={`p-5 text-sm text-center ${vi === 1 ? 'text-white' : 'text-gray-500'} ${vi < 3 ? 'border-r border-gray-800' : ''}`}>
+                      {v === '✓' ? <span className="text-white text-base">✓</span> : v === '✗' ? <span className="text-gray-700">✗</span> : v}
+                    </div>
+                  ))}
+                </motion.div>
+              ))}
+            </div>
           </AnimatedSection>
         </div>
       </section>
@@ -294,7 +296,7 @@ export default function HargaPage() {
         <div className="max-w-2xl mx-auto">
           <AnimatedSection className="text-center mb-12">
             <h2 className="text-3xl font-headline font-bold tracking-tight mb-4">Pertanyaan Umum</h2>
-            <p className="text-gray-400">Pertanyaan lain? <a href="#" className="text-blue-400 hover:underline">Hubungi tim kami.</a></p>
+            <p className="text-gray-400">Pertanyaan lain? <a href="#" className="text-white hover:underline">Hubungi tim kami.</a></p>
           </AnimatedSection>
           <AnimatedSection direction="up" className="border-t border-gray-700">
             {pricingFaqs.map((faq, i) => <PricingFAQ key={faq.q} {...faq} index={i} />)}
@@ -305,18 +307,18 @@ export default function HargaPage() {
       {/* CTA Banner */}
       <section className="px-margin-desktop py-24 border-t border-gray-800">
         <div className="max-w-container-max mx-auto">
-          <GlowCard className="rounded-2xl bg-[#1a1a1a] border border-gray-700 p-16 text-center" glowColor="rgba(37,99,235,0.15)">
+          <GlowCard className="rounded-2xl bg-[#111] border border-gray-800 p-8 md:p-16 text-center" glowColor="rgba(255,255,255,0.05)">
             <AnimatedSection>
-              <h2 className="text-4xl font-headline font-bold tracking-tight mb-6">Minta Konsultasi Gratis</h2>
+              <h2 className="text-3xl md:text-4xl font-headline font-bold tracking-tight mb-6">Minta Konsultasi Gratis</h2>
               <p className="text-gray-400 max-w-lg mx-auto mb-10">Hubungi kami melalui WhatsApp untuk mendapatkan panduan implementasi Exantara.</p>
               <div className="flex flex-wrap gap-4 justify-center">
-                <a href="https://wa.me/6282337123533?text=Halo%20Exantara,%20saya%20tertarik%20dengan%20layanan%20Anda." target="_blank" rel="noopener noreferrer">
-                  <MagneticButton className="bg-blue-600 text-white px-10 py-4 font-bold rounded-lg hover:bg-blue-500 transition-colors">
+                <a href="https://wa.me/6282337123533?text=Halo%20Exantara,%20saya%20tertarik%20dengan%20layanan%20Anda." target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                  <MagneticButton className="w-full bg-white text-black px-10 py-4 font-bold rounded-xl hover:bg-gray-200 transition-colors">
                     Hubungi WhatsApp
                   </MagneticButton>
                 </a>
-                <a href="#demo">
-                  <MagneticButton className="border border-gray-600 text-white px-10 py-4 font-bold rounded-lg hover:border-gray-400 transition-colors">
+                <a href="#demo" className="w-full sm:w-auto">
+                  <MagneticButton className="w-full bg-transparent border border-gray-600 text-white px-10 py-4 font-bold rounded-xl hover:bg-gray-800 transition-colors">
                     Jadwalkan Demo
                   </MagneticButton>
                 </a>
@@ -326,7 +328,9 @@ export default function HargaPage() {
         </div>
       </section>
 
-      <Footer dark={true} />
+      <div className="bg-white">
+        <Footer />
+      </div>
     </div>
   );
 }

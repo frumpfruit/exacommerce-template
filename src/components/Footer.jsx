@@ -11,23 +11,12 @@ export default function Footer({ dark = false }) {
       heading: 'Sistem',
       items: [
         { name: 'Produk', path: '/tema' },
-        { name: 'Solusi', path: '#' },
         { name: 'Harga', path: '/harga' },
-      ],
-    },
-    {
-      heading: 'Ekosistem',
-      items: [
-        { name: 'Dokumentasi', path: '#' },
-        { name: 'Blog', path: '#' },
-        { name: 'Panduan', path: '#' },
       ],
     },
     {
       heading: 'Perusahaan',
       items: [
-        { name: 'Tentang Kami', path: '#' },
-        { name: 'Karir', path: '#' },
         { name: 'Privasi', path: '/legal/privacy' },
       ],
     },
