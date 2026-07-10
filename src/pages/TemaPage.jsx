@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -112,9 +113,9 @@ export default function TemaPage() {
                         style={{ backgroundImage: `url('${tpl.img}')` }}
                       ></div>
                       <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-sm">
-                        <button className="bg-white text-black px-6 py-2 rounded-full font-bold shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-all">
+                        <Link to={`/${tpl.id}`} className="bg-white text-black px-6 py-2 rounded-full font-bold shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-all">
                           Preview Langsung
-                        </button>
+                        </Link>
                       </div>
                     </div>
                     <div className="p-6">
@@ -178,12 +179,12 @@ export default function TemaPage() {
                   </li>
                 </ul>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-gray-200 transition-all shadow-md">
+                  <Link to="/distribution" className="bg-white text-black px-8 py-4 text-center rounded-xl font-bold hover:bg-gray-200 transition-all shadow-md">
                     Gunakan Nexus
-                  </button>
-                  <button className="bg-[#1a1a1a] text-white px-8 py-4 rounded-xl font-bold border border-gray-800 hover:bg-[#222] transition-all">
+                  </Link>
+                  <Link to="/distribution" className="bg-[#1a1a1a] text-white px-8 py-4 text-center rounded-xl font-bold border border-gray-800 hover:bg-[#222] transition-all">
                     Lihat Demo
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -197,12 +198,12 @@ export default function TemaPage() {
             <h2 className="font-headline text-3xl md:text-4xl font-bold text-white mb-6">Siap membangun etalase global Anda?</h2>
             <p className="text-lg md:text-xl text-gray-400 mb-10">Pilih dari belasan template siap pakai kami dan percepat ekspansi pasar Anda hari ini.</p>
             <div className="flex flex-wrap justify-center gap-4">
-              <button className="px-8 py-4 bg-white text-black rounded-full font-bold hover:shadow-xl hover:-translate-y-1 transition-all">
+              <button onClick={() => window.scrollTo({top:0, behavior:'smooth'})} className="px-8 py-4 bg-white text-black rounded-full font-bold hover:shadow-xl hover:-translate-y-1 transition-all">
                 Jelajahi Semua Template
               </button>
-              <button className="px-8 py-4 bg-transparent text-white border border-gray-600 rounded-full font-bold hover:bg-white/10 transition-all">
+              <Link to="/" className="px-8 py-4 bg-transparent text-white border border-gray-600 rounded-full font-bold hover:bg-white/10 transition-all">
                 Konsultasi Kustom
-              </button>
+              </Link>
             </div>
           </div>
         </section>
