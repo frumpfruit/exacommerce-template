@@ -11,6 +11,10 @@ export default function Footer({ dark = false }) {
       heading: 'Tentang Kami',
       items: [
         { name: 'Home', path: '/' },
+        { name: 'Solusi', path: '/#solusi' },
+        { name: 'Fitur', path: '/#fitur' },
+        { name: 'Ekosistem', path: '/#ekosistem' },
+        { name: 'Tanya Jawab (FAQ)', path: '/#faq' },
         { name: 'Contact', path: 'https://wa.me/6282337123533?text=Halo%20Exantara,%20saya%20tertarik%20dengan%20layanan%20Anda.' },
       ],
     },
@@ -18,6 +22,7 @@ export default function Footer({ dark = false }) {
       heading: 'Solusi',
       items: [
         { name: 'Tema Website', path: '/tema' },
+        { name: 'Harga', path: '/harga' },
         { name: 'Konsultasi Harga', path: 'https://wa.me/6282337123533?text=Halo%20Exantara,%20saya%20tertarik%20dengan%20layanan%20Anda.' },
       ],
     },
@@ -126,18 +131,12 @@ export default function Footer({ dark = false }) {
         ))}
       </StaggerContainer>
 
-      <div className={`px-6 md:px-12 lg:px-16 py-8 border-t flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-widest font-label font-bold ${
+      <div className={`px-6 md:px-12 lg:px-16 py-8 border-t flex flex-row items-center gap-4 md:gap-10 text-[10px] uppercase tracking-widest font-label font-bold whitespace-nowrap overflow-x-auto w-full ${
         dark ? 'border-white/10 text-gray-500' : 'border-gray-200 text-gray-400'
       }`}>
-        <div className="flex flex-col md:flex-row gap-4 md:gap-10">
-          <span>© 2024 Exantara</span>
-          <Link className={`transition-colors ${dark ? 'hover:text-white' : 'hover:text-[#111827]'}`} to="/legal/terms">Syarat & Ketentuan</Link>
-          <Link className={`transition-colors ${dark ? 'hover:text-white' : 'hover:text-[#111827]'}`} to="/legal/privacy">Kebijakan Privasi</Link>
-        </div>
-        <div className="flex items-center gap-4">
-          <span className="material-symbols-outlined text-sm">language</span>
-          <span>Indonesia | Global Standard</span>
-        </div>
+        <span className="shrink-0">© 2026 Exantara</span>
+        <Link className={`shrink-0 transition-colors ${dark ? 'hover:text-white' : 'hover:text-[#111827]'}`} to="/legal/terms">Syarat & Ketentuan</Link>
+        <Link className={`shrink-0 transition-colors ${dark ? 'hover:text-white' : 'hover:text-[#111827]'}`} to="/legal/privacy">Kebijakan Privasi</Link>
       </div>
     </footer>
   );
