@@ -8,15 +8,19 @@ const MotionLink = motion(Link);
 export default function Footer({ dark = false }) {
   const links = [
     {
-      heading: 'Sistem',
+      heading: 'Navigasi',
       items: [
-        { name: 'Produk', path: '/tema' },
-        { name: 'Harga', path: '/harga' },
+        { name: 'Solusi', path: '/#solusi' },
+        { name: 'Fitur', path: '/#fitur' },
+        { name: 'Ekosistem', path: '/#ekosistem' },
+        { name: 'Tanya Jawab (FAQ)', path: '/#faq' },
       ],
     },
     {
       heading: 'Perusahaan',
       items: [
+        { name: 'Tema Website', path: '/tema' },
+        { name: 'Harga', path: '/harga' },
         { name: 'Privasi', path: '/legal/privacy' },
       ],
     },

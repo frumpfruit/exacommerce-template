@@ -32,7 +32,7 @@ export default function FaqSection() {
 
 
   return (
-    <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 bg-[#f8f9fa] text-[#111827] relative z-10 border-t border-[#e5e7eb] font-body">
+    <section id="faq" className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 bg-[#f8f9fa] text-[#111827] relative z-10 border-t border-[#e5e7eb] font-body">
       <div className="max-w-4xl mx-auto space-y-12 sm:space-y-16">
         
         {/* Editorial Section Header */}
