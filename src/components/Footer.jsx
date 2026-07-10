@@ -3,19 +3,33 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { StaggerContainer, StaggerItem } from './ui/AnimatedSection';
 
+const MotionLink = motion(Link);
+
 export default function Footer({ dark = false }) {
   const links = [
     {
       heading: 'Sistem',
-      items: ['Produk', 'Solusi', 'Harga'],
+      items: [
+        { name: 'Produk', path: '/tema' },
+        { name: 'Solusi', path: '#' },
+        { name: 'Harga', path: '/harga' },
+      ],
     },
     {
       heading: 'Ekosistem',
-      items: ['Dokumentasi', 'Blog', 'Panduan'],
+      items: [
+        { name: 'Dokumentasi', path: '#' },
+        { name: 'Blog', path: '#' },
+        { name: 'Panduan', path: '#' },
+      ],
     },
     {
       heading: 'Perusahaan',
-      items: ['Tentang Kami', 'Karir', 'Privasi'],
+      items: [
+        { name: 'Tentang Kami', path: '#' },
+        { name: 'Karir', path: '#' },
+        { name: 'Privasi', path: '/legal/privacy' },
+      ],
     },
   ];
 
@@ -77,17 +91,31 @@ export default function Footer({ dark = false }) {
             </h4>
             <ul className="space-y-4 text-sm font-medium">
               {items.map((item) => (
-                <li key={item}>
-                  <motion.a
-                    className={`transition-colors inline-block ${
-                      dark ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-[#111827]'
-                    }`}
-                    href="#"
-                    whileHover={{ x: 4 }}
-                    transition={{ type: 'spring', stiffness: 400, damping: 30 }}
-                  >
-                    {item}
-                  </motion.a>
+                <li key={item.name}>
+                  {item.path === '#' ? (
+                    <motion.a
+                      href="#"
+                      onClick={(e) => e.preventDefault()}
+                      className={`transition-colors inline-block cursor-default ${
+                        dark ? 'text-gray-500' : 'text-gray-400'
+                      }`}
+                      whileHover={{ x: 2 }}
+                      transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                    >
+                      {item.name}
+                    </motion.a>
+                  ) : (
+                    <MotionLink
+                      to={item.path}
+                      className={`transition-colors inline-block ${
+                        dark ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-[#111827]'
+                      }`}
+                      whileHover={{ x: 4 }}
+                      transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                    >
+                      {item.name}
+                    </MotionLink>
+                  )}
                 </li>
               ))}
             </ul>
