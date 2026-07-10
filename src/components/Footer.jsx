@@ -8,20 +8,17 @@ const MotionLink = motion(Link);
 export default function Footer({ dark = false }) {
   const links = [
     {
-      heading: 'Navigasi',
+      heading: 'Tentang Kami',
       items: [
-        { name: 'Solusi', path: '/#solusi' },
-        { name: 'Fitur', path: '/#fitur' },
-        { name: 'Ekosistem', path: '/#ekosistem' },
-        { name: 'Tanya Jawab (FAQ)', path: '/#faq' },
+        { name: 'Home', path: '/' },
+        { name: 'Contact', path: 'https://wa.me/6282337123533?text=Halo%20Exantara,%20saya%20tertarik%20dengan%20layanan%20Anda.' },
       ],
     },
     {
-      heading: 'Perusahaan',
+      heading: 'Solusi',
       items: [
         { name: 'Tema Website', path: '/tema' },
-        { name: 'Harga', path: '/harga' },
-        { name: 'Privasi', path: '/legal/privacy' },
+        { name: 'Konsultasi Harga', path: 'https://wa.me/6282337123533?text=Halo%20Exantara,%20saya%20tertarik%20dengan%20layanan%20Anda.' },
       ],
     },
   ];
@@ -85,7 +82,20 @@ export default function Footer({ dark = false }) {
             <ul className="space-y-4 text-sm font-medium">
               {items.map((item) => (
                 <li key={item.name}>
-                  {item.path === '#' ? (
+                  {item.path.startsWith('http') ? (
+                    <motion.a
+                      href={item.path}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`transition-colors inline-block ${
+                        dark ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-[#111827]'
+                      }`}
+                      whileHover={{ x: 4 }}
+                      transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                    >
+                      {item.name}
+                    </motion.a>
+                  ) : item.path === '#' ? (
                     <motion.a
                       href="#"
                       onClick={(e) => e.preventDefault()}

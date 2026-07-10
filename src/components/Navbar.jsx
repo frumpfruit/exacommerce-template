@@ -460,9 +460,11 @@ export default function Navbar() {
             </motion.div>
           )}
         </AnimatePresence>
+        </header>
+      </div>
 
-        {/* Mobile Slide-over Drawer Overlay */}
-        <AnimatePresence>
+      {/* Mobile Slide-over Drawer Overlay */}
+      <AnimatePresence>
           {mobileOpen && (
             <motion.div
               data-lenis-prevent={true}
@@ -751,8 +753,6 @@ export default function Navbar() {
             </motion.div>
           )}
         </AnimatePresence>
-        </header>
-      </div>
     </>
   );
 }
