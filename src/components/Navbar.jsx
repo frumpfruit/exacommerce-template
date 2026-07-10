@@ -78,8 +78,8 @@ export default function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 30);
       
-      // On the homepage and tema page, it's dark (transparent) only at the very top.
-      if (location.pathname === '/' || location.pathname === '/tema') {
+      // On the homepage, tema, and harga page, it's dark (transparent) only at the very top.
+      if (location.pathname === '/' || location.pathname === '/tema' || location.pathname === '/harga') {
         setIsDarkTheme(window.scrollY <= 30);
       } else {
         setIsDarkTheme(false);
@@ -117,7 +117,7 @@ export default function Navbar() {
   };
 
   // Scrolled/Solid state includes active dropdowns
-  const isSolid = scrolled || mobileOpen || activeDropdown !== null || !(location.pathname === '/' || location.pathname === '/tema');
+  const isSolid = scrolled || mobileOpen || activeDropdown !== null || !(location.pathname === '/' || location.pathname === '/tema' || location.pathname === '/harga');
 
   return (
     <>
