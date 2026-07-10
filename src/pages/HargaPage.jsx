@@ -216,7 +216,7 @@ export default function HargaPage() {
                     <span className="text-gray-400 mb-1">/bln</span>
                   </div>
 
-                  <a href="https://wa.me/6282337123533?text=Halo%20Exantara,%20saya%20tertarik%20dengan%20layanan%20Anda." target="_blank" rel="noopener noreferrer" className="block w-full mb-8">
+                  <a href="https://wa.me/6282337123533?text=Halo%20Exantara%2C%20saya%20ingin%20berkonsultasi%20mengenai%20harga%20dan%20penawaran%20layanan%20Anda." target="_blank" rel="noopener noreferrer" className="block w-full mb-8">
                     <MagneticButton
                       className={`w-full py-3 font-bold rounded transition-colors text-sm ${
                         plan.ctaVariant === 'primary'
@@ -312,7 +312,7 @@ export default function HargaPage() {
               <h2 className="text-3xl md:text-4xl font-headline font-bold tracking-tight mb-6">Minta Konsultasi Gratis</h2>
               <p className="text-gray-400 max-w-lg mx-auto mb-10">Hubungi kami melalui WhatsApp untuk mendapatkan panduan implementasi Exantara.</p>
               <div className="flex flex-wrap gap-4 justify-center">
-                <a href="https://wa.me/6282337123533?text=Halo%20Exantara,%20saya%20tertarik%20dengan%20layanan%20Anda." target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                <a href="https://wa.me/6282337123533?text=Halo%20Exantara%2C%20saya%20ingin%20berkonsultasi%20mengenai%20harga%20dan%20penawaran%20layanan%20Anda." target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                   <MagneticButton className="w-full bg-white text-black px-10 py-4 font-bold rounded-xl hover:bg-gray-200 transition-colors">
                     Hubungi WhatsApp
                   </MagneticButton>

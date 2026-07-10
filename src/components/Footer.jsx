@@ -15,7 +15,7 @@ export default function Footer({ dark = false }) {
         { name: 'Fitur', path: '/#fitur' },
         { name: 'Ekosistem', path: '/#ekosistem' },
         { name: 'Tanya Jawab (FAQ)', path: '/#faq' },
-        { name: 'Contact', path: 'https://wa.me/6282337123533?text=Halo%20Exantara,%20saya%20tertarik%20dengan%20layanan%20Anda.' },
+        { name: 'Contact', path: 'https://wa.me/6282337123533?text=Halo%20Exantara%2C%20saya%20ingin%20mengetahui%20lebih%20detail%20mengenai%20layanan%20dan%20solusi%20yang%20ditawarkan.' },
       ],
     },
     {
@@ -23,7 +23,7 @@ export default function Footer({ dark = false }) {
       items: [
         { name: 'Tema Website', path: '/tema' },
         { name: 'Harga', path: '/harga' },
-        { name: 'Konsultasi Harga', path: 'https://wa.me/6282337123533?text=Halo%20Exantara,%20saya%20tertarik%20dengan%20layanan%20Anda.' },
+        { name: 'Konsultasi Harga', path: 'https://wa.me/6282337123533?text=Halo%20Exantara%2C%20saya%20ingin%20berkonsultasi%20mengenai%20harga%20dan%20penawaran%20layanan%20Anda.' },
       ],
     },
   ];

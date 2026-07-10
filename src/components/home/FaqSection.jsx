@@ -88,9 +88,12 @@ export default function FaqSection() {
             <h4 className="text-xl sm:text-2xl font-bold text-[#111827] font-headline leading-tight">Masih memiliki pertanyaan khusus tentang regulasi produk Anda?</h4>
             <p className="text-sm sm:text-base text-gray-700 font-medium">Konsultasikan gratis dengan tim penasihat ekspor dan arsitek perdagangan kami 24/7.</p>
           </div>
-          <button className="w-full sm:w-auto px-6 py-3 rounded bg-[#111827] text-white font-body text-xs uppercase tracking-widest font-bold hover:bg-[#374151] transition-all shrink-0 shadow-sm text-center justify-center flex">
+          <a 
+            href="https://wa.me/6282337123533?text=Halo%20Exantara%2C%20saya%20ingin%20mengetahui%20lebih%20detail%20mengenai%20layanan%20dan%20solusi%20yang%20ditawarkan." 
+            target="_blank" rel="noopener noreferrer" 
+            className="w-full sm:w-auto px-6 py-3 rounded bg-[#111827] text-white font-body text-xs uppercase tracking-widest font-bold hover:bg-[#374151] transition-all shrink-0 shadow-sm text-center justify-center flex">
             Hubungi Tim Advisor ↴
-          </button>
+          </a>
         </div>
 
       </div>

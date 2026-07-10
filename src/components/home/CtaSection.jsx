@@ -61,7 +61,7 @@ export default function CtaSection() {
 
         <div className="cta-btn-group flex flex-col sm:flex-row gap-4 justify-center pt-4">
           <a 
-            href="https://wa.me/6282337123533?text=Halo%20Exantara,%20saya%20tertarik%20dengan%20layanan%20Anda."
+            href="https://wa.me/6282337123533?text=Halo%20Exantara%2C%20saya%20ingin%20mengetahui%20lebih%20detail%20mengenai%20layanan%20dan%20solusi%20yang%20ditawarkan."
             target="_blank"
             rel="noopener noreferrer"
             className="group px-8 py-4 rounded bg-[#111827] text-white font-body text-xs uppercase tracking-[0.2em] font-black hover:bg-[#374151] transition-all shadow-xl hover:shadow-2xl flex items-center justify-center gap-3 relative overflow-hidden"

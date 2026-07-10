@@ -55,7 +55,7 @@ const MEGAMENU_DATA = {
       title: "Minta Konsultasi Gratis",
       desc: "Dapatkan akses penuh ke fitur ekspor berstandar enterprise tanpa komitmen kartu kredit.",
       cta: "Hubungi Kami ➔",
-      to: "https://wa.me/6282337123533?text=Halo%20Exantara,%20saya%20tertarik%20dengan%20layanan%20Anda."
+      to: "https://wa.me/6282337123533?text=Halo%20Exantara%2C%20saya%20ingin%20mengetahui%20lebih%20detail%20mengenai%20layanan%20dan%20solusi%20yang%20ditawarkan."
     }
   }
 };
@@ -705,7 +705,7 @@ export default function Navbar() {
                   {/* Promotion card */}
                   <div className="pt-4 border-t border-white/10">
                     <a 
-                      href="https://wa.me/6282337123533?text=Halo%20Exantara,%20saya%20tertarik%20dengan%20layanan%20Anda."
+                      href="https://wa.me/6282337123533?text=Halo%20Exantara%2C%20saya%20ingin%20mengetahui%20lebih%20detail%20mengenai%20layanan%20dan%20solusi%20yang%20ditawarkan."
                       target="_blank" rel="noopener noreferrer"
                       onClick={() => { setMobileOpen(false); setMobileSubmenu(null); }}
                       className="block rounded-xl p-5 bg-white text-black hover:bg-white/95 transition-all text-left shadow-lg relative overflow-hidden"
@@ -741,7 +741,7 @@ export default function Navbar() {
                   Login
                 </a>
                 <a 
-                  href="https://wa.me/6282337123533?text=Halo%20Exantara,%20saya%20tertarik%20dengan%20layanan%20Anda."
+                  href="https://wa.me/6282337123533?text=Halo%20Exantara%2C%20saya%20ingin%20mengetahui%20lebih%20detail%20mengenai%20layanan%20dan%20solusi%20yang%20ditawarkan."
                   target="_blank" rel="noopener noreferrer"
                   onClick={() => { setMobileOpen(false); setMobileSubmenu(null); }}
                   className="flex-1 py-3 text-center rounded-full bg-white text-black text-[10px] font-bold uppercase tracking-widest hover:bg-gray-100 transition-all shadow-md flex items-center justify-center"
