@@ -120,7 +120,7 @@ export default function HargaPage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="px-margin-desktop py-32 max-w-container-max mx-auto text-center">
+      <section className="px-6 md:px-12 py-32 max-w-6xl mx-auto text-center">
         <AnimatedSection>
           <motion.div
             className="inline-block px-3 py-1 border border-gray-600 text-gray-200 font-label text-xs uppercase tracking-widest mb-8 bg-gray-800/50"
@@ -169,7 +169,7 @@ export default function HargaPage() {
       </section>
 
       {/* Pricing Cards */}
-      <section className="px-margin-desktop pb-24 max-w-container-max mx-auto">
+      <section className="px-6 md:px-12 pb-24 max-w-6xl mx-auto">
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {plans.map((plan) => (
             <StaggerItem key={plan.id} direction="scale">
@@ -246,8 +246,8 @@ export default function HargaPage() {
       </section>
 
       {/* Feature Table */}
-      <section className="px-margin-desktop py-24 border-t border-gray-800">
-        <div className="max-w-container-max mx-auto">
+      <section className="px-6 md:px-12 py-24 border-t border-gray-800">
+        <div className="max-w-6xl mx-auto">
           <AnimatedSection className="text-center mb-16">
             <h2 className="text-4xl font-headline font-bold tracking-tight mb-4">Bandingkan Semua Fitur</h2>
             <p className="text-gray-400">Pilih paket yang tepat untuk kebutuhan bisnis Anda.</p>
@@ -292,7 +292,7 @@ export default function HargaPage() {
       </section>
 
       {/* FAQ */}
-      <section className="px-margin-desktop py-24 border-t border-gray-800">
+      <section className="px-6 md:px-12 py-24 border-t border-gray-800">
         <div className="max-w-2xl mx-auto">
           <AnimatedSection className="text-center mb-12">
             <h2 className="text-3xl font-headline font-bold tracking-tight mb-4">Pertanyaan Umum</h2>
@@ -305,8 +305,8 @@ export default function HargaPage() {
       </section>
 
       {/* CTA Banner */}
-      <section className="px-margin-desktop py-24 border-t border-gray-800">
-        <div className="max-w-container-max mx-auto">
+      <section className="px-6 md:px-12 py-24 border-t border-gray-800">
+        <div className="max-w-5xl mx-auto">
           <GlowCard className="rounded-2xl bg-[#111] border border-gray-800 p-8 md:p-16 text-center" glowColor="rgba(255,255,255,0.05)">
             <AnimatedSection>
               <h2 className="text-3xl md:text-4xl font-headline font-bold tracking-tight mb-6">Minta Konsultasi Gratis</h2>
