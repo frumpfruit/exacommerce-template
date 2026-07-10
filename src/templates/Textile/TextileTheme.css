@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Work+Sans:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap');
+
+.textile-theme {
+  /* Colors */
+  --txtl-surface: #f7f9ff;
+  --txtl-surface-bright: #f7f9ff;
+  --txtl-inverse-primary: #bec7d6;
+  --txtl-on-surface-variant: #44474b;
+  --txtl-surface-container-lowest: #ffffff;
+  --txtl-on-tertiary: #ffffff;
+  --txtl-on-error-container: #93000a;
+  --txtl-secondary-fixed: #e4e2dd;
+  --txtl-error-container: #ffdad6;
+  --txtl-on-secondary: #ffffff;
+  --txtl-surface-container-low: #f1f4fa;
+  --txtl-surface-container-high: #e5e8ee;
+  --txtl-on-tertiary-fixed-variant: #3a475f;
+  --txtl-primary-fixed-dim: #bec7d6;
+  --txtl-on-tertiary-fixed: #0e1c31;
+  --txtl-on-secondary-fixed-variant: #474744;
+  --txtl-background: #f7f9ff;
+  --txtl-secondary-fixed-dim: #c8c6c2;
+  --txtl-surface-variant: #dfe3e8;
+  --txtl-surface-tint: #565f6c;
+  --txtl-on-primary: #ffffff;
+  --txtl-inverse-surface: #2d3135;
+  --txtl-surface-container: #ebeef4;
+  --txtl-inverse-on-surface: #eef1f7;
+  --txtl-on-surface: #181c20;
+  --txtl-on-error: #ffffff;
+  --txtl-secondary: #5e5e5b;
+  --txtl-outline-variant: #c5c6cc;
+  --txtl-tertiary-fixed: #d6e3ff;
+  --txtl-secondary-container: #e1dfdb;
+  --txtl-on-secondary-container: #63635f;
+  --txtl-tertiary: #000b20;
+  --txtl-error: #ba1a1a;
+  --txtl-primary-container: #1a232e;
+  --txtl-surface-container-highest: #dfe3e8;
+  --txtl-on-secondary-fixed: #1b1c19;
+  --txtl-on-primary-fixed-variant: #3e4754;
+  --txtl-on-primary-container: #818a98;
+  --txtl-tertiary-fixed-dim: #b9c7e3;
+  --txtl-on-tertiary-container: #7c8aa4;
+  --txtl-primary-fixed: #dae3f2;
+  --txtl-primary: #040d17;
+  --txtl-outline: #75777c;
+  --txtl-on-background: #181c20;
+  --txtl-surface-dim: #d7dae0;
+  --txtl-tertiary-container: #152238;
+  --txtl-on-primary-fixed: #131c27;
+
+  /* Fonts */
+  --txtl-font-serif: 'Libre Caslon Text', serif;
+  --txtl-font-sans: 'Work Sans', sans-serif;
+
+  background-color: var(--txtl-surface);
+  color: var(--txtl-primary);
+  font-family: var(--txtl-font-sans);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.textile-theme h1,
+.textile-theme h2,
+.textile-theme h3,
+.textile-theme h4,
+.textile-theme h5,
+.textile-theme h6,
+.textile-theme .font-serif {
+  line-height: 1.15;
+}
+
+.textile-theme .material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga';
+}
+
+.textile-theme .silk-texture { 
+  background-image: radial-gradient(circle at 2px 2px, rgba(224, 221, 213, 0.2) 1px, transparent 0); 
+  background-size: 24px 24px; 
+}
+
+@keyframes textileMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.textile-theme .animate-marquee {
+  animation: textileMarquee 40s linear infinite;
+}
+
+/* Base resets within textile-theme */
+.textile-theme * {
+  box-sizing: border-box;
+}
+
+.textile-theme a {
+  text-decoration: none;
+}

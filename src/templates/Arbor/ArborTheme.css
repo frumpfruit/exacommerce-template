@@ -1,0 +1,81 @@
+.arbor-theme {
+  /* Colors */
+  --arbor-primary: #012d1d;
+  --arbor-primary-container: #1b4332;
+  --arbor-secondary: #0e6c4a;
+  --arbor-secondary-container: #a0f4c8;
+  --arbor-background: #f9faf6;
+  --arbor-surface-bright: #f9faf6;
+  --arbor-surface-container: #eeeeeb;
+  --arbor-surface-container-low: #f3f4f1;
+  --arbor-surface-container-high: #e8e8e5;
+  --arbor-surface-container-highest: #e2e3e0;
+  --arbor-surface-container-lowest: #ffffff;
+  
+  --arbor-on-primary: #ffffff;
+  --arbor-on-secondary: #ffffff;
+  --arbor-on-surface: #1a1c1a;
+  --arbor-on-surface-variant: #414844;
+  --arbor-on-primary-container: #86af99;
+  --arbor-on-secondary-container: #19724f;
+  
+  --arbor-outline: #717973;
+  --arbor-outline-variant: #c1c8c2;
+  
+  --arbor-sapling-light: #D8F3DC;
+  --arbor-pulp-gray: #EDF0F2;
+  --arbor-soft-clay: #F4F1EE;
+  --arbor-timber-bark: #2D2A26;
+  --arbor-paper-white: #FDFDFD;
+  
+  --arbor-error: #ba1a1a;
+  --arbor-error-container: #ffdad6;
+  --arbor-on-error: #ffffff;
+  
+  /* Fonts */
+  --arbor-font-headline: 'Hanken Grotesk', sans-serif;
+  --arbor-font-body: 'Manrope', sans-serif;
+
+  background-color: var(--arbor-background);
+  color: var(--arbor-on-surface);
+  font-family: var(--arbor-font-body);
+}
+
+.arbor-theme .font-headline {
+  font-family: var(--arbor-font-headline);
+}
+
+.arbor-theme .font-body {
+  font-family: var(--arbor-font-body);
+}
+
+/* Custom Background Mesh Gradient */
+.arbor-theme .bg-mesh {
+  background-color: #012d1d;
+  background-image: 
+      radial-gradient(at 0% 0%, hsla(158, 64%, 20%, 1) 0, transparent 50%), 
+      radial-gradient(at 50% 0%, hsla(145, 45%, 15%, 1) 0, transparent 50%), 
+      radial-gradient(at 100% 0%, hsla(160, 50%, 25%, 1) 0, transparent 50%);
+}
+
+/* Material Symbols Adjustments */
+.arbor-theme .material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+}
+
+/* Selection customization */
+.arbor-theme ::selection {
+  background-color: var(--arbor-sapling-light);
+  color: var(--arbor-primary);
+}
+
+/* Card Zoom & Interactive Transitions */
+.arbor-theme .hover-lift {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.arbor-theme .hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(1, 45, 29, 0.08);
+}

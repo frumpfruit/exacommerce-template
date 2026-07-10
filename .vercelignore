@@ -1,0 +1,18 @@
+# Exclude agent skill systems and notes
+.agents
+docs
+md
+*.md
+DESIGN.md
+README.md
+coffee-company-prd-flowchart.jsx
+
+# Exclude local build output and local dependencies
+node_modules
+dist
+dist-ssr
+.vercel
+.vscode
+.idea
+*.log
+.DS_Store
