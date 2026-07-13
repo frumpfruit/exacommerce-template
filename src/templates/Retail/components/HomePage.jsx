@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import CategoryGrid from './CategoryGrid';
 import CollectionSlider from './CollectionSlider';
 import ProductShowcase from './ProductShowcase';
 import ScrollReveal from './ScrollReveal';
 import { useParallax, useMouseTilt, useStaggerVisible } from '../../../lib/motionHooks';
 
-// ─── 3D Tilt Hover Card ────────────────────────────────────────────────────────
+// â”€â”€â”€ 3D Tilt Hover Card â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function TiltCard({ children, style = {} }) {
   const [ref, tilt, handleMouseMove, handleMouseLeave] = useMouseTilt(5);
   return (
@@ -85,7 +85,7 @@ export default function HomePage({ products = [], onNavigate, onAddToCart }) {
 
         <div className="retail-container" style={{ position: 'relative', zIndex: 3, color: 'white', width: '100%' }}>
           <div style={{ maxWidth: '650px' }}>
-            {/* Hero title — cinematic reveal from right, delayed */}
+            {/* Hero title â€” cinematic reveal from right, delayed */}
             <h1 style={{
               fontSize: '44px',
               fontWeight: 800,
@@ -155,13 +155,13 @@ export default function HomePage({ products = [], onNavigate, onAddToCart }) {
         </div>
       </section>
 
-      {/* Brand Curation Details Section — cinematic right slide */}
+      {/* Brand Curation Details Section â€” cinematic right slide */}
       <ScrollReveal direction="right" duration={1100}>
         <section style={{ backgroundColor: 'var(--retail-surface-strong)', padding: 'var(--retail-space-10) 0', borderBottom: '1px solid var(--retail-surface-muted)' }}>
           <div className="retail-container">
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))',
               gap: 'var(--retail-space-9)',
               alignItems: 'center'
             }}>
@@ -223,13 +223,13 @@ export default function HomePage({ products = [], onNavigate, onAddToCart }) {
               We curate and tailor elements that anchor modern living spaces with architectural balance and unmatched material comfort.
             </p>
 
-            {/* Rich Editorial Image Cards Grid — 3D tilt on hover */}
+            {/* Rich Editorial Image Cards Grid â€” 3D tilt on hover */}
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))',
               gap: 'var(--retail-space-8)'
             }}>
-              {/* Card 1 — rises from below */}
+              {/* Card 1 â€” rises from below */}
               <ScrollReveal direction="rise" staggerIndex={0} duration={1000}>
               <TiltCard>
               <div 
@@ -262,7 +262,7 @@ export default function HomePage({ products = [], onNavigate, onAddToCart }) {
               </TiltCard>
               </ScrollReveal>
 
-              {/* Card 2 — slides from left */}
+              {/* Card 2 â€” slides from left */}
               <ScrollReveal direction="left" staggerIndex={1} duration={1000}>
               <TiltCard>
               <div 
@@ -295,7 +295,7 @@ export default function HomePage({ products = [], onNavigate, onAddToCart }) {
               </TiltCard>
               </ScrollReveal>
 
-              {/* Card 3 — dissolves */}
+              {/* Card 3 â€” dissolves */}
               <ScrollReveal direction="dissolve" staggerIndex={2} duration={1200}>
               <TiltCard>
               <div 
@@ -328,7 +328,7 @@ export default function HomePage({ products = [], onNavigate, onAddToCart }) {
               </TiltCard>
               </ScrollReveal>
 
-              {/* Card 4 — rises from below */}
+              {/* Card 4 â€” rises from below */}
               <ScrollReveal direction="rise" staggerIndex={3} duration={1000}>
               <TiltCard>
               <div 
@@ -369,7 +369,7 @@ export default function HomePage({ products = [], onNavigate, onAddToCart }) {
         <CategoryGrid onNavigate={onNavigate} />
       </ScrollReveal>
 
-      {/* Why Choose Us Section — slide from left */}
+      {/* Why Choose Us Section â€” slide from left */}
       <ScrollReveal direction="right" duration={1000}>
         <section style={{ 
           backgroundColor: 'var(--retail-surface-strong)', 
@@ -379,7 +379,7 @@ export default function HomePage({ products = [], onNavigate, onAddToCart }) {
           <div className="retail-container">
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))',
               gap: 'var(--retail-space-9)',
               alignItems: 'start'
             }}>
@@ -464,7 +464,7 @@ export default function HomePage({ products = [], onNavigate, onAddToCart }) {
         </section>
       </ScrollReveal>
 
-      {/* Collection Sliders — alternating directions */}
+      {/* Collection Sliders â€” alternating directions */}
       <ScrollReveal direction="left" duration={1100}>
         <CollectionSlider 
           title="Best Seller" 
@@ -501,7 +501,7 @@ export default function HomePage({ products = [], onNavigate, onAddToCart }) {
         />
       </ScrollReveal>
 
-      {/* Testimonials Section — dissolve reveal */}
+      {/* Testimonials Section â€” dissolve reveal */}
       <ScrollReveal direction="dissolve" duration={1300}>
         <section style={{ 
           backgroundColor: 'var(--retail-surface-raised)', 
@@ -534,7 +534,7 @@ export default function HomePage({ products = [], onNavigate, onAddToCart }) {
             {/* 3-Column Clean Bordered Grid for Reviews (No cards, no shadows) */}
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
               gap: 'var(--retail-space-8)'
             }}>
               {[
@@ -564,7 +564,7 @@ export default function HomePage({ products = [], onNavigate, onAddToCart }) {
                 }} className="retail-testimonial-item">
                   <div>
                     <div style={{ color: 'var(--retail-border-strong)', fontSize: '14px', marginBottom: 'var(--retail-space-3)' }}>
-                      ★★★★★
+                      â˜…â˜…â˜…â˜…â˜…
                     </div>
                     <p style={{ 
                       fontSize: '14px', 
@@ -593,3 +593,4 @@ export default function HomePage({ products = [], onNavigate, onAddToCart }) {
     </div>
   );
 }
+

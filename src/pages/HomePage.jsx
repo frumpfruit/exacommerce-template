@@ -181,7 +181,7 @@ export default function HomePage() {
         </div>
 
         {/* Section 12: CTA & Footer (Slides up with rounded top corners) */}
-        <div className="relative z-30 bg-black rounded-t-[3.5rem] md:rounded-t-[5rem] shadow-[0_-24px_50px_rgba(0,0,0,0.35)] overflow-hidden">
+        <div id="contact" className="relative z-30 bg-black rounded-t-[3.5rem] md:rounded-t-[5rem] shadow-[0_-24px_50px_rgba(0,0,0,0.35)] overflow-hidden">
           <CtaSection />
         </div>
 

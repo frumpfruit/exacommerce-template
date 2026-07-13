@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Leaf, Activity, ShieldCheck, Heart } from 'lucide-react';
 
 export default function AboutPage() {
@@ -76,7 +76,7 @@ export default function AboutPage() {
     {/* Sourcing Blueprint */}
     <section className="supp-section" style={{ backgroundColor: '#ffffff', borderTop: '1px solid var(--supp-border-muted)' }}>
       <div className="supp-container">
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px', alignItems: 'center' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '30px', alignItems: 'center' }}>
           <div>
             <div className="supp-section-subtitle">Ladang & Bahan Mentah</div>
             <h2 className="supp-section-title" style={{ color: 'var(--supp-text-primary)' }}>Sourcing Blueprint Organik Kami</h2>
@@ -91,13 +91,13 @@ export default function AboutPage() {
             <h4 style={{ fontSize: '16px', fontWeight: 800, color: 'var(--supp-text-primary)', marginBottom: '15px' }}>Bahan Baku Inti:</h4>
             <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
               <li style={{ fontSize: '13px', display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--supp-text-secondary)' }}>
-                <span style={{ color: 'var(--supp-surface-raised)', fontWeight: 800 }}>✔</span> <strong>Ubi Ungu Organik Bromo:</strong> Sumber antosianin tinggi untuk memelihara mukosa lambung.
+                <span style={{ color: 'var(--supp-surface-raised)', fontWeight: 800 }}>âœ”</span> <strong>Ubi Ungu Organik Bromo:</strong> Sumber antosianin tinggi untuk memelihara mukosa lambung.
               </li>
               <li style={{ fontSize: '13px', display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--supp-text-secondary)' }}>
-                <span style={{ color: 'var(--supp-surface-raised)', fontWeight: 800 }}>✔</span> <strong>Swedish Oats Premium:</strong> Karbohidrat kompleks pelepasan lambat ramah pencernaan.
+                <span style={{ color: 'var(--supp-surface-raised)', fontWeight: 800 }}>âœ”</span> <strong>Swedish Oats Premium:</strong> Karbohidrat kompleks pelepasan lambat ramah pencernaan.
               </li>
               <li style={{ fontSize: '13px', display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--supp-text-secondary)' }}>
-                <span style={{ color: 'var(--supp-surface-raised)', fontWeight: 800 }}>✔</span> <strong>15 Biji-bijian Aktif:</strong> Quinoa, biji chia, dan flaxseed sebagai pelengkap mikronutrisi.
+                <span style={{ color: 'var(--supp-surface-raised)', fontWeight: 800 }}>âœ”</span> <strong>15 Biji-bijian Aktif:</strong> Quinoa, biji chia, dan flaxseed sebagai pelengkap mikronutrisi.
               </li>
             </ul>
           </div>
@@ -116,7 +116,7 @@ export default function AboutPage() {
           Setiap bets formulasi NutriPride melewati tiga tahap pengujian independen sebelum dikemas secara kedap udara.
         </p>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))', gap: '20px' }}>
           <div style={{ padding: '20px', backgroundColor: 'var(--supp-surface-card)', border: '1px solid var(--supp-border-muted)', borderRadius: '12px', boxShadow: 'var(--supp-shadow-2)' }}>
             <h3 style={{ fontSize: '18px', fontWeight: 800, color: 'var(--supp-surface-raised)', marginBottom: '8px' }}>BPOM RI</h3>
             <p style={{ fontSize: '13px', color: 'rgba(33, 37, 41, 0.75)', lineHeight: 1.5 }}>Terdaftar resmi dengan kode MD nasional, menjamin keamanan konsumsi harian keluarga.</p>
@@ -186,3 +186,4 @@ export default function AboutPage() {
     </>  
   );
 }
+

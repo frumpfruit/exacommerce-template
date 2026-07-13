@@ -5,11 +5,59 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 export const TEMPLATES = [
-  { id: 'retail', title: 'Retail & Online Store (HAVEN)', category: 'E-commerce', img: '/images/generated/haven_mockup.png', desc: 'Template toko online lengkap dengan desain mewah dan premium.' },
-  { id: 'distribution', title: 'Distribution & Wholesale (NEXUS)', category: 'E-commerce', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCitg-GBTltyyVOs4jzMfq_1UGz2YazM_abXrtrmn_WMdAkI-q_2qJj1M6LInKvS76i5U7I-Jd-dtxH-McpZDOhZsPpaKTFnsKPWImqbj3RF0ahQsCICVp6xEAUoJEQbN4W4txs1P3cfl59wJajloOuowhVBVr8YBd14-lOLnywT--JjcMLjAmYJd0Ilhs5emYKS_jAoFfQ30EztKz6ZBqQD-cabc_hl68rGicdkNdvfHa8FNdwqOBK', desc: 'Platform B2B untuk distributor skala besar dengan analitik.' },
-  { id: 'marketing', title: 'Supplement & Health Compro (NUTRIPRIDE)', category: 'Landing Page', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBUV6uqVQbCfSO6x0z6uW_MgMzMD2F-fhbgZzUZcm5tvwMGr7LUCkN4QWIU4ZNgVdWBJYcRQCE_AZ-uRH0U7h4osr2nyu5F490-Eln_Lhbe69Oqp6laNv6fzOubsF0n49rLHVC1F-pPLUBXGAd-TovmYPFsd3LvszkjpU43OLlvFg6tJqohxBijMFcetXLejZIaSsmpZ0YfCBQ7PIgKEC7E6NIlw1cl1ARYcvKTrK16OMaE9a3TMfB8', desc: 'Halaman arahan konversi tinggi untuk produk kesehatan dan FMCG.' },
-  { id: 'coffee', title: 'Premium Coffee Producer (KOPITERA)', category: 'Landing Page', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBZl8OI9BddePCFCaa0Y0xwwAtnE_Z0sXcqjqS-nEEo4wmZS9HMXET79aCgzh8f0YRHTJgkS_gUFWr6HxEyvSe5kyTBsNW8P7othcQAjXQ7zHQqasE1bK4wwMdJzdJ8L2skJj0Dv53HH-ZTKH9D7LOL_oyUWHxWLk65_3rfSp7_KsghX49DNN5pO0evKrhZ4g0GttWyszNa9rfMkKqRiH0hjZj0dxwP1gLX_zbEW8spBl7CsYPONAlL', desc: 'Desain elegan untuk produsen kopi premium.' },
-  { id: 'profile', title: 'Creator Profile (AURA)', category: 'Portfolio', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDX43VnbE2jji48nsqZ8S-5vDH0QCj9oJjsfnJI5ZmtSk5er-ng_PLdLc4069D6i3HooPOR-dKC_9t2zFKgBRsXNp1lEbNNMAGFateUuHsWSQC9-SIpvBui4UuV0qllpOg6ZLjYnRtcVLNedFWMDr6Sf4afw26slxAWdsuD4O2pXqL85Fy0CazQBmQGIw7exiARsw6Uj8sBulUZi5ZBJhntHArJcrSqsU8ffCrvkAaevHHheN7ga-CM', desc: 'Portofolio minimalis untuk kreator dan desainer.' },
+  { 
+    id: 'retail', 
+    title: 'Retail & Online Store (HAVEN)', 
+    category: 'E-commerce', 
+    img: '/mockup/HAVEN DESK.png', 
+    desc: 'Template toko online furnitur mewah (HAVEN) dengan katalog premium, keranjang belanja, proses konsultasi desain kustom, dan ulasan estetika.' 
+  },
+  { 
+    id: 'distribution', 
+    title: 'Distribution & Wholesale (NEXUS)', 
+    category: 'E-commerce', 
+    img: '/mockup/NEXUS DESK.png', 
+    desc: 'Platform e-commerce B2B (NEXUS) untuk distributor pengemasan, alat keselamatan SNI, dan logistik industri dengan fitur Request for Quote (RFQ).' 
+  },
+  { 
+    id: 'coffee', 
+    title: 'Premium Coffee Exporter (KOPITERA)', 
+    category: 'Landing Page', 
+    img: '/mockup/KOPITERA DESK.png', 
+    desc: 'Landing page eksportir biji kopi hijau pilihan Nusantara (KOPITERA) untuk roastery global lengkap dengan profil rasa origin dan detail ketertelusuran.' 
+  },
+  { 
+    id: 'roastery', 
+    title: 'Roastery & Specialty Coffee (ELITE BREW)', 
+    category: 'Landing Page', 
+    img: '/mockup/ELITE BRE DESK.png', 
+    desc: 'Website modern specialty coffee roastery (ELITE BREW) yang menampilkan aneka mesin pembuat kopi (brewers), pods kopi, aksesoris, dan paket bundel.' 
+  },
+  { 
+    id: 'textile', 
+    title: 'Textile Global (Silk & Stone)', 
+    category: 'Corporate', 
+    img: '/mockup/SILK DESK.png', 
+    desc: 'Katalog ekspor B2B kain tenun warisan budaya (Silk & Stone) yang menjembatani karya perajin tradisional dengan logistik pengiriman internasional.' 
+  },
+  { 
+    id: 'kokitopia', 
+    title: 'Kokitopia (Goldfish Store)', 
+    category: 'E-commerce', 
+    img: '/mockup/KOKITOPIA ENTIRE PAGE DESK.png', 
+    desc: 'Website e-commerce spesialis ikan hias koki / goldfish premium (Kokitopia) dengan galeri ikan pilihan, tips perawatan maskoki, dan sistem pemesanan langsung.' , 
+    external: true, 
+    url: 'https://kokitopia.com' 
+  },
+  { 
+    id: 'spjteak', 
+    title: 'SPJ Teak Furniture', 
+    category: 'Corporate', 
+    img: '/mockup/SPJ DESK.png', 
+    desc: 'Katalog produk eksportir mebel kayu jati premium Jepara (SPJ Teak Furniture) untuk kebutuhan ritel furnitur internasional dan dekorasi indoor-outdoor.', 
+    external: true, 
+    url: 'https://spjteakfurniture.com' 
+  }
 ];
 
 const FILTERS = ['All', 'Landing Page', 'E-commerce', 'Corporate', 'Portfolio', 'SaaS', 'Content'];
@@ -107,15 +155,23 @@ export default function TemaPage() {
                     transition={{ duration: 0.3 }}
                     className="group bg-[#111] border border-gray-800 hover:border-gray-600 rounded-xl overflow-hidden transition-all duration-300"
                   >
-                    <div className="aspect-video bg-[#1a1a1a] w-full relative overflow-hidden">
-                      <div 
-                        className="w-full h-full transform group-hover:scale-105 transition-transform duration-700 bg-cover bg-center"
-                        style={{ backgroundImage: `url('${tpl.img}')` }}
-                      ></div>
+                    <div className="w-full bg-[#1a1a1a] relative overflow-hidden" style={{ height: '220px' }}>
+                      <img
+                        src={tpl.img}
+                        alt={tpl.title}
+                        className="w-full h-full object-cover object-top transform group-hover:scale-105 transition-transform duration-700"
+                        loading="lazy"
+                      />
                       <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-sm">
-                        <Link to={`/${tpl.id}`} className="bg-white text-black px-6 py-2 rounded-full font-bold shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-all">
-                          Preview Langsung
-                        </Link>
+                        {tpl.external ? (
+                          <a href={tpl.url} target="_blank" rel="noopener noreferrer" className="bg-white text-black px-6 py-2 rounded-full font-bold shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-all">
+                            Kunjungi Website
+                          </a>
+                        ) : (
+                          <Link to={`/${tpl.id}`} className="bg-white text-black px-6 py-2 rounded-full font-bold shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-all">
+                            Preview Langsung
+                          </Link>
+                        )}
                       </div>
                     </div>
                     <div className="p-6">

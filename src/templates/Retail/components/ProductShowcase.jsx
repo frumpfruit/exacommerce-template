@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 
 export default function ProductShowcase({ products = [], onAddToCart, onViewDetail }) {
   // Use passed products, default to first 4 if available
@@ -20,7 +20,7 @@ export default function ProductShowcase({ products = [], onAddToCart, onViewDeta
         
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 240px), 1fr))',
           gap: 'var(--retail-space-8)'
         }}>
           {list.map(product => (
@@ -76,3 +76,4 @@ export default function ProductShowcase({ products = [], onAddToCart, onViewDeta
     </section>
   );
 }
+

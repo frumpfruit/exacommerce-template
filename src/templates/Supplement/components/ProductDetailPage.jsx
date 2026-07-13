@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import ScrollReveal from './ScrollReveal';
 
 export default function ProductDetailPage({ product, onAddToCart, onInquireNow, onSelectProduct, allProducts = [] }) {
@@ -23,13 +23,13 @@ export default function ProductDetailPage({ product, onAddToCart, onInquireNow, 
             transition: 'all 0.2s'
           }}
         >
-          ← Kembali ke Katalog
+          â† Kembali ke Katalog
         </button>
 
         <ScrollReveal>
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))',
             gap: '30px',
             backgroundColor: 'var(--supp-surface-card)',
             border: '1px solid var(--supp-border-muted)',
@@ -153,7 +153,7 @@ export default function ProductDetailPage({ product, onAddToCart, onInquireNow, 
               </h2>
               <div style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 220px), 1fr))',
                 gap: '20px'
               }}>
                 {relatedProducts.map(rp => (
@@ -198,3 +198,7 @@ export default function ProductDetailPage({ product, onAddToCart, onInquireNow, 
     </div>
   );
 }
+
+
+
+

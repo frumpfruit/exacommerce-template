@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import ScrollReveal from './ScrollReveal';
 import { ContainerScroll, CardSticky } from '@/components/cards-stack';
 
@@ -13,7 +13,7 @@ export default function AboutPage() {
         borderBottom: '1px solid rgba(255,255,255,0.1)'
       }}>
         <div className="dist-container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'var(--dist-space-8)', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 'var(--dist-space-8)', alignItems: 'center' }}>
             <div style={{ maxWidth: '600px' }}>
               <span style={{ 
                 display: 'inline-block',
@@ -54,7 +54,7 @@ export default function AboutPage() {
         <section style={{ backgroundColor: 'var(--dist-surface-base)', paddingBottom: 'var(--dist-space-8)' }}>
           <div className="dist-container">
             <div style={{
-              display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+              display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))',
               borderTop: '1px solid rgba(255,255,255,0.1)', borderLeft: '1px solid rgba(255,255,255,0.1)'
             }}>
               {[
@@ -228,3 +228,4 @@ export default function AboutPage() {
     </div>
   );
 }
+

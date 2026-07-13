@@ -37,7 +37,7 @@ export default function ArborStore() {
         {activePage === 'process' && <ProcessPage onNavigate={handleNavigate} />}
         {activePage === 'about' && <AboutPage onNavigate={handleNavigate} />}
       </div>
-      <Footer />
+      <Footer onNavigate={handleNavigate} />
     </div>
   );
 }

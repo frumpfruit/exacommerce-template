@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import ScrollReveal from './ScrollReveal';
 
 export default function ContactPage() {
@@ -62,7 +62,7 @@ export default function ContactPage() {
           <div className="dist-container" style={{ maxWidth: '900px' }}>
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
               gap: 'var(--dist-space-7)'
             }}>
               {/* Contact Info */}
@@ -72,10 +72,10 @@ export default function ContactPage() {
                 </h2>
 
                 {[
-                  { label: 'Head Office', value: 'Jl. Raya Industri No. 88, Surabaya 60175, East Java, Indonesia', icon: '📍' },
-                  { label: 'Phone', value: '+62 31 8888 7777', icon: '📞' },
-                  { label: 'Email', value: 'sales@nexusdistribution.co.id', icon: '✉️' },
-                  { label: 'Business Hours', value: 'Mon - Fri: 08:00 - 17:00 WIB\nSat: 08:00 - 12:00 WIB', icon: '🕐' }
+                  { label: 'Head Office', value: 'Jl. Raya Industri No. 88, Surabaya 60175, East Java, Indonesia', icon: 'ðŸ“' },
+                  { label: 'Phone', value: '+62 31 8888 7777', icon: 'ðŸ“ž' },
+                  { label: 'Email', value: 'sales@nexusdistribution.co.id', icon: 'âœ‰ï¸' },
+                  { label: 'Business Hours', value: 'Mon - Fri: 08:00 - 17:00 WIB\nSat: 08:00 - 12:00 WIB', icon: 'ðŸ•' }
                 ].map((item, idx) => (
                   <div key={idx} style={{
                     display: 'flex', gap: 'var(--dist-space-3)',
@@ -169,3 +169,4 @@ export default function ContactPage() {
     </div>
   );
 }
+

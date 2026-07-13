@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Coffee } from 'lucide-react';
 
 export default function Footer({ onNavigate }) {
@@ -9,7 +9,7 @@ export default function Footer({ onNavigate }) {
     }}>
       <div style={{
         maxWidth: '1200px', width: '100%', margin: '0 auto',
-        display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+        display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))',
         gap: '48px', paddingBottom: '60px', borderBottom: '1px solid rgba(250,247,242,0.08)'
       }}>
         <div>
@@ -59,9 +59,10 @@ export default function Footer({ onNavigate }) {
         display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap',
         gap: '20px', fontSize: '12px', color: 'rgba(250,247,242,0.3)'
       }}>
-        <div>© 2026 KOPITERA. Semua Hak Cipta Dilindungi.</div>
-        <div>Design System: Warm Luxury Gourmet · PRD v1.0</div>
+        <div>Â© 2026 KOPITERA. Semua Hak Cipta Dilindungi.</div>
+        <div>Design System: Warm Luxury Gourmet Â· PRD v1.0</div>
       </div>
     </footer>
   );
 }
+

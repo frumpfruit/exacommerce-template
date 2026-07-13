@@ -118,3 +118,22 @@ body {
   border-color: #cbd5e1;
   box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.05);
 }
+
+/* Global overflow-x prevention for all template store themes */
+.retail-theme,
+.dist-theme,
+.coffee-theme,
+.roastery-theme,
+.supp-theme,
+.arbor-theme,
+.textile-theme,
+.fullscreen-preview-wrapper {
+  max-width: 100%;
+  overflow-x: hidden !important;
+  box-sizing: border-box;
+}
+
+body, html {
+  max-width: 100%;
+  overflow-x: hidden;
+}

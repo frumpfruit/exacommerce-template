@@ -1,11 +1,11 @@
 import React from 'react';
 
-export default function Footer() {
+export default function Footer({ onNavigate = () => {} }) {
   return (
     <footer className="bg-[#1b4332] text-white">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-[64px] px-[24px] py-[120px] max-w-[1280px] mx-auto">
         <div className="space-y-6">
-          <a className="font-['Hanken_Grotesk'] text-[32px] leading-[40px] font-bold text-[#D8F3DC]" href="#">Arbor Pulp</a>
+          <button onClick={() => onNavigate('home')} className="font-['Hanken_Grotesk'] text-[32px] leading-[40px] font-bold text-[#D8F3DC] hover:opacity-80 transition-opacity text-left">Arbor Pulp</button>
           <p className="font-['Manrope'] text-[16px] leading-[24px] font-[400] text-[#a5d0b9] leading-relaxed">
             Engineering a sustainable future through meticulous stewardship of industrial forest species.
           </p>
@@ -13,19 +13,19 @@ export default function Footer() {
         <div className="space-y-6">
           <h4 className="font-['Hanken_Grotesk'] text-[12px] leading-[16px] font-[700] tracking-[0.05em] uppercase tracking-wider text-[#D8F3DC]">Core Assets</h4>
           <nav className="flex flex-col gap-3">
-            <a className="text-[#a5d0b9] hover:text-[#D8F3DC] transition-colors duration-200 font-['Manrope'] text-[16px] leading-[24px] font-[400]" href="#">Acacia Lifecycle</a>
-            <a className="text-[#a5d0b9] hover:text-[#D8F3DC] transition-colors duration-200 font-['Manrope'] text-[16px] leading-[24px] font-[400]" href="#">Eucalyptus Stewardship</a>
-            <a className="text-[#a5d0b9] hover:text-[#D8F3DC] transition-colors duration-200 font-['Manrope'] text-[16px] leading-[24px] font-[400]" href="#">Sustainability Report</a>
-            <a className="text-[#a5d0b9] hover:text-[#D8F3DC] transition-colors duration-200 font-['Manrope'] text-[16px] leading-[24px] font-[400]" href="#">Industrial Applications</a>
+            <button onClick={() => onNavigate('home')} className="text-[#a5d0b9] hover:text-[#D8F3DC] transition-colors duration-200 font-['Manrope'] text-[16px] leading-[24px] font-[400] text-left">Acacia Lifecycle</button>
+            <button onClick={() => onNavigate('home')} className="text-[#a5d0b9] hover:text-[#D8F3DC] transition-colors duration-200 font-['Manrope'] text-[16px] leading-[24px] font-[400] text-left">Eucalyptus Stewardship</button>
+            <button onClick={() => onNavigate('about')} className="text-[#a5d0b9] hover:text-[#D8F3DC] transition-colors duration-200 font-['Manrope'] text-[16px] leading-[24px] font-[400] text-left">Sustainability Report</button>
+            <button onClick={() => onNavigate('home')} className="text-[#a5d0b9] hover:text-[#D8F3DC] transition-colors duration-200 font-['Manrope'] text-[16px] leading-[24px] font-[400] text-left">Industrial Applications</button>
           </nav>
         </div>
         <div className="space-y-6">
           <h4 className="font-['Hanken_Grotesk'] text-[12px] leading-[16px] font-[700] tracking-[0.05em] uppercase tracking-wider text-[#D8F3DC]">Corporate</h4>
           <nav className="flex flex-col gap-3">
-            <a className="text-[#a5d0b9] hover:text-[#D8F3DC] transition-colors duration-200 font-['Manrope'] text-[16px] leading-[24px] font-[400]" href="#">Investor Relations</a>
-            <a className="text-[#a5d0b9] hover:text-[#D8F3DC] transition-colors duration-200 font-['Manrope'] text-[16px] leading-[24px] font-[400]" href="#">Privacy Policy</a>
-            <a className="text-[#a5d0b9] hover:text-[#D8F3DC] transition-colors duration-200 font-['Manrope'] text-[16px] leading-[24px] font-[400]" href="#">Terms of Service</a>
-            <a className="text-[#a5d0b9] hover:text-[#D8F3DC] transition-colors duration-200 font-['Manrope'] text-[16px] leading-[24px] font-[400]" href="#">Press Kit</a>
+            <button onClick={() => onNavigate('about')} className="text-[#a5d0b9] hover:text-[#D8F3DC] transition-colors duration-200 font-['Manrope'] text-[16px] leading-[24px] font-[400] text-left">Investor Relations</button>
+            <button onClick={() => onNavigate('about')} className="text-[#a5d0b9] hover:text-[#D8F3DC] transition-colors duration-200 font-['Manrope'] text-[16px] leading-[24px] font-[400] text-left">Privacy Policy</button>
+            <button onClick={() => onNavigate('about')} className="text-[#a5d0b9] hover:text-[#D8F3DC] transition-colors duration-200 font-['Manrope'] text-[16px] leading-[24px] font-[400] text-left">Terms of Service</button>
+            <button onClick={() => onNavigate('process')} className="text-[#a5d0b9] hover:text-[#D8F3DC] transition-colors duration-200 font-['Manrope'] text-[16px] leading-[24px] font-[400] text-left">Press Kit</button>
           </nav>
         </div>
         <div className="space-y-6">
@@ -45,12 +45,12 @@ export default function Footer() {
       <div className="border-t border-white/10 px-[24px] py-8">
         <div className="max-w-[1280px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
           <p className="font-['Manrope'] text-[16px] leading-[24px] font-[400] text-[#a5d0b9]/60">
-            © 2024 Arbor Pulp. All rights reserved. Engineered Nature for a Sustainable Future.
+            &copy; 2024 Arbor Pulp. All rights reserved. Engineered Nature for a Sustainable Future.
           </p>
           <div className="flex gap-6">
-            <a className="text-[#a5d0b9]/60 hover:text-[#D8F3DC] transition-colors" href="#"><span className="material-symbols-outlined">public</span></a>
-            <a className="text-[#a5d0b9]/60 hover:text-[#D8F3DC] transition-colors" href="#"><span className="material-symbols-outlined">share</span></a>
-            <a className="text-[#a5d0b9]/60 hover:text-[#D8F3DC] transition-colors" href="#"><span className="material-symbols-outlined">rss_feed</span></a>
+            <button onClick={() => onNavigate('home')} className="text-[#a5d0b9]/60 hover:text-[#D8F3DC] transition-colors"><span className="material-symbols-outlined">public</span></button>
+            <button onClick={() => onNavigate('about')} className="text-[#a5d0b9]/60 hover:text-[#D8F3DC] transition-colors"><span className="material-symbols-outlined">share</span></button>
+            <button onClick={() => onNavigate('process')} className="text-[#a5d0b9]/60 hover:text-[#D8F3DC] transition-colors"><span className="material-symbols-outlined">rss_feed</span></button>
           </div>
         </div>
       </div>

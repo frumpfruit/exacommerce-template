@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 
 export default function ProductShowcase({ products = [], onAddToCart, onViewDetail }) {
   const displayProducts = products.slice(0, 4);
@@ -29,7 +29,7 @@ export default function ProductShowcase({ products = [], onAddToCart, onViewDeta
 
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 240px), 1fr))',
           gap: 'var(--dist-space-5)'
         }}>
           {displayProducts.map(product => (
@@ -55,7 +55,7 @@ export default function ProductShowcase({ products = [], onAddToCart, onViewDeta
                 marginBottom: 'var(--dist-space-3)',
                 position: 'relative'
               }}>
-                {/* 📷 IMAGE NEEDED: product image */}
+                {/* ðŸ“· IMAGE NEEDED: product image */}
                 <div style={{
                   width: '100%', height: '100%',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -126,3 +126,4 @@ export default function ProductShowcase({ products = [], onAddToCart, onViewDeta
     </section>
   );
 }
+

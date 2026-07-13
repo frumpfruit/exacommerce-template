@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import ScrollReveal from './ScrollReveal';
 
 const PIPELINE_STEPS = [
@@ -19,7 +19,7 @@ export default function ProcessPage({ onNavigate }) {
         borderBottom: '1px solid var(--supp-border-muted)'
       }}>
         <div className="supp-container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'var(--supp-space-layout-sm)', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 'var(--supp-space-layout-sm)', alignItems: 'center' }}>
             <div style={{ maxWidth: '600px' }}>
               <span style={{ 
                 display: 'inline-block', padding: '4px 10px', backgroundColor: 'rgba(120, 190, 0, 0.1)', 
@@ -121,7 +121,7 @@ export default function ProcessPage({ onNavigate }) {
               Garansi Kualitas & Layanan NutriPride
             </h2>
             
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '20px' }}>
               {[
                 { title: '100% Organik Tanpa Kimia', desc: 'Kami menjamin tidak ada pewarna sintetis, pemanis buatan, atau pengental kimia. Seluruh bahan mentah murni bersumber dari perkebunan organik.' },
                 { title: 'Konsultasi Ahli Gizi Cepat', desc: 'Semua permintaan konsultasi diet dan saran produk akan diproses dan dihubungi oleh ahli gizi bersertifikat kami dalam waktu maksimal 24 jam.' },
@@ -175,3 +175,4 @@ export default function ProcessPage({ onNavigate }) {
     </div>
   );
 }
+

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, Minus, Plus, ShoppingCart, ShieldCheck, Check, ChevronDown, ChevronUp, Globe } from 'lucide-react';
 
@@ -269,3 +269,6 @@ export default function ProductDetailPage({ product, onNavigate, onAddToCart, sh
     </div>
   );
 }
+
+
+

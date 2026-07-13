@@ -36,13 +36,13 @@ export default function Footer({ onNavigate }) {
           {/* Col 2: Solutions / Shop */}
           <div>
             <h4 style={{ color: 'white', fontSize: '14px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1px', marginBottom: 'var(--dist-space-4)' }}>
-              Shop
+              Kategori
             </h4>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '13px' }}>
-              <li><a href="#" style={{ cursor: 'pointer' }} onClick={(e) => { e.preventDefault(); onNavigate('store'); }}>Furniture</a></li>
-              <li><a href="#" style={{ cursor: 'pointer' }} onClick={(e) => { e.preventDefault(); onNavigate('store'); }}>Lighting</a></li>
-              <li><a href="#" style={{ cursor: 'pointer' }} onClick={(e) => { e.preventDefault(); onNavigate('store'); }}>Decor</a></li>
-              <li><a href="#" style={{ cursor: 'pointer' }} onClick={(e) => { e.preventDefault(); onNavigate('store'); }}>Sale</a></li>
+              <li><a href="#" style={{ cursor: 'pointer' }} onClick={(e) => { e.preventDefault(); onNavigate('store'); }}>Packaging</a></li>
+              <li><a href="#" style={{ cursor: 'pointer' }} onClick={(e) => { e.preventDefault(); onNavigate('store'); }}>Safety Equipment</a></li>
+              <li><a href="#" style={{ cursor: 'pointer' }} onClick={(e) => { e.preventDefault(); onNavigate('store'); }}>Office Supplies</a></li>
+              <li><a href="#" style={{ cursor: 'pointer' }} onClick={(e) => { e.preventDefault(); onNavigate('store'); }}>Cleaning Tools</a></li>
             </ul>
           </div>
 
@@ -52,8 +52,8 @@ export default function Footer({ onNavigate }) {
               Support
             </h4>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '13px' }}>
-              <li><a href="#" style={{ cursor: 'pointer' }} onClick={(e) => { e.preventDefault(); }}>FAQ</a></li>
-              <li><a href="#" style={{ cursor: 'pointer' }} onClick={(e) => { e.preventDefault(); }}>Shipping & Returns</a></li>
+              <li><a href="#" style={{ cursor: 'pointer' }} onClick={(e) => { e.preventDefault(); onNavigate('contact'); }}>FAQ</a></li>
+              <li><a href="#" style={{ cursor: 'pointer' }} onClick={(e) => { e.preventDefault(); onNavigate('contact'); }}>Shipping &amp; Returns</a></li>
               <li><a href="#" style={{ cursor: 'pointer' }} onClick={(e) => { e.preventDefault(); onNavigate('contact'); }}>Contact Us</a></li>
             </ul>
           </div>

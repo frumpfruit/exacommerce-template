@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 
 const CATEGORIES = [
   { 
@@ -69,7 +69,7 @@ export default function CategoryGrid({ onNavigate }) {
       {/* Categories Grid with Premium Hover Animations */}
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))',
         gap: 'var(--retail-space-7)'
       }}>
         {CATEGORIES.map(cat => (
@@ -91,7 +91,7 @@ export default function CategoryGrid({ onNavigate }) {
                 display: 'flex',
                 alignItems: 'center'
               }}>
-                {cat.title} <span className="retail-category-arrow">→</span>
+                {cat.title} <span className="retail-category-arrow">â†’</span>
               </h3>
               <p style={{ 
                 fontSize: '12px', 
@@ -126,10 +126,11 @@ export default function CategoryGrid({ onNavigate }) {
           onMouseEnter={(e) => e.currentTarget.style.color = 'var(--retail-text-primary)'}
           onMouseLeave={(e) => e.currentTarget.style.color = 'var(--retail-border-strong)'}
         >
-          View All Collections →
+          View All Collections â†’
         </button>
       </div>
 
     </section>
   );
 }
+

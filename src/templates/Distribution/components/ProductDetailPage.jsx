@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import ScrollReveal from './ScrollReveal';
 
 export default function ProductDetailPage({ product, onAddToCart, onInquireNow, onSelectProduct, allProducts = [] }) {
@@ -23,13 +23,13 @@ export default function ProductDetailPage({ product, onAddToCart, onInquireNow, 
             transition: 'all 0.2s'
           }}
         >
-          ← Back to Catalog
+          â† Back to Catalog
         </button>
 
         <ScrollReveal>
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))',
             gap: 'var(--dist-space-7)',
             backgroundColor: 'var(--dist-surface-strong)',
             border: '1px solid var(--dist-surface-muted)',
@@ -39,7 +39,7 @@ export default function ProductDetailPage({ product, onAddToCart, onInquireNow, 
           }}>
             {/* Image */}
             <div className="dist-detail-img-container">
-              {/* 📷 IMAGE NEEDED: product image */}
+              {/* ðŸ“· IMAGE NEEDED: product image */}
               <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" strokeWidth="1" style={{ position: 'absolute', zIndex: 0 }}>
                 <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
                 <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
@@ -137,7 +137,7 @@ export default function ProductDetailPage({ product, onAddToCart, onInquireNow, 
               </h2>
               <div style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 220px), 1fr))',
                 gap: 'var(--dist-space-4)'
               }}>
                 {relatedProducts.map(rp => (
@@ -179,3 +179,7 @@ export default function ProductDetailPage({ product, onAddToCart, onInquireNow, 
     </div>
   );
 }
+
+
+
+

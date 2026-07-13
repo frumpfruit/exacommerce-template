@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 
 export default function Footer({ onNavigate }) {
   const [email, setEmail] = useState('');
@@ -44,7 +44,7 @@ export default function Footer({ onNavigate }) {
       <div className="retail-container">
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))',
           gap: 'var(--retail-space-8)',
           marginBottom: 'var(--retail-space-10)'
         }}>
@@ -143,7 +143,7 @@ export default function Footer({ onNavigate }) {
               
               {subscribed && (
                 <span style={{ fontSize: 'var(--retail-text-sm)', color: '#d9ab7e', marginTop: 'var(--retail-space-1)', fontWeight: 500 }}>
-                  ✓ Subscribed successfully!
+                  âœ“ Subscribed successfully!
                 </span>
               )}
             </form>
@@ -160,7 +160,7 @@ export default function Footer({ onNavigate }) {
           fontSize: 'var(--retail-text-xs)',
           color: '#666'
         }}>
-          <div>© 2026 Haven Collection. All rights reserved.</div>
+          <div>Â© 2026 Haven Collection. All rights reserved.</div>
           <div style={{ display: 'flex', gap: 'var(--retail-space-5)' }}>
             <button onClick={(e) => handleModalOpen(e, 'privacy')} className="retail-footer-link" style={{ fontSize: 'var(--retail-text-xs)', color: '#666' }}>
               Privacy Policy
@@ -329,3 +329,4 @@ export default function Footer({ onNavigate }) {
     </footer>
   );
 }
+

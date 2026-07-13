@@ -73,19 +73,19 @@ export default function Footer({ onNavigate }) {
           <div className="space-y-4">
             <h5 className="text-label-lg font-label-lg font-bold uppercase tracking-wider text-pure-white/90">Support</h5>
             <ul className="space-y-2.5 text-body-md text-pure-white/70">
-              <li><a className="hover:text-pure-white hover:underline transition-all text-left block" href="#faq">FAQ</a></li>
-              <li><a className="hover:text-pure-white hover:underline transition-all text-left block" href="#returns">Returns</a></li>
-              <li><a className="hover:text-pure-white hover:underline transition-all text-left block" href="#contact">Contact Us</a></li>
-              <li><a className="hover:text-pure-white hover:underline transition-all text-left block" href="#warranty">Warranty</a></li>
+              <li><button onClick={() => onNavigate('contact')} className="hover:text-pure-white hover:underline transition-all text-left">FAQ</button></li>
+              <li><button onClick={() => onNavigate('contact')} className="hover:text-pure-white hover:underline transition-all text-left">Returns</button></li>
+              <li><button onClick={() => onNavigate('contact')} className="hover:text-pure-white hover:underline transition-all text-left">Contact Us</button></li>
+              <li><button onClick={() => onNavigate('contact')} className="hover:text-pure-white hover:underline transition-all text-left">Warranty</button></li>
             </ul>
           </div>
           <div className="space-y-4">
             <h5 className="text-label-lg font-label-lg font-bold uppercase tracking-wider text-pure-white/90">Company</h5>
             <ul className="space-y-2.5 text-body-md text-pure-white/70">
-              <li><a className="hover:text-pure-white hover:underline transition-all text-left block" href="#careers">Careers</a></li>
-              <li><a className="hover:text-pure-white hover:underline transition-all text-left block" href="#terms">Terms</a></li>
-              <li><a className="hover:text-pure-white hover:underline transition-all text-left block" href="#privacy">Privacy</a></li>
-              <li><a className="hover:text-pure-white hover:underline transition-all text-left block" href="#legal">Legal</a></li>
+              <li><button onClick={() => onNavigate('about')} className="hover:text-pure-white hover:underline transition-all text-left">Careers</button></li>
+              <li><button onClick={() => onNavigate('about')} className="hover:text-pure-white hover:underline transition-all text-left">Terms</button></li>
+              <li><button onClick={() => onNavigate('about')} className="hover:text-pure-white hover:underline transition-all text-left">Privacy</button></li>
+              <li><button onClick={() => onNavigate('about')} className="hover:text-pure-white hover:underline transition-all text-left">Legal</button></li>
             </ul>
           </div>
         </div>

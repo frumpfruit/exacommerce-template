@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 
 export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }) {
   // If we came with no items, show empty state or fallback to default Bora Chair
@@ -135,7 +135,7 @@ export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }
         {/* Form & Summary Container */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
           gap: 'var(--retail-space-7)',
           alignItems: 'start'
         }}>
@@ -215,7 +215,7 @@ export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }
                         alignItems: 'center',
                         gap: '4px'
                       }}>
-                        🏷️ {prod.tag}
+                        ðŸ·ï¸ {prod.tag}
                       </span>
                     </div>
 
@@ -337,7 +337,7 @@ export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }
                 {/* Nama & Email Row */}
                 <div style={{
                   display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))',
                   gap: 'var(--retail-space-4)',
                   marginBottom: 'var(--retail-space-4)'
                 }}>
@@ -640,3 +640,4 @@ export default function InquiryPage({ inquiryItems = [], onGoBack, onClearCart }
     </div>
   );
 }
+

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+﻿import React, { useState, useEffect, useRef } from 'react';
 import { 
   Sparkles, ArrowRight, ShieldCheck, Leaf, Award, 
   Activity, Star, ChevronDown, Users, Heart 
@@ -6,7 +6,7 @@ import {
 import ScrollReveal from './ScrollReveal';
 import { useParallax, useCountUp, useStaggerVisible } from '../../../lib/motionHooks';
 
-// ─── Parallax Hero Background ─────────────────────────────────────────────────
+// â”€â”€â”€ Parallax Hero Background â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function ParallaxHeroBg() {
   const [parallaxRef, offset] = useParallax(0.25);
   return (
@@ -24,7 +24,7 @@ function ParallaxHeroBg() {
   );
 }
 
-// ─── Animated Stat Counter ────────────────────────────────────────────────────
+// â”€â”€â”€ Animated Stat Counter â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function AnimatedStat({ value, label, suffix = '' }) {
   // Extract numeric portion
   const numericMatch = value.match(/[\d.]+/);
@@ -45,7 +45,7 @@ function AnimatedStat({ value, label, suffix = '' }) {
   );
 }
 
-// ─── Staggered Benefits Grid ──────────────────────────────────────────────────
+// â”€â”€â”€ Staggered Benefits Grid â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const BENEFITS = [
   { icon: Leaf, title: '100% Plant-Based', desc: 'Seluruh produk terbuat dari protein nabati organik murni tanpa lemak jenuh hewani.' },
   { icon: Activity, title: 'Low Glycemic Index', desc: 'Formula pelepasan lambat karbohidrat kompleks menjaga kestabilan kadar gula darah Anda.' },
@@ -60,7 +60,7 @@ function StaggeredBenefits() {
   return (
     <div
       ref={containerRef}
-      style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '20px', marginTop: '30px' }}
+      style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))', gap: '20px', marginTop: '30px' }}
     >
       {BENEFITS.map(({ icon: Icon, title, desc }, i) => (
         <div
@@ -91,7 +91,7 @@ function StaggeredBenefits() {
   );
 }
 
-// ─── Parallax Testimonial Strip ───────────────────────────────────────────────
+// â”€â”€â”€ Parallax Testimonial Strip â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const TESTIMONIALS = [
   { text: '"Energi saya stabil seharian dan lambung jadi terasa sangat nyaman!"', name: 'Dewi Lestari', role: 'Ibu Rumah Tangga & Runner, 34', initials: 'DL' },
   { text: '"Produk Oat Purple ini ramah sekali di lambung, rasanya lezat tidak seret."', name: 'Roni Wijaya', role: 'Software Architect, 40', initials: 'RW' },
@@ -123,7 +123,7 @@ export default function HomePage({ onNavigate }) {
 
   return (
     <>
-      {/* ── HERO ──────────────────────────────────────────────────────── */}
+      {/* â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section
         className="supp-section supp-container"
         style={{ position: 'relative', overflow: 'hidden' }}
@@ -132,7 +132,7 @@ export default function HomePage({ onNavigate }) {
         <ParallaxHeroBg />
         <div className="supp-hero" style={{ position: 'relative', zIndex: 1 }}>
 
-          {/* Hero text — slides in from left */}
+          {/* Hero text â€” slides in from left */}
           <div
             className="supp-hero-content"
             style={{
@@ -162,7 +162,7 @@ export default function HomePage({ onNavigate }) {
             </div>
           </div>
 
-          {/* Hero SVG — slides in from right + mouse parallax */}
+          {/* Hero SVG â€” slides in from right + mouse parallax */}
           <div
             className="supp-hero-image-wrap"
             style={{
@@ -205,22 +205,22 @@ export default function HomePage({ onNavigate }) {
         </div>
       </section>
 
-      {/* ── CERT STRIP — blur dissolve ──────────────────────────────── */}
+      {/* â”€â”€ CERT STRIP â€” blur dissolve â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <ScrollReveal direction="blur" delay={0}>
         <section className="supp-cert-strip">
           <div className="supp-container" style={{ display: 'flex', justifyContent: 'center', gap: '30px', flexWrap: 'wrap', fontSize: '13px', fontWeight: 800, letterSpacing: '1.5px', textTransform: 'uppercase', color: 'var(--supp-text-secondary)' }}>
             <span>BPOM RI Certified</span>
-            <span style={{ color: 'var(--supp-surface-raised)' }}>•</span>
+            <span style={{ color: 'var(--supp-surface-raised)' }}>â€¢</span>
             <span>100% Halal MUI</span>
-            <span style={{ color: 'var(--supp-surface-raised)' }}>•</span>
+            <span style={{ color: 'var(--supp-surface-raised)' }}>â€¢</span>
             <span>GMP Certified Quality</span>
-            <span style={{ color: 'var(--supp-surface-raised)' }}>•</span>
+            <span style={{ color: 'var(--supp-surface-raised)' }}>â€¢</span>
             <span>HACCP Food Safety</span>
           </div>
         </section>
       </ScrollReveal>
 
-      {/* ── BENEFITS GRID — stagger grow ────────────────────────────── */}
+      {/* â”€â”€ BENEFITS GRID â€” stagger grow â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="supp-section" style={{ backgroundColor: '#ffffff', borderTop: '1px solid var(--supp-border-muted)' }}>
         <div className="supp-container">
           <ScrollReveal direction="up">
@@ -233,10 +233,10 @@ export default function HomePage({ onNavigate }) {
         </div>
       </section>
 
-      {/* ── STATS — animated counters, slide from sides ─────────────── */}
+      {/* â”€â”€ STATS â€” animated counters, slide from sides â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="supp-section" style={{ backgroundColor: '#ffffff', borderTop: '1px solid var(--supp-border-muted)' }}>
         <div className="supp-container">
-          <div className="supp-stats-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '0' }}>
+          <div className="supp-stats-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 160px), 1fr))', gap: '0' }}>
             <ScrollReveal direction="right" staggerIndex={0}>
               <AnimatedStat value="500K+" label="Packs Distributed" />
             </ScrollReveal>
@@ -253,7 +253,7 @@ export default function HomePage({ onNavigate }) {
         </div>
       </section>
 
-      {/* ── SPLIT FEATURE — left/right alternating parallax ──────────── */}
+      {/* â”€â”€ SPLIT FEATURE â€” left/right alternating parallax â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="supp-section" style={{ backgroundColor: '#f0f6f2', borderTop: '1px solid var(--supp-border-muted)' }}>
         <div className="supp-container">
           <ScrollReveal direction="up">
@@ -294,7 +294,7 @@ export default function HomePage({ onNavigate }) {
                       </g>
                     ))}
                     {/* Label */}
-                    <text x="16" y="185" fill="#03582d" fontSize="9" fontWeight="700" fontFamily="system-ui" letterSpacing="1.5" opacity="0.7">ORGANIC FARM PARTNER — BROMO, EAST JAVA</text>
+                    <text x="16" y="185" fill="#03582d" fontSize="9" fontWeight="700" fontFamily="system-ui" letterSpacing="1.5" opacity="0.7">ORGANIC FARM PARTNER â€” BROMO, EAST JAVA</text>
                   </svg>
                 )
               },
@@ -322,13 +322,13 @@ export default function HomePage({ onNavigate }) {
                     <path d="M150,140 Q150,155 180,158 Q210,155 210,140" fill="#78be00" opacity="0.12"/>
                     {/* Temperature indicator */}
                     <rect x="260" y="70" width="60" height="70" rx="6" fill="white" stroke="#e5e7eb" strokeWidth="1"/>
-                    <text x="290" y="96" textAnchor="middle" fill="#03582d" fontSize="18" fontWeight="900" fontFamily="monospace">4°C</text>
+                    <text x="290" y="96" textAnchor="middle" fill="#03582d" fontSize="18" fontWeight="900" fontFamily="monospace">4Â°C</text>
                     <text x="290" y="112" textAnchor="middle" fill="#78be00" fontSize="8" fontWeight="700" fontFamily="system-ui" letterSpacing="1">COLD PRESS</text>
                     <rect x="268" y="118" width="44" height="4" rx="2" fill="#e5e7eb"/>
                     <rect x="268" y="118" width="20" height="4" rx="2" fill="#78be00"/>
                     <text x="290" y="132" textAnchor="middle" fill="#6b7280" fontSize="7" fontFamily="system-ui">Low Temp Preserved</text>
                     {/* Side labels */}
-                    <text x="16" y="185" fill="#03582d" fontSize="9" fontWeight="700" fontFamily="system-ui" letterSpacing="1.5" opacity="0.7">COLD-PRESS TECHNOLOGY — ENZYME ACTIVE</text>
+                    <text x="16" y="185" fill="#03582d" fontSize="9" fontWeight="700" fontFamily="system-ui" letterSpacing="1.5" opacity="0.7">COLD-PRESS TECHNOLOGY â€” ENZYME ACTIVE</text>
                   </svg>
                 )
               },
@@ -366,12 +366,12 @@ export default function HomePage({ onNavigate }) {
                     <circle cx="75" cy="48" r="28" fill="#03582d" opacity="0.08" stroke="#03582d" strokeWidth="1.5"/>
                     <text x="75" y="44" textAnchor="middle" fill="#03582d" fontSize="8" fontWeight="800" fontFamily="system-ui">HALAL</text>
                     <text x="75" y="56" textAnchor="middle" fill="#03582d" fontSize="7" fontFamily="system-ui">MUI 2024</text>
-                    <text x="16" y="185" fill="#03582d" fontSize="9" fontWeight="700" fontFamily="system-ui" letterSpacing="1.5" opacity="0.7">LAB ACCREDITED — 3 INDEPENDENT AUDIT STAGES</text>
+                    <text x="16" y="185" fill="#03582d" fontSize="9" fontWeight="700" fontFamily="system-ui" letterSpacing="1.5" opacity="0.7">LAB ACCREDITED â€” 3 INDEPENDENT AUDIT STAGES</text>
                   </svg>
                 )
               },
             ].map(({ num, title, desc, side, svg }) => (
-              <div key={num} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '30px', alignItems: 'center' }}>
+              <div key={num} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '30px', alignItems: 'center' }}>
                 <ScrollReveal direction={side === 'left' ? 'right' : 'left'}>
                   <div style={{ display: 'flex', alignItems: 'flex-start', gap: '20px' }}>
                     <span style={{ fontSize: '56px', fontWeight: 900, color: 'rgba(120,190,0,0.12)', lineHeight: 1, flexShrink: 0, fontVariantNumeric: 'tabular-nums' }}>{num}</span>
@@ -393,7 +393,7 @@ export default function HomePage({ onNavigate }) {
         </div>
       </section>
 
-      {/* ── TESTIMONIALS — blur dissolve staggered ────────────────────── */}
+      {/* â”€â”€ TESTIMONIALS â€” blur dissolve staggered â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="supp-section" style={{ backgroundColor: '#ffffff', borderTop: '1px solid var(--supp-border-muted)' }}>
         <div className="supp-container">
           <ScrollReveal direction="up">
@@ -425,7 +425,7 @@ export default function HomePage({ onNavigate }) {
         </div>
       </section>
 
-      {/* ── COMMUNITY GRID — grow effect ──────────────────────────────── */}
+      {/* â”€â”€ COMMUNITY GRID â€” grow effect â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="supp-section" style={{ backgroundColor: '#f0f6f2', borderTop: '1px solid var(--supp-border-muted)' }}>
         <div className="supp-container">
           <ScrollReveal direction="up">
@@ -435,7 +435,7 @@ export default function HomePage({ onNavigate }) {
             </div>
           </ScrollReveal>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '15px', marginTop: '30px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))', gap: '15px', marginTop: '30px' }}>
             {[
               { label: 'Pagi Penuh Energi', hash: '#sarapansehat', img: '/images/supplement/social_breakfast.png' },
               { label: 'Runner Rutin Akhir Pekan', hash: '#nutripridefit', img: '/images/supplement/social_runner.png' },
@@ -479,7 +479,7 @@ export default function HomePage({ onNavigate }) {
         </div>
       </section>
 
-      {/* ── FAQ — reveal wipe ──────────────────────────────────────────── */}
+      {/* â”€â”€ FAQ â€” reveal wipe â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="supp-section supp-container">
         <ScrollReveal direction="up">
           <div className="supp-section-title-wrap">
@@ -512,3 +512,4 @@ export default function HomePage({ onNavigate }) {
     </>
   );
 }
+

@@ -222,7 +222,7 @@ export default function ProcessPage({ onNavigate }) {
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="retail-btn retail-btn-primary" 
-                style={{ fontSize: '12px', padding: '12px 28px', borderRadius: '4px' }}
+                style={{ fontSize: '12px', padding: '12px 28px', borderRadius: '4px', color: '#ffffff' }}
               >
                 Schedule Consultation
               </a>

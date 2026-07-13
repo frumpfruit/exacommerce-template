@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import ScrollReveal from './ScrollReveal';
 
 export default function AboutPage() {
@@ -34,7 +34,7 @@ export default function AboutPage() {
               color: 'var(--retail-text-secondary)',
               marginBottom: 'var(--retail-space-3)'
             }}>
-              Est. 2010 • Premium Curation
+              Est. 2010 â€¢ Premium Curation
             </span>
             <h1 className="retail-heading" style={{ 
               fontSize: '36px', 
@@ -64,7 +64,7 @@ export default function AboutPage() {
           <ScrollReveal>
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))',
               gap: 'var(--retail-space-9)',
               alignItems: 'center'
             }}>
@@ -161,7 +161,7 @@ export default function AboutPage() {
           {/* Typographic Border Grid (No cards, no shadows) */}
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))',
             borderTop: '1px solid var(--retail-surface-muted)',
             borderLeft: '1px solid var(--retail-surface-muted)'
           }}>
@@ -236,7 +236,7 @@ export default function AboutPage() {
                     alignItems: 'center',
                     gap: '8px'
                   }}>
-                    <span style={{ color: 'var(--retail-border-strong)' }}>✦</span> {v}
+                    <span style={{ color: 'var(--retail-border-strong)' }}>âœ¦</span> {v}
                   </span>
                 ))}
               </div>
@@ -251,7 +251,7 @@ export default function AboutPage() {
           <ScrollReveal>
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))',
               gap: 'var(--retail-space-9)',
               alignItems: 'center'
             }}>
@@ -314,7 +314,7 @@ export default function AboutPage() {
         <div className="retail-container">
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))',
             gap: 'var(--retail-space-8)',
             textAlign: 'center'
           }}>
@@ -354,7 +354,7 @@ export default function AboutPage() {
       <section style={{ padding: 'var(--retail-space-10) 0', textAlign: 'center' }}>
         <div className="retail-container" style={{ maxWidth: '720px', margin: '0 auto' }}>
           <ScrollReveal>
-            <span style={{ fontSize: '24px', color: 'var(--retail-border-strong)', display: 'block', marginBottom: 'var(--retail-space-4)' }}>✦</span>
+            <span style={{ fontSize: '24px', color: 'var(--retail-border-strong)', display: 'block', marginBottom: 'var(--retail-space-4)' }}>âœ¦</span>
             <h2 style={{
               fontSize: '20px',
               fontWeight: 600,
@@ -376,3 +376,4 @@ export default function AboutPage() {
     </div>
   );
 }
+

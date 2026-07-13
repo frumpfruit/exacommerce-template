@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import ScrollReveal from './ScrollReveal';
 
 const FEATURED_ARTICLE = {
@@ -151,7 +151,7 @@ export default function InsightsPage() {
           <ScrollReveal>
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))',
               gap: 'var(--retail-space-9)',
               alignItems: 'center'
             }}>
@@ -172,7 +172,7 @@ export default function InsightsPage() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--retail-space-4)' }}>
                 <div style={{ display: 'flex', gap: '10px', fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--retail-border-strong)' }}>
                   <span>{FEATURED_ARTICLE.category}</span>
-                  <span>•</span>
+                  <span>â€¢</span>
                   <span>{FEATURED_ARTICLE.readTime}</span>
                 </div>
                 <h2 style={{
@@ -269,7 +269,7 @@ export default function InsightsPage() {
             /* 3-Column Clean Border Grid (No shadow cards, no white boxes) */
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
               gap: 'var(--retail-space-8)'
             }}>
               {filteredArticles.map((art, idx) => (
@@ -291,7 +291,7 @@ export default function InsightsPage() {
                   </div>
                   <div style={{ display: 'flex', justifyBetween: 'space-between', fontSize: '11px', color: 'var(--retail-text-secondary)', gap: '10px' }}>
                     <span>{art.date}</span>
-                    <span>•</span>
+                    <span>â€¢</span>
                     <span>{art.readTime}</span>
                   </div>
                   <h4 style={{
@@ -367,7 +367,7 @@ export default function InsightsPage() {
           {/* Horizontal Layout with Vertical Dividers (No Cards) */}
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
             gap: 'var(--retail-space-8)'
           }}>
             {EXPERT_TIPS.map((tip, idx) => (
@@ -442,7 +442,7 @@ export default function InsightsPage() {
 
             {subbed ? (
               <div style={{ color: '#d9ab7e', fontWeight: 600, fontSize: '14px', padding: '10px' }}>
-                ✓ Terima kasih! Anda telah terdaftar dalam newsletter kami.
+                âœ“ Terima kasih! Anda telah terdaftar dalam newsletter kami.
               </div>
             ) : (
               <form onSubmit={handleSubscribe} style={{ display: 'flex', gap: '8px', justifyContent: 'center' }}>
@@ -480,3 +480,4 @@ export default function InsightsPage() {
     </div>
   );
 }
+

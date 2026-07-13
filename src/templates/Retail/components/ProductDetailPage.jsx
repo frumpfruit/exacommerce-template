@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import ScrollReveal from './ScrollReveal';
 
 export default function ProductDetailPage({ product, onAddToCart, onInquireNow, onSelectProduct, allProducts = [] }) {
@@ -57,7 +57,7 @@ export default function ProductDetailPage({ product, onAddToCart, onInquireNow, 
         <ScrollReveal>
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))',
             gap: 'var(--retail-space-8)',
             backgroundColor: 'var(--retail-surface-strong)',
             border: '1px solid var(--retail-surface-muted)',
@@ -194,7 +194,7 @@ export default function ProductDetailPage({ product, onAddToCart, onInquireNow, 
               display: 'flex',
               gap: 'var(--retail-space-4)',
               marginTop: 'var(--retail-space-4)',
-              flexWrap: 'wrap'
+              flexDirection: 'column'
             }}>
               {/* Add to Cart */}
               <button
@@ -211,12 +211,12 @@ export default function ProductDetailPage({ product, onAddToCart, onInquireNow, 
                   borderColor: 'var(--retail-border-strong)',
                   borderWidth: '2px',
                   padding: '12px 24px',
-                  flexGrow: 1,
+                  width: '100%',
                   fontSize: '12px',
                   fontWeight: 700
                 }}
               >
-                🛒 Masukkan Keranjang
+                MASUKKAN KERANJANG
               </button>
 
               {/* Inquire now */}
@@ -225,12 +225,13 @@ export default function ProductDetailPage({ product, onAddToCart, onInquireNow, 
                 className="retail-btn retail-btn-primary"
                 style={{
                   padding: '12px 24px',
-                  flexGrow: 1.5,
+                  width: '100%',
                   fontSize: '12px',
-                  fontWeight: 700
+                  fontWeight: 700,
+                  color: '#ffffff'
                 }}
               >
-                💬 Kirim Inquiry
+                KIRIM INQUIRY
               </button>
             </div>
           </div>
@@ -255,7 +256,7 @@ export default function ProductDetailPage({ product, onAddToCart, onInquireNow, 
 
               <div style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 220px), 1fr))',
                 gap: 'var(--retail-space-6)'
               }}>
                 {similarProducts.map(similar => (
@@ -348,3 +349,8 @@ export default function ProductDetailPage({ product, onAddToCart, onInquireNow, 
     </div>
   );
 }
+
+
+
+
+

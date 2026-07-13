@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import ScrollReveal from './ScrollReveal';
 
 const CATEGORIES = [
@@ -6,28 +6,28 @@ const CATEGORIES = [
     title: 'Packaging Supplies',
     desc: 'Corrugated boxes, stretch wrap, packing tape, bubble wrap, and palletizing materials for secure goods transit.',
     count: '120+ Products',
-    /* 📷 IMAGE NEEDED: packaging-supplies.jpg — warehouse shelves with stacked boxes, packaging tape rolls, bubble wrap */
+    /* ðŸ“· IMAGE NEEDED: packaging-supplies.jpg â€” warehouse shelves with stacked boxes, packaging tape rolls, bubble wrap */
     img: '/images/distribution/packaging-supplies.jpg'
   },
   {
     title: 'Safety Equipment',
     desc: 'Helmets, gloves, goggles, high-vis vests, and certified PPE for industrial and construction environments.',
     count: '85+ Products',
-    /* 📷 IMAGE NEEDED: safety-equipment.jpg — safety helmets, gloves, goggles arranged on industrial surface */
+    /* ðŸ“· IMAGE NEEDED: safety-equipment.jpg â€” safety helmets, gloves, goggles arranged on industrial surface */
     img: '/images/distribution/safety-equipment.jpg'
   },
   {
     title: 'Office Supplies',
     desc: 'Paper reams, writing instruments, filing systems, and desk essentials for professional work environments.',
     count: '200+ Products',
-    /* 📷 IMAGE NEEDED: office-supplies.jpg — organized office supplies, paper stacks, pens, folders */
+    /* ðŸ“· IMAGE NEEDED: office-supplies.jpg â€” organized office supplies, paper stacks, pens, folders */
     img: '/images/distribution/office-supplies.jpg'
   },
   {
     title: 'Industrial Equipment',
     desc: 'Material handling tools, pallet dispensers, strapping machines, and warehouse automation accessories.',
     count: '60+ Products',
-    /* 📷 IMAGE NEEDED: industrial-equipment.jpg — warehouse with industrial tools, pallet jacks, machinery */
+    /* ðŸ“· IMAGE NEEDED: industrial-equipment.jpg â€” warehouse with industrial tools, pallet jacks, machinery */
     img: '/images/distribution/industrial-equipment.jpg'
   }
 ];
@@ -58,7 +58,7 @@ export default function CategoryGrid({ onNavigate }) {
 
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))',
             gap: 'var(--dist-space-5)'
           }}>
             {CATEGORIES.map((cat, idx) => (
@@ -92,7 +92,7 @@ export default function CategoryGrid({ onNavigate }) {
                   </span>
                   <h3 style={{ fontSize: '18px', fontWeight: 700, marginBottom: '6px' }}>
                     {cat.title}
-                    <span className="dist-category-arrow">→</span>
+                    <span className="dist-category-arrow">â†’</span>
                   </h3>
                   <p style={{ fontSize: '12px', lineHeight: 1.5, opacity: 0.85, margin: 0 }}>
                     {cat.desc}
@@ -106,3 +106,4 @@ export default function CategoryGrid({ onNavigate }) {
     </ScrollReveal>
   );
 }
+

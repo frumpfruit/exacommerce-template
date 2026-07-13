@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+﻿import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { fadeUp, fadeLeft, fadeRight } from '../motionPresets';
 
@@ -93,7 +93,7 @@ export default function ProductDetailPage({ product, allProducts = [], onAddToCa
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {product.features.map((feat, i) => (
                     <li key={i} className="flex items-start gap-3 text-[14px]" style={{ color: brand.gray }}>
-                      <span style={{ color: brand.coral, fontWeight: 'bold' }}>✓</span> {feat}
+                      <span style={{ color: brand.coral, fontWeight: 'bold' }}>âœ“</span> {feat}
                     </li>
                   ))}
                 </ul>
@@ -182,3 +182,6 @@ export default function ProductDetailPage({ product, allProducts = [], onAddToCa
     </div>
   );
 }
+
+
+

@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import ScrollReveal from './ScrollReveal';
 
 const PIPELINE_STEPS = [
@@ -19,7 +19,7 @@ export default function ProcessPage({ onNavigate }) {
         borderBottom: '1px solid rgba(255,255,255,0.1)'
       }}>
         <div className="dist-container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'var(--dist-space-8)', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 'var(--dist-space-8)', alignItems: 'center' }}>
             <div style={{ maxWidth: '600px' }}>
               <span style={{ 
                 display: 'inline-block', padding: '4px 10px', backgroundColor: 'rgba(255,255,255,0.1)', 
@@ -115,7 +115,7 @@ export default function ProcessPage({ onNavigate }) {
               Enterprise <span style={{ color: 'var(--dist-brand-primary)' }}>Service Level Agreement</span> (SLA)
             </h2>
             
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 'var(--dist-space-5)' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 'var(--dist-space-5)' }}>
               {[
                 { title: '99.9% Order Accuracy', desc: 'Our automated picking systems ensure you get exactly what you ordered. We cover all reverse logistics costs for any picking errors.' },
                 { title: '24-Hour Quotation Turnaround', desc: 'Complex custom RFQs are processed by our pricing analysts and returned within one business day, guaranteed.' },
@@ -169,3 +169,4 @@ export default function ProcessPage({ onNavigate }) {
     </div>
   );
 }
+

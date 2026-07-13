@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 
 export default function ProductDetailPage({ product, onNavigate = () => {}, onAddToCart = () => {}, showToast = () => {} }) {
   const [tonnage, setTonnage] = useState(25);
@@ -123,7 +123,7 @@ export default function ProductDetailPage({ product, onNavigate = () => {}, onAd
 
                 <div className="text-left sm:text-right font-sans text-[13px] text-[color:var(--arbor-on-surface-variant)] space-y-1">
                   <p>Min. Volume: <strong className="font-bold text-[color:var(--arbor-primary)]">{product.moq}</strong></p>
-                  <p>Est. CO₂ Footprint: <strong className="font-bold text-emerald-600">{calculatedFootprint} Tons</strong></p>
+                  <p>Est. COâ‚‚ Footprint: <strong className="font-bold text-emerald-600">{calculatedFootprint} Tons</strong></p>
                 </div>
               </div>
 
@@ -211,3 +211,6 @@ export default function ProductDetailPage({ product, onNavigate = () => {}, onAd
     </div>
   );
 }
+
+
+

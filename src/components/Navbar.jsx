@@ -61,7 +61,10 @@ const MEGAMENU_DATA = {
 };
 
 const SIMPLE_NAV_ITEMS = [
-  { key: 'template', to: '/tema', label: 'Template Website Kami' }
+  { key: 'fitur', to: '/#fitur', label: 'Fitur' },
+  { key: 'harga', to: '/harga', label: 'Harga' },
+  { key: 'template', to: '/tema', label: 'Template Website Kami' },
+  { key: 'contact', to: '/#contact', label: 'Contact' }
 ];
 
 export default function Navbar() {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import ScrollReveal from './ScrollReveal';
 
 const CATEGORIES = ['All', 'Chair', 'Table', 'Lounge', 'Accessories'];
@@ -55,7 +55,7 @@ export default function StorePage({ products = [], onAddToCart, onViewDetail }) 
         <ScrollReveal delay={200}>
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))',
             gap: 'var(--retail-space-8)'
           }}>
             {filteredProducts.map(product => (
@@ -174,3 +174,4 @@ export default function StorePage({ products = [], onAddToCart, onViewDetail }) 
     </div>
   );
 }
+

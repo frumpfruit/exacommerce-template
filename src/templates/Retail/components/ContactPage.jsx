@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import ScrollReveal from './ScrollReveal';
 
 export default function ContactPage() {
@@ -41,7 +41,7 @@ export default function ContactPage() {
 
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
           gap: 'var(--retail-space-9)'
         }}>
           {/* Left panel: Info */}
@@ -131,7 +131,7 @@ export default function ContactPage() {
             }}>
               {submitted ? (
                 <div style={{ textAlign: 'center', padding: 'var(--retail-space-8) 0' }}>
-                  <span style={{ fontSize: '48px', display: 'block', marginBottom: 'var(--retail-space-4)' }}>📩</span>
+                  <span style={{ fontSize: '48px', display: 'block', marginBottom: 'var(--retail-space-4)' }}>ðŸ“©</span>
                   <h3 style={{ fontSize: 'var(--retail-text-lg)', fontWeight: 700, textTransform: 'uppercase', marginBottom: 'var(--retail-space-3)' }}>Message Submitted</h3>
                   <p style={{ fontSize: 'var(--retail-text-sm)', color: 'var(--retail-text-secondary)', lineHeight: 1.6, marginBottom: 'var(--retail-space-6)' }}>
                     Thank you for contacting HAVEN. A member of our design team will respond to your inquiry at <strong>{formData.email}</strong> within 24 hours.
@@ -243,3 +243,4 @@ export default function ContactPage() {
     </div>
   );
 }
+

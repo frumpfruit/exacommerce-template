@@ -202,7 +202,7 @@ export default function FeatureShowcaseSection() {
                       </div>
                     </div>
                     <div className="rounded-2xl overflow-hidden border border-[#e5e7eb] shadow-lg bg-[#f8f9fa]">
-                      <img src="/images/home/media-library.png" alt="Exantara Commerce Media Library" className="w-full h-auto object-cover max-h-72" loading="lazy" />
+                      <img src="/images/generated/toko_inventaris_grounded.png" alt="Exantara Commerce Media Library" className="w-full h-auto object-cover max-h-72" loading="lazy" />
                     </div>
                   </div>
                 )}
@@ -231,6 +231,9 @@ export default function FeatureShowcaseSection() {
                         </span>
                       </div>
                       <span className="w-full sm:w-auto text-center justify-center flex px-3.5 py-1.5 rounded bg-[#111827] text-white font-body text-xs font-bold cursor-pointer hover:bg-[#374151]">Proses Pesanan</span>
+                    </div>
+                    <div className="rounded-2xl overflow-hidden border border-[#e5e7eb] shadow-lg mt-4 bg-[#f8f9fa]">
+                      <img src="/images/generated/buyer_insight_grounded.png" alt="Market Builder Insight" className="w-full h-auto object-cover max-h-48" loading="lazy" />
                     </div>
                   </div>
                 )}
@@ -261,6 +264,9 @@ export default function FeatureShowcaseSection() {
                         <span className="text-[#10b981] font-mono">APPROVED</span>
                       </div>
                     </div>
+                    <div className="rounded-2xl overflow-hidden border border-[#e5e7eb] shadow-lg mt-4 bg-[#f8f9fa]">
+                      <img src="/images/generated/customs_automation_grounded.png" alt="Customs Automation" className="w-full h-auto object-cover max-h-48" loading="lazy" />
+                    </div>
                   </div>
                 )}
 
@@ -282,6 +288,9 @@ export default function FeatureShowcaseSection() {
                         <div className="text-xl sm:text-2xl font-black text-[#111827] font-headline mt-1">USD, EUR, JPY</div>
                         <span className="text-[11px] sm:text-xs text-[#4b5563] font-mono block mt-1 font-semibold">Semua rekening terhubung</span>
                       </div>
+                    </div>
+                    <div className="rounded-2xl overflow-hidden border border-[#e5e7eb] shadow-lg mt-4 bg-[#f8f9fa]">
+                      <img src="/images/home/dashboard-home.png" alt="Smart Dashboard" className="w-full h-auto object-cover max-h-48" loading="lazy" />
                     </div>
                   </div>
                 )}
