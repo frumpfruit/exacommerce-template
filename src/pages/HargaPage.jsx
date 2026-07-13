@@ -109,9 +109,10 @@ export default function HargaPage() {
     <div className="font-body bg-[#0a0f1d] text-white min-h-screen">
       <Navbar />
 
-      {/* Hero */}
-      <section className="px-6 md:px-12 py-32 max-w-6xl mx-auto text-center">
-        <AnimatedSection>
+      <main className="pt-24">
+        {/* Hero */}
+        <section className="px-6 md:px-12 py-16 md:py-24 max-w-6xl mx-auto text-center">
+          <AnimatedSection>
           <h1 className="text-4xl md:text-5xl font-headline font-bold mb-8 tracking-tight">
             Pilih Rencana
           </h1>
@@ -296,6 +297,7 @@ export default function HargaPage() {
           </AnimatedSection>
         </div>
       </section>
+      </main>
 
       <div className="bg-white">
         <Footer />

@@ -64,7 +64,12 @@ const SIMPLE_NAV_ITEMS = [
   { key: 'fitur', to: '/#fitur', label: 'Fitur' },
   { key: 'harga', to: '/harga', label: 'Harga' },
   { key: 'template', to: '/tema', label: 'Template Website Kami' },
-  { key: 'contact', to: '/#contact', label: 'Contact' }
+  { 
+    key: 'contact', 
+    to: 'https://wa.me/6282337123533?text=Halo%20Exantara%2C%20saya%20ingin%20mengetahui%20lebih%20detail%20mengenai%20layanan%20dan%20solusi%20yang%20ditawarkan.', 
+    label: 'Contact',
+    external: true
+  }
 ];
 
 export default function Navbar() {
@@ -179,8 +184,28 @@ export default function Navbar() {
             */}
 
             {/* Simple Menu Items */}
-            {SIMPLE_NAV_ITEMS.map(({ key, to, label }) => {
+            {SIMPLE_NAV_ITEMS.map(({ key, to, label, external }) => {
               const isActive = location.pathname === to;
+              if (external) {
+                return (
+                  <a
+                    key={key}
+                    href={to}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`relative group py-2 font-body text-xs uppercase tracking-[0.12em] xl:tracking-[0.18em] font-bold transition-colors ${
+                      isSolid && !isDarkTheme
+                        ? 'text-[#4b5563] hover:text-[#111827]'
+                        : 'text-white/80 hover:text-white'
+                    }`}
+                  >
+                    <span>{label}</span>
+                    <span className={`absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 ease-out group-hover:w-full ${
+                      isSolid && !isDarkTheme ? 'bg-[#374151]' : 'bg-white'
+                    }`}></span>
+                  </a>
+                );
+              }
               return (
                 <Link
                   key={key}
@@ -523,10 +548,12 @@ export default function Navbar() {
                   </button>
                   */}
 
-                  {SIMPLE_NAV_ITEMS.map(({ key, to, label }) => (
+                  {SIMPLE_NAV_ITEMS.map(({ key, to, label, external }) => (
                     <a
                       key={key}
                       href={to}
+                      target={external ? "_blank" : undefined}
+                      rel={external ? "noopener noreferrer" : undefined}
                       onClick={() => { setMobileOpen(false); setMobileSubmenu(null); }}
                       className="w-full text-left py-4 border-b border-white/10 block text-base font-bold font-headline tracking-wide hover:text-white/80 transition-colors"
                     >
