@@ -210,35 +210,36 @@ export default function TemaPage() {
             
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 bg-[#111] border border-gray-800 rounded-2xl overflow-hidden shadow-sm">
               <div className="lg:col-span-7 aspect-[16/10] bg-[#1a1a1a] overflow-hidden relative">
-                <div 
-                  className="w-full h-full transform hover:scale-105 transition-transform duration-700 bg-cover bg-center"
-                  style={{ backgroundImage: `url('https://lh3.googleusercontent.com/aida-public/AB6AXuBZl8OI9BddePCFCaa0Y0xwwAtnE_Z0sXcqjqS-nEEo4wmZS9HMXET79aCgzh8f0YRHTJgkS_gUFWr6HxEyvSe5kyTBsNW8P7othcQAjXQ7zHQqasE1bK4wwMdJzdJ8L2skJj0Dv53HH-ZTKH9D7LOL_oyUWHxWLk65_3rfSp7_KsghX49DNN5pO0evKrhZ4g0GttWyszNa9rfMkKqRiH0hjZj0dxwP1gLX_zbEW8spBl7CsYPONAlL')` }}
-                ></div>
+                <img
+                  src="/mockup/SILK DESK.png"
+                  alt="Silk & Stone Textile Template"
+                  className="w-full h-full object-cover object-top transform hover:scale-105 transition-transform duration-700"
+                />
               </div>
               <div className="lg:col-span-5 p-8 md:p-12 flex flex-col justify-center">
                 <span className="font-mono text-gray-400 text-xs uppercase tracking-wider mb-4 border border-gray-800 bg-[#1a1a1a] px-3 py-1 rounded-full w-max">
-                  Rilis Terpopuler
+                  Pilihan Bulan Ini
                 </span>
-                <h3 className="font-headline text-3xl md:text-4xl font-bold text-white mb-6">Nexus Distribution System</h3>
+                <h3 className="font-headline text-3xl md:text-4xl font-bold text-white mb-6">Silk & Stone Textile</h3>
                 <p className="text-gray-400 mb-8 leading-relaxed">
-                  Sistem desain terbaik untuk distributor ekspor B2B. Termasuk 15+ komponen katalog, sistem pemesanan grosir, dan dasbor manajemen pembeli internasional.
+                  Katalog ekspor B2B kain tenun warisan budaya yang elegan. Menjembatani karya perajin tradisional Nusantara dengan pasar tekstil premium internasional.
                 </p>
                 <ul className="space-y-4 mb-10">
                   <li className="flex items-center gap-3 text-gray-300">
-                    <span className="text-white">✓</span> Layout Responsif Penuh
+                    <span className="text-white">✓</span> Katalog Kain Tenun & Material Premium
                   </li>
                   <li className="flex items-center gap-3 text-gray-300">
-                    <span className="text-white">✓</span> Katalog Produk Skala Besar
+                    <span className="text-white">✓</span> Sistem Inquiry & Trade Order B2B
                   </li>
                   <li className="flex items-center gap-3 text-gray-300">
-                    <span className="text-white">✓</span> Siap untuk Infrastruktur Global
+                    <span className="text-white">✓</span> Desain Minimalis Berstandar Global
                   </li>
                 </ul>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Link to="/distribution" className="bg-white text-black px-8 py-4 text-center rounded-xl font-bold hover:bg-gray-200 transition-all shadow-md">
-                    Gunakan Nexus
+                  <Link to="/textile" className="bg-white text-black px-8 py-4 text-center rounded-xl font-bold hover:bg-gray-200 transition-all shadow-md">
+                    Gunakan Silk & Stone
                   </Link>
-                  <Link to="/distribution" className="bg-[#1a1a1a] text-white px-8 py-4 text-center rounded-xl font-bold border border-gray-800 hover:bg-[#222] transition-all">
+                  <Link to="/textile" className="bg-[#1a1a1a] text-white px-8 py-4 text-center rounded-xl font-bold border border-gray-800 hover:bg-[#222] transition-all">
                     Lihat Demo
                   </Link>
                 </div>
